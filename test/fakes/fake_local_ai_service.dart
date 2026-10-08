@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
-import '../../../core/error/app_exception.dart';
-import '../domain/local_ai_service.dart';
+import 'package:offline_ai_chat/core/error/app_exception.dart';
+import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
 import 'fake_responses.dart';
 
 /// Development stand-in for a local model.

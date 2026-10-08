@@ -1,0 +1,14 @@
+# Halo release build (LLM_METRICS=true), Galaxy Tab S9 FE (SM-X510, Android 16), 2026-10-08
+# Source: adb logcat -s flutter:I over USB. Wi-Fi off from 21:54:41; airplane mode NOT enabled.
+# Transcripts of background speech captured from the room (not the tester) are redacted.
+10-08 21:57:29.085 [STT] model_loaded model=sherpa-onnx-zipformer-vi-int8-2025-04-20 threads=2 load_ms=2883 rss_mib=410
+10-08 21:57:32.224 [STT] cancelled  rss_mib=402
+10-08 21:57:48.968 [STT] cancelled  rss_mib=391
+10-08 21:58:04.171 [STT] transcribed audio_ms=4480 speech_ms=4480 peak=0.179 decode_ms=196 stop_to_text_ms=318 text="Xin chào hôm nay là thứ mấy" rss_mib=430
+10-08 21:58:18.347 [LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 load_ms=5530 rss_mib=3001
+10-08 21:58:27.055 [LLM] generation_done prompt_msgs=2 prompt_tokens=40 evaluated_prompt_tokens=40 gen_tokens=61 ttft_ms=1137 total_ms=8695 tok_s=7.94 busy_retries=0 threads=2 gap_p50_ms=129 gap_p95_ms=132 gap_max_ms=234 stalls_over_2s=0 rss_mib=3015
+10-08 21:58:49.119 [STT] transcribed audio_ms=10240 speech_ms=9360 peak=0.116 decode_ms=409 stop_to_text_ms=485 text="Sau khi hoàn thành tắt e mốt và gửi đăng cho clo để nó đọc lớp usb đối chiếu kết quả" rss_mib=3058
+10-08 21:59:48.944 [LLM] generation_done prompt_msgs=4 prompt_tokens=133 evaluated_prompt_tokens=133 gen_tokens=328 ttft_ms=3644 total_ms=46687 tok_s=7.60 busy_retries=0 threads=2 gap_p50_ms=133 gap_p95_ms=137 gap_max_ms=138 stalls_over_2s=0 rss_mib=3081
+10-08 22:02:03.635 [STT] transcribed audio_ms=21280 speech_ms=21280 peak=0.158 decode_ms=1115 stop_to_text_ms=1267 text=<redacted: background speech, not the tester> rss_mib=2169
+10-08 22:02:59.456 [STT] transcribed audio_ms=30000 speech_ms=30000 peak=0.163 decode_ms=1521 stop_to_text_ms=1624 text=<redacted: background speech, not the tester> rss_mib=738
+10-08 22:04:45.086 [LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=480 gen_tokens=1 ttft_ms=18191 total_ms=18191 tok_s=null busy_retries=0 threads=2 rss_mib=1996

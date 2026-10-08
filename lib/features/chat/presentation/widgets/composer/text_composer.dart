@@ -25,7 +25,8 @@ class TextComposer extends StatelessWidget {
   final bool isGenerating;
   final VoidCallback onSend;
   final VoidCallback onStop;
-  final VoidCallback onVoice;
+  /// Null disables voice input.
+  final VoidCallback? onVoice;
 
   @override
   Widget build(BuildContext context) {

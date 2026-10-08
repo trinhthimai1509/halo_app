@@ -1,6 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
+
+import '../../../../core/utils/process_memory.dart' as process_memory;
 
 /// Development instrumentation for local inference. Writes one `[LLM]` line
 /// per event to the platform log (logcat on Android); nothing is stored or
@@ -18,16 +18,6 @@ abstract final class LlmMetrics {
     debugPrint('[LLM] $event $body');
   }
 
-  /// Resident memory of this process in MiB, from `/proc/self/status`
-  /// (Linux/Android only). Null where unavailable.
-  static int? residentMemoryMiB() {
-    try {
-      final status = File('/proc/self/status').readAsLinesSync();
-      final line = status.firstWhere((l) => l.startsWith('VmRSS:'));
-      final kib = int.parse(line.replaceAll(RegExp(r'[^0-9]'), ''));
-      return kib ~/ 1024;
-    } catch (_) {
-      return null;
-    }
-  }
+  /// Resident memory of this process in MiB; null where unavailable.
+  static int? residentMemoryMiB() => process_memory.residentMemoryMiB();
 }

@@ -42,6 +42,22 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+
+    // sherpa-onnx ships prebuilt .so files for every ABI and they bypass
+    // abiFilters (≈ 51 MB extra). The app cannot run on 32-bit devices
+    // anyway (no llama.cpp build), so drop those ABIs from every APK.
+    packaging {
+        jniLibs {
+            excludes += listOf("lib/armeabi-v7a/**", "lib/armeabi/**", "lib/x86/**")
+        }
+    }
+}
+
+// Release APKs target phones only: x86_64 (emulator) stays in debug builds.
+androidComponents {
+    onVariants(selector().withBuildType("release")) { variant ->
+        variant.packaging.jniLibs.excludes.add("lib/x86_64/**")
+    }
 }
 
 kotlin {

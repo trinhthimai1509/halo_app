@@ -1,4 +1,4 @@
-import '../domain/local_ai_service.dart';
+import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
 
 /// Canned replies for [FakeLocalAiService]. Development content only.
 abstract final class FakeResponses {

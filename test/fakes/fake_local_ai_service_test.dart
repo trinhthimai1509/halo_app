@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:offline_ai_chat/core/error/app_exception.dart';
-import 'package:offline_ai_chat/features/local_ai/data/fake_local_ai_service.dart';
-import 'package:offline_ai_chat/features/local_ai/data/fake_responses.dart';
 import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
+
+import 'fake_local_ai_service.dart';
+import 'fake_responses.dart';
 
 void main() {
   const request = GenerationRequest(

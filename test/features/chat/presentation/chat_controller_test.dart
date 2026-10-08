@@ -6,10 +6,10 @@ import 'package:offline_ai_chat/features/chat/domain/entities/message_role.dart'
 import 'package:offline_ai_chat/features/chat/presentation/state/chat_controller.dart';
 import 'package:offline_ai_chat/features/chat/presentation/state/chat_state.dart';
 import 'package:offline_ai_chat/features/chat/presentation/state/conversation_list_controller.dart';
-import 'package:offline_ai_chat/features/local_ai/data/fake_local_ai_service.dart';
-import 'package:offline_ai_chat/features/local_ai/data/fake_responses.dart';
 import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
 
+import '../../../fakes/fake_local_ai_service.dart';
+import '../../../fakes/fake_responses.dart';
 import '../../../helpers/in_memory_chat_repository.dart';
 import '../../../helpers/test_overrides.dart';
 

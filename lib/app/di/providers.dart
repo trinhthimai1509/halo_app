@@ -8,10 +8,11 @@ import '../../features/chat/data/datasources/chat_local_data_source.dart';
 import '../../features/chat/data/repositories/local_chat_repository.dart';
 import '../../features/chat/domain/repositories/chat_repository.dart';
 import '../../features/chat/domain/usecases/send_message.dart';
-import '../../features/local_ai/data/fake_local_ai_service.dart';
 import '../../features/local_ai/data/llama_cpp/llama_cpp_local_ai_service.dart';
+import '../../features/local_ai/data/unsupported_local_ai_service.dart';
 import '../../features/local_ai/domain/local_ai_service.dart';
-import '../../features/speech/data/fake_speech_to_text_service.dart';
+import '../../features/speech/data/sherpa_speech_to_text_service.dart';
+import '../../features/speech/data/unsupported_speech_to_text_service.dart';
 import '../../features/speech/domain/speech_to_text_service.dart';
 
 // Composition root. This is the only place that knows which concrete
@@ -36,26 +37,27 @@ final chatRepositoryProvider = Provider<ChatRepository>((ref) {
   return repository;
 });
 
-/// `--dart-define=LOCAL_AI=fake` forces the fake model (UI work without a
-/// model installed); `LOCAL_AI=llama` forces llama.cpp.
-const String _localAiOverride = String.fromEnvironment('LOCAL_AI');
+/// Platforms with a validated on-device AI stack. Elsewhere the app uses
+/// "unsupported" services that fail with a clear message: production code
+/// never falls back to fake AI or fake speech. Fakes live under `test/`
+/// and are injected by tests through provider overrides.
+bool get _onDeviceAiSupported => defaultTargetPlatform == TargetPlatform.android;
 
-/// Real on-device inference (llama.cpp) on Android. Other platforms keep the
-/// fake until their runtime integration phase. Tests override this provider.
+/// Real on-device inference (llama.cpp). Tests override this provider.
 final localAiServiceProvider = Provider<LocalAiService>((ref) {
-  final useLlama = switch (_localAiOverride) {
-    'fake' => false,
-    'llama' => true,
-    _ => defaultTargetPlatform == TargetPlatform.android,
-  };
-  final LocalAiService service =
-      useLlama ? LlamaCppLocalAiService() : FakeLocalAiService();
+  final LocalAiService service = _onDeviceAiSupported
+      ? LlamaCppLocalAiService()
+      : const UnsupportedLocalAiService();
   ref.onDispose(service.dispose);
   return service;
 });
 
+/// Real offline speech recognition (sherpa-onnx, Vietnamese). Tests
+/// override this provider.
 final speechToTextServiceProvider = Provider<SpeechToTextService>((ref) {
-  final service = FakeSpeechToTextService();
+  final SpeechToTextService service = _onDeviceAiSupported
+      ? SherpaSpeechToTextService()
+      : const UnsupportedSpeechToTextService();
   ref.onDispose(service.dispose);
   return service;
 });

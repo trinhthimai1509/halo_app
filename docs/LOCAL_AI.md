@@ -1,8 +1,8 @@
 # Local AI
 
 Phase 2 status: a **real on-device LLM runs on Android**, validated on a
-Samsung Galaxy S10. iOS still uses the fake model, and speech-to-text is
-still a fake. Measured results are in [LLM_BENCHMARK.md](LLM_BENCHMARK.md).
+Samsung Galaxy S10. iOS has no on-device runtime yet (it reports "not
+available"). Offline speech-to-text is documented in [SPEECH.md](SPEECH.md). Measured results are in [LLM_BENCHMARK.md](LLM_BENCHMARK.md).
 
 ## 1. Runtime
 
@@ -65,6 +65,9 @@ sha256sum C:/dev/models/Qwen3.5-2B-Q4_K_M.gguf
 # 2. Install the app once (this creates its external files folder), then push
 adb shell mkdir -p /sdcard/Android/data/dev.offlineai.offline_ai_chat/files/models
 adb push C:/dev/models/Qwen3.5-2B-Q4_K_M.gguf /sdcard/Android/data/dev.offlineai.offline_ai_chat/files/models/
+# 3. Android 11+ (verified on Android 16): a folder created by `adb shell` is
+#    owned by `shell` (mode 2770) and the app cannot read it. Open it up:
+adb shell chmod -R a+rwX /sdcard/Android/data/dev.offlineai.offline_ai_chat/files/models
 ```
 
 - With several devices attached, add `-s <serial>` to every command.
@@ -99,10 +102,8 @@ LlamaCppLocalAiService (local_ai/data/llama_cpp) ── only file importing llam
    └─ LlmMetrics             `[LLM]` log lines (development only)
 ```
 
-- `lib/app/di/providers.dart` picks the implementation: `LlamaCppLocalAiService` on Android and `FakeLocalAiService` elsewhere.
-  - `--dart-define=LOCAL_AI=fake` forces the fake, for UI work without a model.
-  - `--dart-define=LOCAL_AI=llama` forces llama.cpp.
-- Unit and widget tests always inject `FakeLocalAiService`.
+- `lib/app/di/providers.dart` picks the implementation: `LlamaCppLocalAiService` on Android and `UnsupportedLocalAiService` elsewhere. The latter fails with a clear message; production code has no fake path.
+- Unit and widget tests inject `FakeLocalAiService` from `test/fakes/`.
 - No domain or presentation file imports llamadart. `ModelUnavailableException` (in `core/error`) is the only new error type the UI knows about.
 
 ### Prompt and chat template
@@ -178,13 +179,9 @@ Logging is on in debug and profile builds, and in release only with `--dart-defi
 ## 6. Future iOS integration (not started)
 - The same Dart code applies. llamadart ships an iOS SwiftPM companion (`llamadart_llama_cpp_flutter`, iOS ≥ 16.4) with Metal support.
 - Model location: `getApplicationSupportDirectory()/models/`, which is already the second candidate path.
-- `providers.dart` currently returns the fake on iOS; switch it after validating on a device.
+- `providers.dart` currently returns `UnsupportedLocalAiService` on iOS; switch it after validating on a device.
 - Re-run the thread sweep on Apple silicon; the right thread count will differ.
 - Needs a Mac with Xcode. This project has only been built on Windows so far.
 
-## 7. Speech-to-text boundary (unchanged, fake)
-`SpeechToTextService` (`features/speech/domain`) defines a start → stop/cancel lifecycle that returns a final transcript. `FakeSpeechToTextService` returns canned text. A real on-device recognizer will need:
-- `NSMicrophoneUsageDescription` (iOS);
-- `RECORD_AUDIO` plus a runtime permission request (Android).
-
-Neither has been added yet.
+## 7. Speech-to-text
+Integrated on Android with sherpa-onnx. See [SPEECH.md](SPEECH.md). STT and the LLM never decode at the same time (the 🎤 is disabled while a reply is generating).

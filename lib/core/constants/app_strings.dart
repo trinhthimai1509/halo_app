@@ -40,6 +40,7 @@ abstract final class AppStrings {
   static const String cancel = 'Cancel';
   static const String conversationDeleted = 'Conversation deleted';
   static const String openConversationHint = 'Opens the conversation';
+  static const String licenses = 'Open-source licences';
 
   // Errors.
   static const String modelUnavailable =
@@ -49,6 +50,12 @@ abstract final class AppStrings {
   static const String loadConversationFailed =
       'This conversation could not be opened.';
   static const String voiceFailed = 'Voice input is not available right now.';
+  static const String micPermissionDenied =
+      'Voice input needs microphone access. Allow it in Settings.';
+  static const String speechModelUnavailable =
+      'The on-device speech model is not installed. See docs/SPEECH.md.';
+  static const String noSpeechDetected =
+      "Didn't catch that. Please try speaking again.";
   static const String historyLoadFailed = 'Your history could not be loaded.';
   static const String deleteFailed = 'The conversation could not be deleted.';
 

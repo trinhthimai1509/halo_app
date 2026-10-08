@@ -13,7 +13,7 @@ presentation (widgets, Riverpod notifiers)
 domain (entities, ChatRepository, SendMessage, LocalAiService, SpeechToTextService)
         ▲ implemented by
         │
-data (SQLite data source, LocalChatRepository, FakeLocalAiService, FakeSpeechToTextService)
+data (SQLite data source, LocalChatRepository, LlamaCppLocalAiService, SherpaSpeechToTextService)
 ```
 
 - **Domain** is plain Dart plus `package:flutter/foundation.dart` for
@@ -146,6 +146,13 @@ instead of leaving the app.
 | `send_message_test` | The system prompt, history and new message reach the model in order |
 | `context_window_policy_test` | Trimming the oldest turns first, always keeping the system prompt and current turn, and rejecting over-long input |
 | `stream_coalescer_test` | First piece emitted immediately, then batched per 50 ms; flush and dispose |
+| `composer_controller_test` | Voice sessions: transcript delivery, permission denial, no speech, missing model vs recognizer error, 30 s auto-stop, cancel during the permission prompt, no voice while generating, repeated sessions |
+| `sherpa_speech_to_text_service_test` | With a fake microphone and recognizer: formatting, permission, silence, trimming, 30 s buffer cap, single model load with per-session warm-up, cancel, retry after a missing model, reload after a recognizer error, dispose |
+| `audio_signal_test` | PCM decoding, silence and click rejection, trimming with padding, quiet speech kept, clipping peak |
+| `transcript_formatter_test` | Upper case → sentence case with all Vietnamese diacritics intact; no punctuation added; mixed-case text untouched |
+| `sherpa_recognizer_host_test` (opt-in) | The production recognizer decodes real Vietnamese audio with the real model on the host |
+
+Fakes (`FakeLocalAiService`, `FakeSpeechToTextService`) live in `test/fakes/`, so they cannot be compiled into the app.
 
 On-device tests in `integration_test/` use the real model and are **not** part of `flutter test`:
 - `regression_test.dart`: completion then next, Stop then next with a native CPU check, repeated and bounded sustained generation.

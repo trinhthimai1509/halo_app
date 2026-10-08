@@ -128,7 +128,9 @@ class _ChatComposerState extends ConsumerState<ChatComposer> {
                       isGenerating: isGenerating,
                       onSend: _send,
                       onStop: ref.read(chatControllerProvider.notifier).stopGeneration,
-                      onVoice: _startVoice,
+                      // No voice input while a reply is generating: speech
+                      // and LLM inference never run at the same time.
+                      onVoice: isGenerating ? null : _startVoice,
                     )
                   : VoiceComposer(
                       key: const ValueKey('voice'),

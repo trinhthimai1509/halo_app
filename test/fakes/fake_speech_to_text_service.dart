@@ -1,5 +1,5 @@
-import '../../../core/error/app_exception.dart';
-import '../domain/speech_to_text_service.dart';
+import 'package:offline_ai_chat/core/error/app_exception.dart';
+import 'package:offline_ai_chat/features/speech/domain/speech_to_text_service.dart';
 
 /// Development stand-in for local speech recognition. Does not touch the
 /// microphone; returns rotating canned transcripts after a short

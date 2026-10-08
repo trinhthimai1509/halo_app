@@ -67,6 +67,15 @@ class _HistoryHeaderState extends ConsumerState<HistoryHeader> {
                 ),
               ),
               SoftIconButton(
+                icon: Icons.info_outline_rounded,
+                tooltip: AppStrings.licenses,
+                onPressed: () => showLicensePage(
+                  context: context,
+                  applicationName: AppStrings.appName,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.xxs),
+              SoftIconButton(
                 icon: _searching ? Icons.close_rounded : Icons.search_rounded,
                 tooltip: _searching ? AppStrings.closeSearch : AppStrings.search,
                 onPressed: _toggleSearch,

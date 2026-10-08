@@ -31,3 +31,8 @@ final class ModelUnavailableException extends AppException {
 final class TranscriptionException extends AppException {
   const TranscriptionException(super.message, [super.cause]);
 }
+
+/// The user has not granted microphone access.
+final class MicrophonePermissionException extends AppException {
+  const MicrophonePermissionException(super.message, [super.cause]);
+}

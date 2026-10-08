@@ -3,10 +3,11 @@ import 'package:offline_ai_chat/app/di/providers.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/chat_message.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/conversation.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/message_role.dart';
-import 'package:offline_ai_chat/features/local_ai/data/fake_local_ai_service.dart';
 import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
-import 'package:offline_ai_chat/features/speech/data/fake_speech_to_text_service.dart';
+import 'package:offline_ai_chat/features/speech/domain/speech_to_text_service.dart';
 
+import '../fakes/fake_local_ai_service.dart';
+import '../fakes/fake_speech_to_text_service.dart';
 import 'in_memory_chat_repository.dart';
 
 /// Fixed "now" used across tests: Wednesday 23 Sep 2026, 14:30.
@@ -21,12 +22,13 @@ FakeLocalAiService instantAi() => FakeLocalAiService(
 List<Override> testOverrides({
   required InMemoryChatRepository repository,
   LocalAiService? ai,
+  SpeechToTextService? speech,
 }) {
   return [
     chatRepositoryProvider.overrideWithValue(repository),
     localAiServiceProvider.overrideWithValue(ai ?? instantAi()),
     speechToTextServiceProvider.overrideWithValue(
-      FakeSpeechToTextService(processingDelay: Duration.zero),
+      speech ?? FakeSpeechToTextService(processingDelay: Duration.zero),
     ),
     clockProvider.overrideWithValue(() => testNow),
   ];

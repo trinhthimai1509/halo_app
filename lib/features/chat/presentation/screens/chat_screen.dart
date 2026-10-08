@@ -62,10 +62,18 @@ class ChatScreen extends ConsumerWidget {
       );
       ref.read(chatControllerProvider.notifier).clearError();
     });
-    ref.listen(composerControllerProvider.select((s) => s.voiceFailed),
-        (_, failed) {
-      if (!failed) return;
-      _showMessage(context, AppStrings.voiceFailed);
+    ref.listen(composerControllerProvider.select((s) => s.error),
+        (_, error) {
+      if (error == null) return;
+      _showMessage(
+        context,
+        switch (error) {
+          VoiceError.permissionDenied => AppStrings.micPermissionDenied,
+          VoiceError.modelUnavailable => AppStrings.speechModelUnavailable,
+          VoiceError.noSpeech => AppStrings.noSpeechDetected,
+          VoiceError.failed => AppStrings.voiceFailed,
+        },
+      );
       ref.read(composerControllerProvider.notifier).acknowledge();
     });
   }
