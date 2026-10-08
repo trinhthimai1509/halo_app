@@ -150,6 +150,8 @@ instead of leaving the app.
 | `sherpa_speech_to_text_service_test` | With a fake microphone and recognizer: formatting, permission, silence, trimming, 30 s buffer cap, single model load with per-session warm-up, cancel, retry after a missing model, reload after a recognizer error, dispose |
 | `audio_signal_test` | PCM decoding, silence and click rejection, trimming with padding, quiet speech kept, clipping peak |
 | `transcript_formatter_test` | Upper case → sentence case with all Vietnamese diacritics intact; no punctuation added; mixed-case text untouched |
+| `arithmetic_answers_test` | Explicit + − × ÷ calculations (Vietnamese words, thousands and decimal notation, precedence, division by zero) are exact; word problems, code-like and ambiguous input are left to the model |
+| `perf_probe_test` (integration, on device) | Prefill speed vs thread count; system-prompt snapshot restores give identical output (docs/LLM_PERFORMANCE.md) |
 | `calendar_answers_test` | Plain date/weekday/time questions (with greetings, particles, month boundaries) are answered from the clock; compound or unrelated questions are left to the model |
 | `assistant_instructions_test` | The system prompt carries the given clock's date, time and offset (never a fixed date) and the behaviour rules |
 | `quality_eval_test` (integration, on device) | 33-case Vietnamese answer-quality suite on the real model, before vs after (docs/LLM_QUALITY.md) |

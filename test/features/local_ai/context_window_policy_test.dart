@@ -64,4 +64,19 @@ void main() {
       throwsA(isA<GenerationException>()),
     );
   });
+
+  test('maxPromptTokens caps the budget below the context limit', () {
+    const capped = ContextWindowPolicy(
+      contextSize: 4096,
+      maxNewTokens: 1024,
+      maxPromptTokens: 1536,
+    );
+    expect(capped.promptBudget, 1536);
+    const loose = ContextWindowPolicy(
+      contextSize: 4096,
+      maxNewTokens: 1024,
+      maxPromptTokens: 9000,
+    );
+    expect(loose.promptBudget, 4096 - 1024 - 64);
+  });
 }

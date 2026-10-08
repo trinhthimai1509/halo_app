@@ -1,0 +1,90 @@
+{
+  "q1_text_prefix": true,
+  "q1_token_prefix": true,
+  "q1_tokens": 220,
+  "q2_text_prefix": true,
+  "q2_token_prefix": true,
+  "q2_tokens": 223,
+  "multi_text_prefix": true,
+  "multi_token_prefix": true,
+  "multi_tokens": 241,
+  "prefix_tokens": 197,
+  "snapshot_build_ms": 7500,
+  "snapshot_saved": true,
+  "snapshot_bytes": 22628362,
+  "q1": {
+    "base": {
+      "ttft_ms": 7921,
+      "total_ms": 9421,
+      "prompt_eval_tokens": 220,
+      "prompt_eval_ms": 7812,
+      "prefill_tok_s": "28.2",
+      "gen_tokens": 11,
+      "decode_tok_s": "7.49",
+      "text": "Thành phố Thủ đô của Việt Nam là Hà Nội."
+    },
+    "snapshot": {
+      "ttft_ms": 1049,
+      "total_ms": 2567,
+      "prompt_eval_tokens": 23,
+      "prompt_eval_ms": 1029,
+      "prefill_tok_s": "22.4",
+      "gen_tokens": 11,
+      "decode_tok_s": "7.42",
+      "text": "Thành phố Thủ đô của Việt Nam là Hà Nội."
+    },
+    "state_load_ms": 25,
+    "loaded_tokens": 197,
+    "identical_output": true
+  },
+  "q2": {
+    "base": {
+      "ttft_ms": 8520,
+      "total_ms": 10141,
+      "prompt_eval_tokens": 223,
+      "prompt_eval_ms": 8496,
+      "prefill_tok_s": "26.2",
+      "gen_tokens": 11,
+      "decode_tok_s": "6.95",
+      "text": "Chúc mẹ bình an và hạnh phúc mỗi ngày!"
+    },
+    "snapshot": {
+      "ttft_ms": 1113,
+      "total_ms": 2638,
+      "prompt_eval_tokens": 26,
+      "prompt_eval_ms": 1096,
+      "prefill_tok_s": "23.7",
+      "gen_tokens": 11,
+      "decode_tok_s": "7.39",
+      "text": "Chúc mẹ bình an và hạnh phúc mỗi ngày!"
+    },
+    "state_load_ms": 19,
+    "loaded_tokens": 197,
+    "identical_output": true
+  },
+  "multi": {
+    "base": {
+      "ttft_ms": 9083,
+      "total_ms": 11867,
+      "prompt_eval_tokens": 241,
+      "prompt_eval_ms": 9058,
+      "prefill_tok_s": "26.6",
+      "gen_tokens": 19,
+      "decode_tok_s": "6.98",
+      "text": "Bạn tên là Minh. Tôi đã ghi nhớ rồi. Bạn muốn nói chuyện gì tiếp theo?"
+    },
+    "snapshot": {
+      "ttft_ms": 1743,
+      "total_ms": 4193,
+      "prompt_eval_tokens": 44,
+      "prompt_eval_ms": 1725,
+      "prefill_tok_s": "25.5",
+      "gen_tokens": 19,
+      "decode_tok_s": "7.95",
+      "text": "Bạn tên là Minh. Tôi đã ghi nhớ rồi. Bạn muốn nói chuyện gì hôm nay?"
+    },
+    "state_load_ms": 61,
+    "loaded_tokens": 197,
+    "identical_output": false
+  }
+}

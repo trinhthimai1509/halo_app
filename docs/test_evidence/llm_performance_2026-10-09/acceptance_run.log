@@ -1,0 +1,162 @@
+[QE] after A1 PASS by=dart (no model call) ttft=44 tok_s=null prompt_tokens=null err=null
+[QE] after A2 PASS by=dart (no model call) ttft=2 tok_s=null prompt_tokens=null err=null
+[QE] after A3 PASS by=dart (no model call) ttft=5 tok_s=null prompt_tokens=null err=null
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=3346 rss_mib=2895
+[LLM] snapshot_built prefix_tokens=201 build_ms=3966 bytes=22677626
+[LLM] generation_done prompt_msgs=2 prompt_tokens=221 evaluated_prompt_tokens=20 gen_tokens=53 ttft_ms=4567 total_ms=10782 tok_s=8.37 busy_retries=0 snapshot=true snapshot_restore_ms=28 threads=2 gap_p50_ms=115 gap_p95_ms=128 gap_max_ms=155 stalls_over_2s=0 rss_mib=2879
+[QE] after B1 PASS by=model ttft=7957 tok_s=8.37 prompt_tokens=221 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=220 evaluated_prompt_tokens=19 gen_tokens=11 ttft_ms=653 total_ms=2164 tok_s=6.62 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=133 gap_p95_ms=180 gap_max_ms=180 stalls_over_2s=0 rss_mib=2879
+[QE] after B2 PASS by=model ttft=657 tok_s=6.62 prompt_tokens=220 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=221 evaluated_prompt_tokens=20 gen_tokens=12 ttft_ms=675 total_ms=2260 tok_s=6.94 busy_retries=0 snapshot=true snapshot_restore_ms=31 threads=2 gap_p50_ms=123 gap_p95_ms=166 gap_max_ms=166 stalls_over_2s=0 rss_mib=2878
+[QE] after B3 PASS by=model ttft=680 tok_s=6.94 prompt_tokens=221 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=224 evaluated_prompt_tokens=23 gen_tokens=11 ttft_ms=754 total_ms=2154 tok_s=7.14 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=123 gap_p95_ms=165 gap_max_ms=165 stalls_over_2s=0 rss_mib=2879
+[QE] after C1 PASS by=model ttft=759 tok_s=7.14 prompt_tokens=224 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=229 evaluated_prompt_tokens=28 gen_tokens=3 ttft_ms=788 total_ms=1175 tok_s=5.17 busy_retries=0 snapshot=true snapshot_restore_ms=30 threads=2 gap_p50_ms=137 gap_p95_ms=137 gap_max_ms=137 stalls_over_2s=0 rss_mib=2880
+[QE] after C2 FAIL by=model ttft=794 tok_s=5.17 prompt_tokens=229 err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=231 evaluated_prompt_tokens=30 gen_tokens=112 ttft_ms=871 total_ms=14938 tok_s=7.89 busy_retries=0 snapshot=true snapshot_restore_ms=29 threads=2 gap_p50_ms=124 gap_p95_ms=137 gap_max_ms=172 stalls_over_2s=0 rss_mib=2885
+[QE] after C3 FAIL by=model ttft=877 tok_s=7.89 prompt_tokens=231 err=factual-error (knowledge)
+[QE] after D1 FAIL by=dart (no model call) ttft=40 tok_s=null prompt_tokens=null err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=236 evaluated_prompt_tokens=35 gen_tokens=8 ttft_ms=1136 total_ms=2401 tok_s=5.53 busy_retries=0 snapshot=true snapshot_restore_ms=29 threads=2 gap_p50_ms=155 gap_p95_ms=181 gap_max_ms=181 stalls_over_2s=0 rss_mib=2886
+[QE] after D2 FAIL by=model ttft=1141 tok_s=5.53 prompt_tokens=236 err=arithmetic-error
+[LLM] generation_done prompt_msgs=2 prompt_tokens=240 evaluated_prompt_tokens=39 gen_tokens=3 ttft_ms=1075 total_ms=1491 tok_s=4.81 busy_retries=0 snapshot=true snapshot_restore_ms=28 threads=2 gap_p50_ms=163 gap_p95_ms=163 gap_max_ms=163 stalls_over_2s=0 rss_mib=2887
+[QE] after D3 FAIL by=model ttft=1080 tok_s=4.81 prompt_tokens=240 err=reasoning-error
+[LLM] generation_done prompt_msgs=2 prompt_tokens=234 evaluated_prompt_tokens=33 gen_tokens=8 ttft_ms=983 total_ms=2048 tok_s=6.57 busy_retries=0 snapshot=true snapshot_restore_ms=26 threads=2 gap_p50_ms=124 gap_p95_ms=173 gap_max_ms=173 stalls_over_2s=0 rss_mib=2888
+[QE] after E1 PASS by=model ttft=990 tok_s=6.57 prompt_tokens=234 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=235 evaluated_prompt_tokens=34 gen_tokens=1 ttft_ms=963 total_ms=1127 tok_s=null busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 rss_mib=2887
+[QE] after E2 FAIL by=model ttft=970 tok_s=null prompt_tokens=235 err=instruction-violation
+[LLM] generation_done prompt_msgs=2 prompt_tokens=229 evaluated_prompt_tokens=28 gen_tokens=8 ttft_ms=775 total_ms=1867 tok_s=6.41 busy_retries=0 snapshot=true snapshot_restore_ms=26 threads=2 gap_p50_ms=127 gap_p95_ms=180 gap_max_ms=180 stalls_over_2s=0 rss_mib=2890
+[QE] after E3 PASS by=model ttft=779 tok_s=6.41 prompt_tokens=229 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=227 evaluated_prompt_tokens=26 gen_tokens=15 ttft_ms=769 total_ms=2579 tok_s=7.73 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=118 gap_p95_ms=123 gap_max_ms=250 stalls_over_2s=0 rss_mib=2888
+[QE] after F1 PASS by=model ttft=773 tok_s=7.73 prompt_tokens=227 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=231 evaluated_prompt_tokens=30 gen_tokens=62 ttft_ms=924 total_ms=8413 tok_s=8.15 busy_retries=0 snapshot=true snapshot_restore_ms=21 threads=2 gap_p50_ms=119 gap_p95_ms=126 gap_max_ms=157 stalls_over_2s=0 rss_mib=2891
+[QE] after F2 PASS by=model ttft=926 tok_s=8.15 prompt_tokens=231 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=242 evaluated_prompt_tokens=41 gen_tokens=17 ttft_ms=1051 total_ms=3543 tok_s=6.42 busy_retries=0 snapshot=true snapshot_restore_ms=26 threads=2 gap_p50_ms=154 gap_p95_ms=166 gap_max_ms=172 stalls_over_2s=0 rss_mib=2892
+[QE] after F3 PASS by=model ttft=1055 tok_s=6.42 prompt_tokens=242 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=245 evaluated_prompt_tokens=44 gen_tokens=33 ttft_ms=1101 total_ms=5231 tok_s=7.75 busy_retries=0 snapshot=true snapshot_restore_ms=24 threads=2 gap_p50_ms=123 gap_p95_ms=126 gap_max_ms=180 stalls_over_2s=0 rss_mib=2894
+[QE] after G1 PASS by=model ttft=1107 tok_s=7.75 prompt_tokens=245 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=262 evaluated_prompt_tokens=61 gen_tokens=13 ttft_ms=1565 total_ms=3297 tok_s=6.93 busy_retries=0 snapshot=true snapshot_restore_ms=26 threads=2 gap_p50_ms=131 gap_p95_ms=142 gap_max_ms=183 stalls_over_2s=0 rss_mib=2894
+[QE] after G2 PASS by=model ttft=1569 tok_s=6.93 prompt_tokens=262 err=null
+[LLM] generation_done prompt_msgs=6 prompt_tokens=285 evaluated_prompt_tokens=84 gen_tokens=6 ttft_ms=2149 total_ms=3079 tok_s=5.38 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=156 gap_p95_ms=180 gap_max_ms=180 stalls_over_2s=0 rss_mib=2896
+[QE] after G3 PASS by=model ttft=2152 tok_s=5.38 prompt_tokens=285 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=225 evaluated_prompt_tokens=24 gen_tokens=41 ttft_ms=673 total_ms=5884 tok_s=7.68 busy_retries=0 snapshot=true snapshot_restore_ms=26 threads=2 gap_p50_ms=125 gap_p95_ms=131 gap_max_ms=181 stalls_over_2s=0 rss_mib=2894
+[QE] after H1 PASS by=model ttft=679 tok_s=7.68 prompt_tokens=225 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=232 evaluated_prompt_tokens=31 gen_tokens=44 ttft_ms=863 total_ms=6437 tok_s=7.71 busy_retries=0 snapshot=true snapshot_restore_ms=23 threads=2 gap_p50_ms=125 gap_p95_ms=136 gap_max_ms=139 stalls_over_2s=0 rss_mib=2894
+[QE] after H2 PASS by=model ttft=867 tok_s=7.71 prompt_tokens=232 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=239 evaluated_prompt_tokens=38 gen_tokens=16 ttft_ms=1052 total_ms=3162 tok_s=7.11 busy_retries=0 snapshot=true snapshot_restore_ms=28 threads=2 gap_p50_ms=123 gap_p95_ms=154 gap_max_ms=162 stalls_over_2s=0 rss_mib=2894
+[QE] after H3 PASS by=model ttft=1056 tok_s=7.11 prompt_tokens=239 err=null
+[QE] after I1 PASS by=dart (no model call) ttft=2 tok_s=null prompt_tokens=null err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=228 evaluated_prompt_tokens=27 gen_tokens=89 ttft_ms=846 total_ms=11924 tok_s=7.94 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=123 gap_p95_ms=126 gap_max_ms=194 stalls_over_2s=0 rss_mib=2895
+[QE] after I2 PASS by=model ttft=852 tok_s=7.94 prompt_tokens=228 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=238 evaluated_prompt_tokens=37 gen_tokens=156 ttft_ms=1025 total_ms=20841 tok_s=7.82 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=124 gap_p95_ms=153 gap_max_ms=166 stalls_over_2s=0 rss_mib=2895
+[QE] after I3 PASS by=model ttft=1031 tok_s=7.82 prompt_tokens=238 err=null
+[LLM] generation_done prompt_msgs=16 prompt_tokens=1258 evaluated_prompt_tokens=1057 gen_tokens=29 ttft_ms=24174 total_ms=28087 tok_s=7.16 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=133 gap_p95_ms=136 gap_max_ms=173 stalls_over_2s=0 rss_mib=2922
+[QE] after J1 PASS by=model ttft=24176 tok_s=7.16 prompt_tokens=1258 err=null
+[LLM] generation_done prompt_msgs=16 prompt_tokens=1383 evaluated_prompt_tokens=1182 gen_tokens=35 ttft_ms=29263 total_ms=34463 tok_s=6.54 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=148 gap_p95_ms=156 gap_max_ms=177 stalls_over_2s=0 rss_mib=2849
+[QE] after J2 PASS by=model ttft=29268 tok_s=6.54 prompt_tokens=1383 err=null
+[QE] after J3 FAIL by=dart (no model call) ttft=2 tok_s=null prompt_tokens=null err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=235 evaluated_prompt_tokens=34 gen_tokens=85 ttft_ms=1012 total_ms=11871 tok_s=7.74 busy_retries=0 snapshot=true snapshot_restore_ms=44 threads=2 gap_p50_ms=123 gap_p95_ms=140 gap_max_ms=184 stalls_over_2s=0 rss_mib=2848
+[QE] after K1 FAIL by=model ttft=1017 tok_s=7.74 prompt_tokens=235 err=no-clarification
+[LLM] generation_done prompt_msgs=2 prompt_tokens=218 evaluated_prompt_tokens=17 gen_tokens=43 ttft_ms=503 total_ms=6201 tok_s=7.37 busy_retries=0 snapshot=true snapshot_restore_ms=22 threads=2 gap_p50_ms=132 gap_p95_ms=152 gap_max_ms=156 stalls_over_2s=0 rss_mib=2848
+[QE] after K2 PASS by=model ttft=506 tok_s=7.37 prompt_tokens=218 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=220 evaluated_prompt_tokens=19 gen_tokens=42 ttft_ms=676 total_ms=6252 tok_s=7.35 busy_retries=0 snapshot=true snapshot_restore_ms=29 threads=2 gap_p50_ms=131 gap_p95_ms=135 gap_max_ms=180 stalls_over_2s=0 rss_mib=2848
+[QE] after K3 PASS by=model ttft=680 tok_s=7.35 prompt_tokens=220 err=null
+[LLM] model_released rss_mib=324
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=2 load_ms=3653 rss_mib=2802
+[LLM] generation_done prompt_msgs=2 prompt_tokens=219 evaluated_prompt_tokens=219 gen_tokens=2 ttft_ms=6079 total_ms=6300 tok_s=4.52 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=115 gap_p95_ms=115 gap_max_ms=115 stalls_over_2s=0 rss_mib=2836
+[QE] consistency baseline seed=1 D1 FAIL by=model ttft=6081 tok_s=4.52 prompt_tokens=219 err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=232 evaluated_prompt_tokens=232 gen_tokens=29 ttft_ms=6424 total_ms=9519 tok_s=9.05 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=106 gap_p95_ms=110 gap_max_ms=110 stalls_over_2s=0 rss_mib=2826
+[QE] consistency baseline seed=1 D2 PASS by=model ttft=6425 tok_s=9.05 prompt_tokens=232 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=241 evaluated_prompt_tokens=241 gen_tokens=17 ttft_ms=7449 total_ms=9356 tok_s=8.39 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=110 gap_p95_ms=118 gap_max_ms=149 stalls_over_2s=0 rss_mib=2827
+[QE] consistency baseline seed=1 G1 FAIL by=model ttft=7450 tok_s=8.39 prompt_tokens=241 err=context-loss
+[LLM] generation_done prompt_msgs=4 prompt_tokens=258 evaluated_prompt_tokens=258 gen_tokens=14 ttft_ms=7871 total_ms=9476 tok_s=8.10 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=111 gap_p95_ms=116 gap_max_ms=155 stalls_over_2s=0 rss_mib=2828
+[QE] consistency baseline seed=1 G2 FAIL by=model ttft=7872 tok_s=8.10 prompt_tokens=258 err=context-loss/reasoning
+[LLM] generation_done prompt_msgs=2 prompt_tokens=231 evaluated_prompt_tokens=231 gen_tokens=79 ttft_ms=7621 total_ms=17190 tok_s=8.15 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=116 gap_p95_ms=136 gap_max_ms=219 stalls_over_2s=0 rss_mib=2828
+[QE] consistency baseline seed=1 K1 FAIL by=model ttft=7621 tok_s=8.15 prompt_tokens=231 err=no-clarification
+[LLM] generation_done prompt_msgs=2 prompt_tokens=216 evaluated_prompt_tokens=216 gen_tokens=42 ttft_ms=7271 total_ms=12470 tok_s=7.89 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=122 gap_p95_ms=125 gap_max_ms=160 stalls_over_2s=0 rss_mib=2828
+[QE] consistency baseline seed=1 K3 PASS by=model ttft=7272 tok_s=7.89 prompt_tokens=216 err=null
+[LLM] model_released rss_mib=317
+[QE] consistency candidate seed=1 D1 FAIL by=dart (no model call) ttft=1 tok_s=null prompt_tokens=null err=wrong-language
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=3307 rss_mib=2799
+[LLM] snapshot_built prefix_tokens=201 build_ms=3441 bytes=22677626
+[LLM] generation_done prompt_msgs=2 prompt_tokens=236 evaluated_prompt_tokens=35 gen_tokens=50 ttft_ms=4248 total_ms=9707 tok_s=8.98 busy_retries=0 snapshot=true snapshot_restore_ms=34 threads=2 gap_p50_ms=108 gap_p95_ms=111 gap_max_ms=149 stalls_over_2s=0 rss_mib=2830
+[QE] consistency candidate seed=1 D2 FAIL by=model ttft=7567 tok_s=8.98 prompt_tokens=236 err=arithmetic-error
+[LLM] generation_done prompt_msgs=4 prompt_tokens=245 evaluated_prompt_tokens=44 gen_tokens=21 ttft_ms=890 total_ms=3305 tok_s=8.28 busy_retries=0 snapshot=true snapshot_restore_ms=14 threads=2 gap_p50_ms=109 gap_p95_ms=147 gap_max_ms=148 stalls_over_2s=0 rss_mib=2830
+[QE] consistency candidate seed=1 G1 FAIL by=model ttft=893 tok_s=8.28 prompt_tokens=245 err=context-loss
+[LLM] generation_done prompt_msgs=4 prompt_tokens=262 evaluated_prompt_tokens=61 gen_tokens=13 ttft_ms=1365 total_ms=2977 tok_s=7.44 busy_retries=0 snapshot=true snapshot_restore_ms=22 threads=2 gap_p50_ms=119 gap_p95_ms=150 gap_max_ms=152 stalls_over_2s=0 rss_mib=2824
+[QE] consistency candidate seed=1 G2 FAIL by=model ttft=1369 tok_s=7.44 prompt_tokens=262 err=context-loss/reasoning
+[LLM] generation_done prompt_msgs=2 prompt_tokens=235 evaluated_prompt_tokens=34 gen_tokens=38 ttft_ms=830 total_ms=5401 tok_s=8.09 busy_retries=0 snapshot=true snapshot_restore_ms=20 threads=2 gap_p50_ms=119 gap_p95_ms=121 gap_max_ms=152 stalls_over_2s=0 rss_mib=2824
+[QE] consistency candidate seed=1 K1 PASS by=model ttft=835 tok_s=8.09 prompt_tokens=235 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=220 evaluated_prompt_tokens=19 gen_tokens=29 ttft_ms=568 total_ms=3964 tok_s=8.24 busy_retries=0 snapshot=true snapshot_restore_ms=21 threads=2 gap_p50_ms=115 gap_p95_ms=127 gap_max_ms=152 stalls_over_2s=0 rss_mib=2824
+[QE] consistency candidate seed=1 K3 PASS by=model ttft=573 tok_s=8.24 prompt_tokens=220 err=null
+[LLM] model_released rss_mib=318
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=2 load_ms=3543 rss_mib=2804
+[LLM] generation_done prompt_msgs=2 prompt_tokens=219 evaluated_prompt_tokens=219 gen_tokens=2 ttft_ms=6893 total_ms=7111 tok_s=4.59 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=110 gap_p95_ms=110 gap_max_ms=110 stalls_over_2s=0 rss_mib=2827
+[QE] consistency baseline seed=2 D1 FAIL by=model ttft=6894 tok_s=4.59 prompt_tokens=219 err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=232 evaluated_prompt_tokens=232 gen_tokens=8 ttft_ms=7191 total_ms=8264 tok_s=6.52 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=149 gap_p95_ms=151 gap_max_ms=151 stalls_over_2s=0 rss_mib=2828
+[QE] consistency baseline seed=2 D2 PASS by=model ttft=7192 tok_s=6.52 prompt_tokens=232 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=241 evaluated_prompt_tokens=241 gen_tokens=21 ttft_ms=8300 total_ms=10616 tok_s=8.64 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=108 gap_p95_ms=115 gap_max_ms=148 stalls_over_2s=0 rss_mib=2829
+[QE] consistency baseline seed=2 G1 PASS by=model ttft=8301 tok_s=8.64 prompt_tokens=241 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=258 evaluated_prompt_tokens=258 gen_tokens=17 ttft_ms=8094 total_ms=10390 tok_s=6.97 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=123 gap_p95_ms=154 gap_max_ms=155 stalls_over_2s=0 rss_mib=2831
+[QE] consistency baseline seed=2 G2 PASS by=model ttft=8095 tok_s=6.97 prompt_tokens=258 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=231 evaluated_prompt_tokens=231 gen_tokens=37 ttft_ms=7990 total_ms=12190 tok_s=8.57 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=113 gap_p95_ms=116 gap_max_ms=126 stalls_over_2s=0 rss_mib=2832
+[QE] consistency baseline seed=2 K1 FAIL by=model ttft=7991 tok_s=8.57 prompt_tokens=231 err=no-clarification
+[LLM] generation_done prompt_msgs=2 prompt_tokens=216 evaluated_prompt_tokens=216 gen_tokens=45 ttft_ms=6998 total_ms=12533 tok_s=7.95 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=119 gap_p95_ms=151 gap_max_ms=152 stalls_over_2s=0 rss_mib=2832
+[QE] consistency baseline seed=2 K3 PASS by=model ttft=6998 tok_s=7.95 prompt_tokens=216 err=null
+[LLM] model_released rss_mib=320
+[QE] consistency candidate seed=2 D1 FAIL by=dart (no model call) ttft=1 tok_s=null prompt_tokens=null err=wrong-language
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=3292 rss_mib=2798
+[LLM] snapshot_built prefix_tokens=201 build_ms=3499 bytes=22677626
+[LLM] generation_done prompt_msgs=2 prompt_tokens=236 evaluated_prompt_tokens=35 gen_tokens=8 ttft_ms=4337 total_ms=5380 tok_s=6.71 busy_retries=0 snapshot=true snapshot_restore_ms=34 threads=2 gap_p50_ms=148 gap_p95_ms=149 gap_max_ms=149 stalls_over_2s=0 rss_mib=2825
+[QE] consistency candidate seed=2 D2 PASS by=model ttft=7642 tok_s=6.71 prompt_tokens=236 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=245 evaluated_prompt_tokens=44 gen_tokens=9 ttft_ms=938 total_ms=2092 tok_s=6.93 busy_retries=0 snapshot=true snapshot_restore_ms=22 threads=2 gap_p50_ms=147 gap_p95_ms=149 gap_max_ms=149 stalls_over_2s=0 rss_mib=2825
+[QE] consistency candidate seed=2 G1 PASS by=model ttft=942 tok_s=6.93 prompt_tokens=245 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=262 evaluated_prompt_tokens=61 gen_tokens=17 ttft_ms=1224 total_ms=3220 tok_s=8.02 busy_retries=0 snapshot=true snapshot_restore_ms=22 threads=2 gap_p50_ms=115 gap_p95_ms=129 gap_max_ms=155 stalls_over_2s=0 rss_mib=2825
+[QE] consistency candidate seed=2 G2 PASS by=model ttft=1228 tok_s=8.02 prompt_tokens=262 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=235 evaluated_prompt_tokens=34 gen_tokens=199 ttft_ms=834 total_ms=25367 tok_s=8.07 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=123 gap_p95_ms=133 gap_max_ms=168 stalls_over_2s=0 rss_mib=2825
+[QE] consistency candidate seed=2 K1 FAIL by=model ttft=838 tok_s=8.07 prompt_tokens=235 err=over-long guess
+[LLM] generation_done prompt_msgs=2 prompt_tokens=220 evaluated_prompt_tokens=19 gen_tokens=117 ttft_ms=537 total_ms=14651 tok_s=8.22 busy_retries=0 snapshot=true snapshot_restore_ms=24 threads=2 gap_p50_ms=122 gap_p95_ms=124 gap_max_ms=150 stalls_over_2s=0 rss_mib=2825
+[QE] consistency candidate seed=2 K3 PASS by=model ttft=541 tok_s=8.22 prompt_tokens=220 err=null
+[LLM] model_released rss_mib=319
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=2 load_ms=3539 rss_mib=2799
+[LLM] generation_done prompt_msgs=2 prompt_tokens=219 evaluated_prompt_tokens=219 gen_tokens=2 ttft_ms=7173 total_ms=7416 tok_s=4.12 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=127 gap_p95_ms=127 gap_max_ms=127 stalls_over_2s=0 rss_mib=2833
+[QE] consistency baseline seed=3 D1 FAIL by=model ttft=7173 tok_s=4.12 prompt_tokens=219 err=wrong-language
+[LLM] generation_done prompt_msgs=2 prompt_tokens=232 evaluated_prompt_tokens=232 gen_tokens=8 ttft_ms=7860 total_ms=8873 tok_s=6.91 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=115 gap_p95_ms=148 gap_max_ms=148 stalls_over_2s=0 rss_mib=2829
+[QE] consistency baseline seed=3 D2 PASS by=model ttft=7860 tok_s=6.91 prompt_tokens=232 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=241 evaluated_prompt_tokens=241 gen_tokens=27 ttft_ms=7854 total_ms=10947 tok_s=8.41 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=113 gap_p95_ms=115 gap_max_ms=156 stalls_over_2s=0 rss_mib=2830
+[QE] consistency baseline seed=3 G1 PASS by=model ttft=7855 tok_s=8.41 prompt_tokens=241 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=258 evaluated_prompt_tokens=258 gen_tokens=16 ttft_ms=9959 total_ms=12047 tok_s=7.18 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=119 gap_p95_ms=162 gap_max_ms=165 stalls_over_2s=0 rss_mib=2831
+[QE] consistency baseline seed=3 G2 PASS by=model ttft=9960 tok_s=7.18 prompt_tokens=258 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=231 evaluated_prompt_tokens=231 gen_tokens=57 ttft_ms=7898 total_ms=14701 tok_s=8.23 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=119 gap_p95_ms=120 gap_max_ms=153 stalls_over_2s=0 rss_mib=2831
+[QE] consistency baseline seed=3 K1 FAIL by=model ttft=7898 tok_s=8.23 prompt_tokens=231 err=no-clarification
+[LLM] generation_done prompt_msgs=2 prompt_tokens=216 evaluated_prompt_tokens=216 gen_tokens=84 ttft_ms=7634 total_ms=18184 tok_s=7.87 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=126 gap_p95_ms=131 gap_max_ms=156 stalls_over_2s=0 rss_mib=2831
+[QE] consistency baseline seed=3 K3 PASS by=model ttft=7635 tok_s=7.87 prompt_tokens=216 err=null
+[LLM] model_released rss_mib=320
+[QE] consistency candidate seed=3 D1 FAIL by=dart (no model call) ttft=1 tok_s=null prompt_tokens=null err=wrong-language
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=3323 rss_mib=2805
+[LLM] snapshot_built prefix_tokens=201 build_ms=3723 bytes=22677626
+[LLM] generation_done prompt_msgs=2 prompt_tokens=236 evaluated_prompt_tokens=35 gen_tokens=8 ttft_ms=4600 total_ms=5518 tok_s=7.63 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=112 gap_p95_ms=127 gap_max_ms=127 stalls_over_2s=0 rss_mib=2822
+[QE] consistency candidate seed=3 D2 PASS by=model ttft=7936 tok_s=7.63 prompt_tokens=236 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=245 evaluated_prompt_tokens=44 gen_tokens=22 ttft_ms=886 total_ms=3870 tok_s=7.04 busy_retries=0 snapshot=true snapshot_restore_ms=22 threads=2 gap_p50_ms=143 gap_p95_ms=144 gap_max_ms=148 stalls_over_2s=0 rss_mib=2822
+[QE] consistency candidate seed=3 G1 PASS by=model ttft=889 tok_s=7.04 prompt_tokens=245 err=null
+[LLM] generation_done prompt_msgs=4 prompt_tokens=262 evaluated_prompt_tokens=61 gen_tokens=18 ttft_ms=1663 total_ms=4333 tok_s=6.37 busy_retries=0 snapshot=true snapshot_restore_ms=29 threads=2 gap_p50_ms=144 gap_p95_ms=166 gap_max_ms=183 stalls_over_2s=0 rss_mib=2823
+[QE] consistency candidate seed=3 G2 PASS by=model ttft=1667 tok_s=6.37 prompt_tokens=262 err=null
+[LLM] generation_done prompt_msgs=2 prompt_tokens=235 evaluated_prompt_tokens=34 gen_tokens=86 ttft_ms=1066 total_ms=11962 tok_s=7.80 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=119 gap_p95_ms=162 gap_max_ms=184 stalls_over_2s=0 rss_mib=2819
+[QE] consistency candidate seed=3 K1 FAIL by=model ttft=1071 tok_s=7.80 prompt_tokens=235 err=no-clarification
+[LLM] generation_done prompt_msgs=2 prompt_tokens=220 evaluated_prompt_tokens=19 gen_tokens=122 ttft_ms=575 total_ms=16176 tok_s=7.76 busy_retries=0 snapshot=true snapshot_restore_ms=21 threads=2 gap_p50_ms=128 gap_p95_ms=137 gap_max_ms=159 stalls_over_2s=0 rss_mib=2819
+[QE] consistency candidate seed=3 K3 PASS by=model ttft=579 tok_s=7.76 prompt_tokens=220 err=null
+[LLM] model_released rss_mib=313
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=4164 rss_mib=2793
+[LLM] snapshot_built prefix_tokens=201 build_ms=3923 bytes=22677626
+[LLM] generation_done prompt_msgs=2 prompt_tokens=221 evaluated_prompt_tokens=20 gen_tokens=53 ttft_ms=4471 total_ms=10726 tok_s=8.31 busy_retries=0 snapshot=true snapshot_restore_ms=31 threads=2 gap_p50_ms=115 gap_p95_ms=128 gap_max_ms=150 stalls_over_2s=0 rss_mib=2822
+[QE] recovery warm status=ok ttft=4473 snapshot=true
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=24 gen_tokens=5 ttft_ms=706 total_ms=1403 tok_s=5.74 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=140 gap_p95_ms=172 gap_max_ms=172 stalls_over_2s=0 rss_mib=2825
+[QE] recovery long_then_stop status=stopped ttft=707 snapshot=true
+[LLM] generation_done prompt_msgs=2 prompt_tokens=224 evaluated_prompt_tokens=224 gen_tokens=11 ttft_ms=5322 total_ms=6988 tok_s=6.00 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=158 gap_p95_ms=184 gap_max_ms=184 stalls_over_2s=0 rss_mib=2828
+[QE] recovery right_after_stop status=ok ttft=5323 snapshot=false
+[LLM] generation_done prompt_msgs=2 prompt_tokens=227 evaluated_prompt_tokens=26 gen_tokens=15 ttft_ms=847 total_ms=2953 tok_s=6.65 busy_retries=0 snapshot=true snapshot_restore_ms=48 threads=2 gap_p50_ms=131 gap_p95_ms=183 gap_max_ms=265 stalls_over_2s=0 rss_mib=2828
+[QE] recovery next status=ok ttft=848 snapshot=true
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=22 gen_tokens=3 ttft_ms=703 total_ms=1115 tok_s=4.85 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=150 gap_p95_ms=150 gap_max_ms=150 stalls_over_2s=0 rss_mib=2828
+[QE] recovery stop_again status=stopped ttft=704 snapshot=true
+[LLM] generation_done prompt_msgs=2 prompt_tokens=222 evaluated_prompt_tokens=222 gen_tokens=6 ttft_ms=4797 total_ms=5635 tok_s=5.97 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=131 gap_p95_ms=175 gap_max_ms=175 stalls_over_2s=0 rss_mib=2828
+[QE] recovery after_second_stop status=ok ttft=4797 snapshot=false
+[LLM] model_released rss_mib=320

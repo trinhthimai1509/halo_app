@@ -13,6 +13,9 @@ class LlmModelConfig {
     required this.minP,
     required this.presencePenalty,
     this.threads = defaultAndroidThreads,
+    this.batchThreads = defaultAndroidBatchThreads,
+    this.maxPromptTokens = defaultMaxPromptTokens,
+    this.systemPromptSnapshot = true,
     this.seed,
   });
 
@@ -30,6 +33,22 @@ class LlmModelConfig {
   /// optimum; other SoCs should be re-measured with
   /// `integration_test/thread_sweep_test.dart` (`--dart-define=LLM_THREADS=N`).
   static const int defaultAndroidThreads = 2;
+
+  /// Threads for prompt processing (prefill), which is compute-bound and
+  /// scales differently from decoding.
+  ///
+  /// Measured 2026-10-09 on a Galaxy Tab S9 FE (Exynos 1380, 4× A78 +
+  /// 4× A55), 220-token prompt, decode threads 2 (docs/LLM_PERFORMANCE.md):
+  /// 2 → 28 tok/s, **4 → 60 tok/s**, 6 → 49 tok/s (slower: the A55s join
+  /// and every layer waits for them), 8 → 61 tok/s. 4 gets nearly all of
+  /// the gain on the big cores. Not yet re-measured on the Galaxy S10.
+  static const int defaultAndroidBatchThreads = 4;
+
+  /// Upper bound on prompt tokens (system + history + new message), below
+  /// the `n_ctx − maxNewTokens` limit. Prompt processing is re-done every
+  /// turn (no KV reuse for this hybrid model), so this bounds the worst
+  /// time-to-first-token: ~1.3k conversation tokens ≈ 22 s at 60 tok/s.
+  static const int defaultMaxPromptTokens = 1536;
 
   /// Qwen3.5-2B (Apache-2.0), 4-bit, from `unsloth/Qwen3.5-2B-GGUF`.
   ///
@@ -70,26 +89,49 @@ class LlmModelConfig {
   final double minP;
   final double presencePenalty;
 
-  /// CPU threads for decoding and prompt processing. Defaults to
-  /// [defaultAndroidThreads].
+  /// CPU threads for decoding. Defaults to [defaultAndroidThreads].
   final int threads;
+
+  /// CPU threads for prompt processing. Defaults to
+  /// [defaultAndroidBatchThreads].
+  final int batchThreads;
+
+  /// See [defaultMaxPromptTokens].
+  final int maxPromptTokens;
+
+  /// Whether the processed system prompt is snapshotted once and restored
+  /// per request instead of being re-evaluated (LlamaCppLocalAiService).
+  final bool systemPromptSnapshot;
 
   /// Fixed sampler seed for reproducible benchmarks; null = time-based.
   final int? seed;
 
   /// Copy for benchmarks that vary one knob at a time.
-  LlmModelConfig copyWith({int? threads, int? seed}) => LlmModelConfig(
+  LlmModelConfig copyWith({
+    int? threads,
+    int? batchThreads,
+    int? maxPromptTokens,
+    bool? systemPromptSnapshot,
+    double? temperature,
+    double? topP,
+    double? presencePenalty,
+    int? seed,
+  }) =>
+      LlmModelConfig(
         displayName: displayName,
         fileName: fileName,
         quantization: quantization,
         contextSize: contextSize,
         maxNewTokens: maxNewTokens,
-        temperature: temperature,
+        temperature: temperature ?? this.temperature,
         topK: topK,
-        topP: topP,
+        topP: topP ?? this.topP,
         minP: minP,
-        presencePenalty: presencePenalty,
+        presencePenalty: presencePenalty ?? this.presencePenalty,
         threads: threads ?? this.threads,
+        batchThreads: batchThreads ?? this.batchThreads,
+        maxPromptTokens: maxPromptTokens ?? this.maxPromptTokens,
+        systemPromptSnapshot: systemPromptSnapshot ?? this.systemPromptSnapshot,
         seed: seed ?? this.seed,
       );
 }

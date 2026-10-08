@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:llamadart/llamadart.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 
 import '../../../../core/error/app_exception.dart';
 import '../../domain/context_window_policy.dart';
@@ -19,6 +21,17 @@ import 'model_file_locator.dart';
 ///   the life of the service, across conversations.
 /// - Cancelling a [generate] subscription sets llama.cpp's native abort flag,
 ///   so decoding stops instead of running on in the background.
+/// - **System-prompt snapshot.** Qwen3.5 is a hybrid (recurrent) model, so
+///   llama.cpp cannot roll its state back to a shared prompt prefix and
+///   every request re-processes the whole prompt. Instead, the system
+///   prompt is processed once, saved with `llama_state_save_file`, and
+///   restored before each request (tens of ms), so only the conversation
+///   is evaluated. Used only when (a) the previous generation ended
+///   normally, so no native decode can still be running, and (b) the
+///   rendered prompt starts with exactly the snapshotted text; otherwise
+///   the request falls back to full processing (which clears memory).
+///   Verified on device: identical output with and without the snapshot
+///   under a fixed seed (docs/LLM_PERFORMANCE.md).
 ///
 /// No llamadart type leaves this file.
 class LlamaCppLocalAiService implements LocalAiService {
@@ -40,6 +53,7 @@ class LlamaCppLocalAiService implements LocalAiService {
   late final ContextWindowPolicy _contextPolicy = ContextWindowPolicy(
     contextSize: config.contextSize,
     maxNewTokens: config.maxNewTokens,
+    maxPromptTokens: config.maxPromptTokens,
   );
 
   late final GenerationParams _generationParams = GenerationParams(
@@ -54,12 +68,22 @@ class LlamaCppLocalAiService implements LocalAiService {
     // Forward every token from the worker; StreamCoalescer limits UI
     // updates on the Dart side by time instead.
     streamBatchTokenThreshold: 1,
+    // Prefix reuse cannot work for this hybrid model except right after a
+    // snapshot restore, where it is enabled per request.
+    reusePromptPrefix: false,
   );
 
   LlamaEngine? _engine;
   Future<void>? _loading;
   Future<void> _previousGeneration = Future<void>.value();
   bool _disposed = false;
+
+  _SystemSnapshot? _snapshot;
+
+  /// False from the start of a native generation until it ends by itself.
+  /// A cancelled generation may still be decoding natively for a moment,
+  /// so state must not be restored until a later generation completes.
+  bool _nativeIdle = true;
 
   @override
   bool get isReady => _engine != null && !_disposed;
@@ -93,7 +117,7 @@ class LlamaCppLocalAiService implements LocalAiService {
           gpuLayers: 0,
           preferredBackend: GpuBackend.cpu,
           numberOfThreads: config.threads,
-          numberOfThreadsBatch: config.threads,
+          numberOfThreadsBatch: config.batchThreads,
         ),
       );
     } catch (error) {
@@ -113,6 +137,7 @@ class LlamaCppLocalAiService implements LocalAiService {
       'file_mib': File(path).lengthSync() >> 20,
       'n_ctx': await engine.getContextSize(),
       'threads': config.threads,
+      'batch_threads': config.batchThreads,
       'load_ms': stopwatch.elapsedMilliseconds,
       'rss_mib': LlmMetrics.residentMemoryMiB(),
     });
@@ -170,10 +195,20 @@ class LlamaCppLocalAiService implements LocalAiService {
       finish();
     }
 
-    void listen(List<LlamaChatMessage> prompt, int attempt) {
+    void listen(
+      List<LlamaChatMessage> prompt,
+      int attempt, {
+      bool fromSnapshot = false,
+    }) {
       var receivedAny = false;
+      run.fromSnapshot = fromSnapshot;
+      _nativeIdle = false;
       subscription = engine
-          .create(prompt, params: params, enableThinking: false)
+          .create(
+            prompt,
+            params: params.copyWith(reusePromptPrefix: fromSnapshot),
+            enableThinking: false,
+          )
           .listen(
         (chunk) {
           final text =
@@ -194,6 +229,7 @@ class LlamaCppLocalAiService implements LocalAiService {
               error.message.contains('already in progress');
           if (busy && !cancelled && attempt < _busyRetryLimit) {
             run.busyRetries++;
+            // A retry never reuses restored state: something was running.
             Timer(_busyRetryDelay, () {
               if (cancelled) return finish();
               listen(prompt, attempt + 1);
@@ -204,6 +240,7 @@ class LlamaCppLocalAiService implements LocalAiService {
         },
         onDone: () {
           ended = true;
+          _nativeIdle = true;
           coalescer.flush();
           unawaited(_logRun(engine, prompt, run, cancelled: false));
           controller.close();
@@ -213,7 +250,9 @@ class LlamaCppLocalAiService implements LocalAiService {
       );
     }
 
+    var starting = false;
     Future<void> start() async {
+      starting = true;
       try {
         await previous;
         if (cancelled) return finish();
@@ -222,8 +261,14 @@ class LlamaCppLocalAiService implements LocalAiService {
           engine.getTokenCount,
         );
         if (cancelled) return finish();
-        listen(window.map(_toLlamaMessage).toList(), 0);
+        final prompt = window.map(_toLlamaMessage).toList();
+        final fromSnapshot =
+            await _restoreSnapshot(engine, window, prompt, run);
+        if (cancelled) return finish();
+        starting = false;
+        listen(prompt, 0, fromSnapshot: fromSnapshot);
       } catch (error, stackTrace) {
+        starting = false;
         await fail(error, stackTrace);
       }
     }
@@ -243,6 +288,11 @@ class LlamaCppLocalAiService implements LocalAiService {
           engine.cancelGeneration();
           await active.cancel();
           unawaited(_logRun(engine, const [], run, cancelled: true));
+        } else if (starting) {
+          // start() is still preparing (possibly building the snapshot); it
+          // sees `cancelled` and finishes itself once native work is done,
+          // so the next request cannot overlap it.
+          return;
         }
         finish();
       },
@@ -255,6 +305,15 @@ class LlamaCppLocalAiService implements LocalAiService {
     _disposed = true;
     final engine = _engine;
     _engine = null;
+    final snapshot = _snapshot;
+    _snapshot = null;
+    if (snapshot != null) {
+      try {
+        File(snapshot.path).deleteSync();
+      } catch (_) {
+        // Cache file; nothing to clean up.
+      }
+    }
     if (engine != null) {
       engine.cancelGeneration();
       await engine.dispose();
@@ -263,6 +322,84 @@ class LlamaCppLocalAiService implements LocalAiService {
       });
     }
   }
+
+  /// Restores the system-prompt snapshot for [prompt] if that is safe and
+  /// applicable; returns whether the request may evaluate only the rest.
+  Future<bool> _restoreSnapshot(
+    LlamaEngine engine,
+    List<AiMessage> window,
+    List<LlamaChatMessage> prompt,
+    _RunStats run,
+  ) async {
+    if (!config.systemPromptSnapshot || !_nativeIdle) return false;
+    if (window.isEmpty || window.first.role != AiRole.system) return false;
+    try {
+      final snapshot = await _ensureSnapshot(engine, window.first.content);
+      if (snapshot == null) return false;
+      final rendered =
+          (await engine.chatTemplate(prompt, enableThinking: false)).prompt;
+      if (!rendered.startsWith(snapshot.prefix)) return false;
+      final watch = Stopwatch()..start();
+      await engine.stateLoadFile(
+        snapshot.path,
+        tokenCapacity: config.contextSize,
+      );
+      run.snapshotRestoreMs = watch.elapsedMilliseconds;
+      return true;
+    } catch (error) {
+      // Missing/corrupt cache file or unsupported template: rebuild next
+      // time; this request processes the full prompt (memory is cleared).
+      _snapshot = null;
+      LlmMetrics.log('snapshot_failed', {'error': '"$error"'});
+      return false;
+    }
+  }
+
+  /// Builds (or reuses) the snapshot of [system]. Called only while no
+  /// native generation is running.
+  Future<_SystemSnapshot?> _ensureSnapshot(
+    LlamaEngine engine,
+    String system,
+  ) async {
+    final existing = _snapshot;
+    if (existing != null && existing.system == system) return existing;
+    _snapshot = null;
+
+    // The Qwen3.5 template refuses a system-only conversation, so the
+    // system block is cut out of a rendered two-message prompt.
+    final rendered = (await engine.chatTemplate(
+      [
+        LlamaChatMessage.fromText(role: LlamaChatRole.system, text: system),
+        const LlamaChatMessage.fromText(role: LlamaChatRole.user, text: '.'),
+      ],
+      enableThinking: false,
+    ))
+        .prompt;
+    final cut = rendered.indexOf(_userTurnMarker);
+    if (cut <= 0) return null; // Not a ChatML template: no snapshot.
+    final prefix = rendered.substring(0, cut);
+    final tokens = await engine.tokenize(prefix, addSpecial: false);
+
+    final watch = Stopwatch()..start();
+    _nativeIdle = false;
+    // maxTokens 0: evaluate the prefix and stop. Nothing is sampled, so the
+    // saved state holds exactly the prefix tokens.
+    await engine
+        .generate(prefix, params: _generationParams.copyWith(maxTokens: 0))
+        .drain<void>();
+    _nativeIdle = true;
+    final dir = await getTemporaryDirectory();
+    final path = p.join(dir.path, 'llm_system_prompt.state');
+    if (!await engine.stateSaveFile(path, tokens: tokens)) return null;
+    LlmMetrics.log('snapshot_built', {
+      'prefix_tokens': tokens.length,
+      'build_ms': watch.elapsedMilliseconds,
+      'bytes': File(path).lengthSync(),
+    });
+    return _snapshot = _SystemSnapshot(system, prefix, path);
+  }
+
+  static const String _userTurnMarker = '<|im_start|>user';
 
   Future<void> _logRun(
     LlamaEngine engine,
@@ -292,6 +429,8 @@ class LlamaCppLocalAiService implements LocalAiService {
             ? ((generated - 1) * 1000 / decodeMs).toStringAsFixed(2)
             : null,
         'busy_retries': run.busyRetries,
+        'snapshot': run.fromSnapshot,
+        'snapshot_restore_ms': run.snapshotRestoreMs,
         'threads': config.threads,
         ...run.gapStats(),
         'rss_mib': LlmMetrics.residentMemoryMiB(),
@@ -317,6 +456,8 @@ class _RunStats {
   final StringBuffer reply = StringBuffer();
   int? firstTokenMs;
   int busyRetries = 0;
+  bool fromSnapshot = false;
+  int? snapshotRestoreMs;
 
   void start() => _clock.start();
 
@@ -349,4 +490,17 @@ class _RunStats {
       'stalls_over_2s': sorted.where((g) => g > 2000).length,
     };
   }
+}
+
+/// The processed system prompt saved to disk (see [LlamaCppLocalAiService]).
+class _SystemSnapshot {
+  const _SystemSnapshot(this.system, this.prefix, this.path);
+
+  /// The system message text it was built from (the cache key).
+  final String system;
+
+  /// The rendered prompt text it covers.
+  final String prefix;
+
+  final String path;
 }

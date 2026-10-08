@@ -2,6 +2,7 @@ import '../../../../core/error/app_exception.dart';
 import '../../../../core/utils/clock.dart';
 import '../../../../core/utils/id_generator.dart';
 import '../../../local_ai/domain/local_ai_service.dart';
+import '../arithmetic_answers.dart';
 import '../assistant_instructions.dart';
 import '../calendar_answers.dart';
 import '../entities/chat_message.dart';
@@ -92,9 +93,11 @@ class SendMessage {
     target = target.copyWith(updatedAt: sentAt);
     yield UserMessageSaved(target, userMessage);
 
-    // Plain calendar questions are answered from the device clock: the
-    // model cannot know today's date and would guess.
-    final calendarReply = CalendarAnswers.answer(prompt, sentAt);
+    // Plain calendar questions are answered from the device clock (the
+    // model cannot know today's date) and explicit simple calculations
+    // exactly (the 2B model gets them wrong at random).
+    final calendarReply = CalendarAnswers.answer(prompt, sentAt) ??
+        ArithmeticAnswers.answer(prompt);
     if (calendarReply != null) {
       final reply = ChatMessage(
         id: _ids.next(),

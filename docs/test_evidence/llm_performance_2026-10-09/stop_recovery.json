@@ -1,0 +1,44 @@
+[
+  {
+    "step": "warm",
+    "status": "ok",
+    "ttft_ms": 4473,
+    "output": "Chào tôi là Halo, trợ lý AI chạy ngoại tuyến của bạn. Hôm nay là Thứ Sáu, ngày 9 tháng 10 năm 2026. Tôi không biết tin tức hay kết quả thể thao. Bạn có cần giúp gì không?",
+    "metrics": "[LLM] generation_done prompt_msgs=2 prompt_tokens=221 evaluated_prompt_tokens=20 gen_tokens=53 ttft_ms=4471 total_ms=10726 tok_s=8.31 busy_retries=0 snapshot=true snapshot_restore_ms=31 threads=2 gap_p50_ms=115 gap_p95_ms=128 gap_max_ms=150 stalls_over_2s=0 rss_mib=2822"
+  },
+  {
+    "step": "long_then_stop",
+    "status": "stopped",
+    "ttft_ms": 707,
+    "output": "Chào bạn, tôi",
+    "metrics": "[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=24 gen_tokens=5 ttft_ms=706 total_ms=1403 tok_s=5.74 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=140 gap_p95_ms=172 gap_max_ms=172 stalls_over_2s=0 rss_mib=2825"
+  },
+  {
+    "step": "right_after_stop",
+    "status": "ok",
+    "ttft_ms": 5323,
+    "output": "Thành phố Thủ đô của Việt Nam là Hà Nội.",
+    "metrics": "[LLM] generation_done prompt_msgs=2 prompt_tokens=224 evaluated_prompt_tokens=224 gen_tokens=11 ttft_ms=5322 total_ms=6988 tok_s=6.00 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=158 gap_p95_ms=184 gap_max_ms=184 stalls_over_2s=0 rss_mib=2828"
+  },
+  {
+    "step": "next",
+    "status": "ok",
+    "ttft_ms": 848,
+    "output": "Chúc mẹ luôn hạnh phúc và bình an mỗi ngày! 🎉",
+    "metrics": "[LLM] generation_done prompt_msgs=2 prompt_tokens=227 evaluated_prompt_tokens=26 gen_tokens=15 ttft_ms=847 total_ms=2953 tok_s=6.65 busy_retries=0 snapshot=true snapshot_restore_ms=48 threads=2 gap_p50_ms=131 gap_p95_ms=183 gap_max_ms=265 stalls_over_2s=0 rss_mib=2828"
+  },
+  {
+    "step": "stop_again",
+    "status": "stopped",
+    "ttft_ms": 704,
+    "output": "Tôi không thể",
+    "metrics": "[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=22 gen_tokens=3 ttft_ms=703 total_ms=1115 tok_s=4.85 busy_retries=0 snapshot=true snapshot_restore_ms=27 threads=2 gap_p50_ms=150 gap_p95_ms=150 gap_max_ms=150 stalls_over_2s=0 rss_mib=2828"
+  },
+  {
+    "step": "after_second_stop",
+    "status": "ok",
+    "ttft_ms": 4797,
+    "output": "100 độ C.",
+    "metrics": "[LLM] generation_done prompt_msgs=2 prompt_tokens=222 evaluated_prompt_tokens=222 gen_tokens=6 ttft_ms=4797 total_ms=5635 tok_s=5.97 busy_retries=0 snapshot=false snapshot_restore_ms=null threads=2 gap_p50_ms=131 gap_p95_ms=175 gap_max_ms=175 stalls_over_2s=0 rss_mib=2828"
+  }
+]

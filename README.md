@@ -20,7 +20,8 @@ no network permission.
 | **Real on-device LLM, Android** (llama.cpp via `llamadart`, Qwen3.5-2B Q4_K_M) | Done; see [docs/LOCAL_AI.md](docs/LOCAL_AI.md) and [docs/LLM_BENCHMARK.md](docs/LLM_BENCHMARK.md) |
 | On-device LLM and speech, iOS | Not started. iOS shows a clear "not available" message, never fake output |
 | **Offline Vietnamese speech-to-text, Android** (sherpa-onnx, Zipformer-vi int8) | Done; see [docs/SPEECH.md](docs/SPEECH.md) |
-| Answer quality: device date/time context, Dart calendar answers, Vietnamese system prompt, tuned sampling | Done. On-device suite 13/33 → 25/33; see [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md) |
+| Answer quality: device date context, Dart calendar and arithmetic answers, Vietnamese system prompt, tuned sampling | Done. On-device suite 13/33 → 25/33 (3-seed average unchanged after the speed work); see [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md) |
+| Response time: 4 prefill threads, system-prompt state snapshot, 1,536-token prompt cap | Done. Median time to first token 8.3 s → 0.93 s on the Tab S9 FE; see [docs/LLM_PERFORMANCE.md](docs/LLM_PERFORMANCE.md) |
 | Dark mode, localisation | Prepared, not implemented |
 
 ## Requirements
@@ -106,4 +107,5 @@ lib/
 - [docs/SPEECH.md](docs/SPEECH.md): offline Vietnamese speech-to-text, model setup, verification, limitations
 - [docs/STT_SPIKE.md](docs/STT_SPIKE.md): engine and licence evaluation, spike measurements
 - [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md): Vietnamese answer-quality suite, root causes, before/after results
+- [docs/LLM_PERFORMANCE.md](docs/LLM_PERFORMANCE.md): time-to-first-token analysis, thread and snapshot experiments, acceptance
 - [docs/LLM_BENCHMARK.md](docs/LLM_BENCHMARK.md): Galaxy S10 measurements and thread comparison

@@ -2,6 +2,8 @@
 //
 //   flutter test integration_test/quality_eval_test.dart -d <serial> --no-uninstall
 //     [--dart-define=QE_BEFORE=all|K|none]   (default: none)
+//     [--dart-define=QE_PARTS=after,consistency,recovery,seeds]
+//       (default: after,consistency,recovery)
 //
 // 1. Prints the exact prompt llama.cpp receives (chat template rendered by
 //    the GGUF's own Jinja template, thinking disabled), before and after.
@@ -16,6 +18,7 @@
 // Expected dates are computed here independently of the app's own
 // calendar code, so the suite does not grade the app against itself.
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -25,8 +28,10 @@ import 'package:integration_test/integration_test.dart';
 import 'package:llamadart/llamadart.dart';
 import 'package:offline_ai_chat/core/utils/id_generator.dart';
 import 'package:offline_ai_chat/features/chat/domain/assistant_instructions.dart';
+import 'package:offline_ai_chat/features/chat/domain/calendar_answers.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/chat_message.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/message_role.dart';
+import 'package:offline_ai_chat/features/chat/domain/local_time_context.dart';
 import 'package:offline_ai_chat/features/chat/domain/usecases/send_message.dart';
 import 'package:offline_ai_chat/features/local_ai/data/llama_cpp/llama_cpp_local_ai_service.dart';
 import 'package:offline_ai_chat/features/local_ai/data/llama_cpp/llm_model_config.dart';
@@ -50,6 +55,22 @@ String _utcOffset(DateTime t) {
   final m = o.inMinutes.abs();
   return 'UTC$sign${_two(m ~/ 60)}:${_two(m % 60)}';
 }
+
+/// The 366ae73 system prompt (verbatim): date plus clock time, so it
+/// changed every minute. Baseline for the performance work.
+String baselineSystemPrompt(DateTime now) =>
+    'Bạn là Halo, trợ lý AI chạy ngoại tuyến trên thiết bị của người dùng.\n'
+    'Bây giờ là ${LocalTimeContext.viDate(now)}, '
+    '${LocalTimeContext.clock(now)} (${LocalTimeContext.utcOffset(now)}).\n'
+    '- Trả lời bằng ngôn ngữ của người dùng, đúng trọng tâm, ngắn gọn.\n'
+    '- Làm bình thường các yêu cầu như tính toán, giải thích, viết thư, '
+    'viết văn. Dùng thông tin người dùng đã nói trong cuộc trò chuyện.\n'
+    '- Không bịa đặt. Bạn không có Internet nên không biết tin tức, giá cả, '
+    'thời tiết, kết quả thể thao; khi được hỏi những điều đó hoặc điều bạn '
+    'không chắc, hãy nói là không biết.\n'
+    '- Tin nhắn có thể do nhận dạng giọng nói nên sai từ. Nếu câu khó hiểu, '
+    'hãy hỏi lại người dùng muốn gì, đừng đoán sang chủ đề khác.\n'
+    '- Không dùng Markdown.';
 
 /// The system prompt shipped before the quality fix (verbatim).
 const String legacySystemPrompt =
@@ -186,7 +207,7 @@ List<Case> buildCases(DateTime now) {
         _vi((o) => _has(o, ['34']) ? null : 'factual-error (knowledge)')),
     // D. Arithmetic and reasoning.
     Case('D1', 'D', '17 cộng 25 bằng bao nhiêu?', '42',
-        _vi((o) => _has(o, ['42']) ? null : 'arithmetic-error')),
+        (o) => _has(o, ['42']) ? null : 'arithmetic-error'),
     Case('D2', 'D', 'Một quyển vở giá 12.000 đồng. Mua 3 quyển thì hết bao nhiêu tiền?', '36.000 đồng',
         _vi((o) => _has(o, ['36.000', '36000', '36 000', '36 nghìn', 'ba mươi sáu nghìn']) ? null : 'arithmetic-error')),
     Case('D3', 'D', 'An có 5 quả táo, cho Bình 2 quả rồi mua thêm 4 quả. Hỏi An còn bao nhiêu quả táo?', '7',
@@ -257,7 +278,7 @@ List<Case> buildCases(DateTime now) {
         }),
         history: _longHistory(16)),
     Case('J3', 'J', '17 cộng 25 bằng bao nhiêu?', '42 with a long unrelated history',
-        _vi((o) => _has(o, ['42']) ? null : 'context-contamination'),
+        (o) => _has(o, ['42']) ? null : 'context-contamination',
         history: _longHistory(12, withFact: false)),
     // K. Ambiguous / corrupted input (K1 is the real tablet transcript).
     Case('K1', 'K', 'Sau khi hoàn thành tắt e mốt và gửi đăng cho clo để nó đọc lớp usb đối chiếu kết quả',
@@ -401,6 +422,12 @@ void _print(String run, Map<String, Object?> r) {
 const String _beforeScope =
     String.fromEnvironment('QE_BEFORE', defaultValue: 'none');
 
+/// Which of the later parts to run: after, consistency, recovery.
+const String _parts = String.fromEnvironment(
+  'QE_PARTS',
+  defaultValue: 'after,consistency,recovery',
+);
+
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -499,5 +526,226 @@ void main() {
         await ai.dispose();
       }
     });
-  }, timeout: const Timeout(Duration(minutes: 75)));
+  }, skip: !_parts.contains('after'),
+      timeout: const Timeout(Duration(minutes: 75)));
+
+  // ------------------------------------------------------------------
+  // 4. Run-to-run consistency: the same model-answered cases with three
+  //    seeds, under the 366ae73 baseline and the production candidate.
+  // ------------------------------------------------------------------
+  testWidgets('4. consistency (3 seeds, baseline vs candidate)', (tester) async {
+    await tester.runAsync(() async {
+      final ids = {'D1', 'D2', 'G1', 'G2', 'K1', 'K3'};
+      final cases =
+          buildCases(DateTime.now()).where((c) => ids.contains(c.id)).toList();
+      final results = <Map<String, Object?>>[];
+      for (final seed in [1, 2, 3]) {
+        // Baseline (366ae73): dated prompt with clock time, 2 prompt
+        // threads, 3008-token budget, no snapshot, no arithmetic handler.
+        final base = LlamaCppLocalAiService(
+          config: LlmModelConfig.qwen35_2b.copyWith(
+            batchThreads: 2,
+            maxPromptTokens: 100000,
+            systemPromptSnapshot: false,
+            seed: seed,
+          ),
+        );
+        await base.initialize();
+        try {
+          for (final c in cases) {
+            final r = await _record(
+              c,
+              (onDelta) => base
+                  .generate(GenerationRequest(messages: [
+                    AiMessage(
+                      role: AiRole.system,
+                      content: baselineSystemPrompt(DateTime.now()),
+                    ),
+                    ...c.history,
+                    _u(c.input),
+                  ]))
+                  .forEach(onDelta),
+            );
+            results.add({'pipeline': 'baseline', 'seed': seed, ...r});
+            _print('consistency baseline seed=$seed', r);
+          }
+        } finally {
+          await base.dispose();
+        }
+
+        final ai = LlamaCppLocalAiService(
+          config: LlmModelConfig.qwen35_2b.copyWith(seed: seed),
+        );
+        final send = SendMessage(
+          repository: InMemoryChatRepository(),
+          ai: ai,
+          ids: IdGenerator(),
+          clock: DateTime.now,
+        );
+        try {
+          for (final c in cases) {
+            final r = await _after(send, c);
+            results.add({'pipeline': 'candidate', 'seed': seed, ...r});
+            _print('consistency candidate seed=$seed', r);
+          }
+        } finally {
+          await ai.dispose();
+        }
+      }
+      await _save('consistency', results);
+    });
+  }, skip: !_parts.contains('consistency'),
+      timeout: const Timeout(Duration(minutes: 40)));
+
+  // ------------------------------------------------------------------
+  // 5. Stop / recovery with the snapshot: cancel mid-reply, ask again
+  //    immediately (must work, without the snapshot), then once more
+  //    (snapshot back in use). Metrics lines carry `snapshot=`.
+  // ------------------------------------------------------------------
+  testWidgets('5. stop and recovery', (tester) async {
+    await tester.runAsync(() async {
+      final ai = LlamaCppLocalAiService(
+        config: LlmModelConfig.qwen35_2b.copyWith(seed: _seed),
+      );
+      await ai.initialize();
+      final steps = <Map<String, Object?>>[];
+      GenerationRequest ask(String q) => GenerationRequest(messages: [
+            AiMessage(
+              role: AiRole.system,
+              content: AssistantInstructions.systemPrompt(DateTime.now()),
+            ),
+            _u(q),
+          ]);
+      Future<Map<String, Object?>> step(String name, String q,
+          {int? stopAfterChunks}) async {
+        final before = _captured.length;
+        final text = StringBuffer();
+        final clock = Stopwatch()..start();
+        int? ttft;
+        var chunks = 0;
+        var status = 'ok';
+        final done = Completer<void>();
+        late final StreamSubscription<String> sub;
+        sub = ai.generate(ask(q)).listen(
+          (d) {
+            ttft ??= clock.elapsedMilliseconds;
+            text.write(d);
+            chunks++;
+            if (stopAfterChunks != null && chunks >= stopAfterChunks) {
+              sub.cancel().whenComplete(() {
+                status = 'stopped';
+                if (!done.isCompleted) done.complete();
+              });
+            }
+          },
+          onError: (Object e) {
+            status = 'error: $e';
+            if (!done.isCompleted) done.complete();
+          },
+          onDone: () {
+            if (!done.isCompleted) done.complete();
+          },
+        );
+        await done.future.timeout(const Duration(seconds: 120));
+        for (var i = 0; i < 30; i++) {
+          if (_captured.skip(before).any((l) => l.contains('[LLM] generation_'))) {
+            break;
+          }
+          await Future<void>.delayed(const Duration(milliseconds: 100));
+        }
+        final line = _captured.skip(before).lastWhere(
+            (l) => l.contains('[LLM] generation_'), orElse: () => '');
+        final r = {
+          'step': name,
+          'status': status,
+          'ttft_ms': ttft,
+          'output': text.toString(),
+          'metrics': line,
+        };
+        // ignore: avoid_print
+        print('[QE] recovery $name status=$status ttft=$ttft '
+            'snapshot=${RegExp(r'snapshot=(\w+)').firstMatch(line)?.group(1)}');
+        return r;
+      }
+
+      try {
+        steps
+          ..add(await step('warm', 'Xin chào, bạn là ai?'))
+          ..add(await step('long_then_stop', 'Viết một bài văn dài về mùa thu Hà Nội.', stopAfterChunks: 5))
+          ..add(await step('right_after_stop', 'Thủ đô của Việt Nam là thành phố nào?'))
+          ..add(await step('next', 'Viết một câu chúc mừng sinh nhật ngắn gọn dành cho mẹ.'))
+          ..add(await step('stop_again', 'Kể chi tiết về lịch sử Việt Nam.', stopAfterChunks: 3))
+          ..add(await step('after_second_stop', 'Nước sôi ở bao nhiêu độ C?'));
+      } finally {
+        await _save('recovery', steps);
+        await ai.dispose();
+      }
+    });
+  }, skip: !_parts.contains('recovery'),
+      timeout: const Timeout(Duration(minutes: 10)));
+
+  // ------------------------------------------------------------------
+  // 6. Full suite on extra seeds for both pipelines (quality variance).
+  //    Baseline = 366ae73 logic: calendar shortcut, then the model with the
+  //    dated+timed prompt, no arithmetic handler, 3008-token budget. It
+  //    runs with 4 prompt threads only to save time (speed setting).
+  // ------------------------------------------------------------------
+  testWidgets('6. full suite on extra seeds', (tester) async {
+    await tester.runAsync(() async {
+      final results = <Map<String, Object?>>[];
+      for (final seed in [1, 2]) {
+        final base = LlamaCppLocalAiService(
+          config: LlmModelConfig.qwen35_2b.copyWith(
+            maxPromptTokens: 100000,
+            systemPromptSnapshot: false,
+            seed: seed,
+          ),
+        );
+        await base.initialize();
+        try {
+          for (final c in buildCases(DateTime.now())) {
+            final calendar = CalendarAnswers.answer(c.input, DateTime.now());
+            final r = await _record(c, (onDelta) async {
+              if (calendar != null) return onDelta(calendar);
+              await base
+                  .generate(GenerationRequest(messages: [
+                    AiMessage(
+                      role: AiRole.system,
+                      content: baselineSystemPrompt(DateTime.now()),
+                    ),
+                    ...c.history,
+                    _u(c.input),
+                  ]))
+                  .forEach(onDelta);
+            });
+            results.add({'pipeline': 'baseline', 'seed': seed, ...r});
+            _print('seeds baseline seed=$seed', r);
+          }
+        } finally {
+          await base.dispose();
+        }
+
+        final ai = LlamaCppLocalAiService(
+          config: LlmModelConfig.qwen35_2b.copyWith(seed: seed),
+        );
+        final send = SendMessage(
+          repository: InMemoryChatRepository(),
+          ai: ai,
+          ids: IdGenerator(),
+          clock: DateTime.now,
+        );
+        try {
+          for (final c in buildCases(DateTime.now())) {
+            final r = await _after(send, c);
+            results.add({'pipeline': 'candidate', 'seed': seed, ...r});
+            _print('seeds candidate seed=$seed', r);
+          }
+        } finally {
+          await ai.dispose();
+        }
+      }
+      await _save('seeds', results);
+    });
+  }, skip: !_parts.contains('seeds'),
+      timeout: const Timeout(Duration(minutes: 60)));
 }

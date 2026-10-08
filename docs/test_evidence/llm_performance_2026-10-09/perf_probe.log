@@ -1,0 +1,22 @@
+[PERF] batch=2 short {"ttft_ms":7806,"total_ms":9197,"prompt_eval_tokens":220,"prompt_eval_ms":7759,"prefill_tok_s":"28.4","gen_tokens":11,"decode_tok_s":"8.10"}
+[PERF] batch=2 short {"ttft_ms":8147,"total_ms":8832,"prompt_eval_tokens":223,"prompt_eval_ms":8118,"prefill_tok_s":"27.5","gen_tokens":5,"decode_tok_s":"7.50"}
+[PERF] batch=2 short {"ttft_ms":8092,"total_ms":13882,"prompt_eval_tokens":220,"prompt_eval_ms":8066,"prefill_tok_s":"27.3","gen_tokens":48,"decode_tok_s":"8.50"}
+[PERF] batch=2 long {"ttft_ms":45090,"total_ms":47384,"prompt_eval_tokens":1202,"prompt_eval_ms":45060,"prefill_tok_s":"26.7","gen_tokens":16,"decode_tok_s":"7.13"}
+[PERF] batch=4 short {"ttft_ms":3642,"total_ms":4831,"prompt_eval_tokens":220,"prompt_eval_ms":3623,"prefill_tok_s":"60.7","gen_tokens":11,"decode_tok_s":"9.47"}
+[PERF] batch=4 short {"ttft_ms":3809,"total_ms":4376,"prompt_eval_tokens":223,"prompt_eval_ms":3790,"prefill_tok_s":"58.8","gen_tokens":5,"decode_tok_s":"9.05"}
+[PERF] batch=4 short {"ttft_ms":3740,"total_ms":8958,"prompt_eval_tokens":220,"prompt_eval_ms":3720,"prefill_tok_s":"59.1","gen_tokens":48,"decode_tok_s":"9.42"}
+[PERF] batch=4 long {"ttft_ms":23916,"total_ms":25938,"prompt_eval_tokens":1202,"prompt_eval_ms":23893,"prefill_tok_s":"50.3","gen_tokens":16,"decode_tok_s":"8.10"}
+[PERF] batch=6 short {"ttft_ms":4444,"total_ms":5651,"prompt_eval_tokens":220,"prompt_eval_ms":4426,"prefill_tok_s":"49.7","gen_tokens":11,"decode_tok_s":"9.33"}
+[PERF] batch=6 short {"ttft_ms":4601,"total_ms":5528,"prompt_eval_tokens":223,"prompt_eval_ms":4583,"prefill_tok_s":"48.7","gen_tokens":8,"decode_tok_s":"8.84"}
+[PERF] batch=6 short {"ttft_ms":4516,"total_ms":9837,"prompt_eval_tokens":220,"prompt_eval_ms":4498,"prefill_tok_s":"48.9","gen_tokens":48,"decode_tok_s":"9.23"}
+[PERF] batch=6 long {"ttft_ms":25855,"total_ms":27859,"prompt_eval_tokens":1202,"prompt_eval_ms":25833,"prefill_tok_s":"46.5","gen_tokens":16,"decode_tok_s":"8.18"}
+[PERF] batch=8 short {"ttft_ms":3570,"total_ms":4841,"prompt_eval_tokens":220,"prompt_eval_ms":3550,"prefill_tok_s":"62.0","gen_tokens":11,"decode_tok_s":"8.88"}
+[PERF] batch=8 short {"ttft_ms":3717,"total_ms":5994,"prompt_eval_tokens":223,"prompt_eval_ms":3696,"prefill_tok_s":"60.3","gen_tokens":19,"decode_tok_s":"8.58"}
+[PERF] batch=8 short {"ttft_ms":3599,"total_ms":9128,"prompt_eval_tokens":220,"prompt_eval_ms":3577,"prefill_tok_s":"61.5","gen_tokens":48,"decode_tok_s":"8.90"}
+[PERF] batch=8 long {"ttft_ms":20095,"total_ms":22066,"prompt_eval_tokens":1202,"prompt_eval_ms":20068,"prefill_tok_s":"59.9","gen_tokens":16,"decode_tok_s":"8.32"}
+[PERF] snapshot error Exception: No user query found in messages.
+[PERF] snapshot report {"error":"Exception: No user query found in messages.","stack":"#0      _raiseException (package:dinja/src/runtime/builtins.dart:1579:3)\n#1      CallExpression.execute (package:dinja/src/ast/nodes.dart:904:24)\n#2      execStatements (package:dinja/src/ast/nodes.dart:60:24)\n#3      IfStatement.execute (package:dinja/src/ast/nodes.dart:128:14)\n#4      execStatements (package:dinja/src/ast/nodes.dart:60:24)\n#5      Program.execute (package:dinja/src/ast/nodes.dart:47:12)\n#6      Template.render (package:dinja/src/template.dart:48:25)\n#7      ChatTemplateHandler.renderTemplate (package:llamadart/src/core/template/chat_template_handler.dart:141:21)"}
+[PERF] q1 identical=true base_ttft=7921 base_eval=220 snap_ttft=1049 snap_eval=23 load_ms=25
+[PERF] q2 identical=true base_ttft=8520 base_eval=223 snap_ttft=1113 snap_eval=26 load_ms=19
+[PERF] multi identical=false base_ttft=9083 base_eval=241 snap_ttft=1743 snap_eval=44 load_ms=61
+[PERF] snapshot report {"q1_text_prefix":true,"q1_token_prefix":true,"q1_tokens":220,"q2_text_prefix":true,"q2_token_prefix":true,"q2_tokens":223,"multi_text_prefix":true,"multi_token_prefix":true,"multi_tokens":241,"prefix_tokens":197,"snapshot_build_ms":7500,"snapshot_saved":true,"snapshot_bytes":22628362}

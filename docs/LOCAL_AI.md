@@ -108,17 +108,22 @@ LlamaCppLocalAiService (local_ai/data/llama_cpp) ── only file importing llam
 
 ### Prompt and chat template
 - The prompt is built from the GGUF's own Jinja template, which for Qwen3.5 is ChatML-style. It is called with `enableThinking: false`; llamadart's own default is `true`, which would emit a hidden reasoning block.
-- **System prompt** (`AssistantInstructions.systemPrompt(now)`, since 2026-10-08):
-  - Vietnamese, rebuilt **per request** with the device's current date, time and UTC offset.
-  - Short rules: answer in the user's language, concisely; don't invent; say "không biết" for live data or uncertain facts; ask for clarification on unclear (possibly mis-transcribed) input; no Markdown.
-  - About 220 tokens, which adds about 6–7 s to every reply on the tablet. See [LLM_QUALITY.md](LLM_QUALITY.md).
-- **Calendar questions** ("hôm nay là thứ mấy?" and similar) are answered in Dart from the device clock (`CalendarAnswers`) and never reach the model.
+- **System prompt** (`AssistantInstructions.systemPrompt(now)`):
+  - Vietnamese, carrying the device's current **date**. It has no clock time, so it stays identical all day.
+  - Short rules: answer in the user's language, concisely; "tôi" means the user; don't invent; say "không biết" for live data or uncertain facts; ask for clarification on unclear (possibly mis-transcribed) input; no Markdown.
+  - About 200 tokens. It is processed **once per day** and restored from a snapshot for each request (§ Prompt processing below).
+- **Calendar questions** ("hôm nay là thứ mấy?" and similar) are answered in Dart from the device clock (`CalendarAnswers`), and **explicit simple calculations** ("17 cộng 25") exactly by `ArithmeticAnswers`. Neither reaches the model.
+- **Prompt processing** (since 2026-10-09; [LLM_PERFORMANCE.md](LLM_PERFORMANCE.md)):
+  - prefill runs on 4 threads (`batchThreads`), decode on 2;
+  - the processed system prompt is snapshotted with `llama_state_save_file` and restored per request, used only after a normally completed generation;
+  - prompts are capped at 1,536 tokens (`maxPromptTokens`).
+  - Median time to first token on the Tab S9 FE: 0.93 s, previously 8.3 s.
 - Message order: system → trimmed history → current user turn → assistant generation.
 - **Sampling** uses the model card's lower-randomness non-thinking set: temperature 0.7, top_p 0.8, top_k 20, min_p 0, presence_penalty 1.5, repeat penalty 1.0.
   - The card's other set (1.0 / 1.0 / 2.0) was used until 2026-10-08. It produced language mixing and invented facts on device; see [LLM_QUALITY.md](LLM_QUALITY.md).
 
 ### Context policy (`ContextWindowPolicy`)
-- `n_ctx` = **4096**. The reply reserve is `maxNewTokens` = **1024**, plus a 64-token safety margin, leaving a prompt budget of 3008 tokens.
+- `n_ctx` = **4096**. The reply reserve is `maxNewTokens` = **1024**, plus a 64-token safety margin, leaving at most 3008 tokens. Since 2026-10-09 the prompt is **capped at 1536 tokens** (`maxPromptTokens`) to bound time to first token.
 - Each message is costed with the model's tokenizer plus 8 tokens of template overhead.
 - Leading system messages and the current user turn are always kept.
 - Older turns are added from newest to oldest while they fit.

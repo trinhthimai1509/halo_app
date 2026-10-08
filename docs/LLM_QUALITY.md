@@ -1,5 +1,10 @@
 # LLM answer quality: Vietnamese evaluation and fixes (2026-10-08)
 
+> **Update 2026-10-09:**
+> - The response-time work ([LLM_PERFORMANCE.md](LLM_PERFORMANCE.md)) took the median time to first token from 8.3 s to 0.93 s.
+> - It also added Dart arithmetic answers and a "tôi = the user" prompt line, and removed the clock time from the prompt.
+> - Quality re-measured over 3 seeds, hand-graded: **74/99 before and after**. The latency table in §3 below describes the 366ae73 state.
+
 **Device:** Galaxy Tab S9 FE (SM-X510, Exynos 1380, Android 16).
 **Model:** Qwen3.5-2B Q4_K_M with llama.cpp (llamadart 0.8.24), 2 threads, `n_ctx` 4096.
 **Not changed:** the model and the STT engine.

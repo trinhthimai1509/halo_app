@@ -18,6 +18,7 @@ class ContextWindowPolicy {
     required this.maxNewTokens,
     this.perMessageOverhead = 8,
     this.safetyMargin = 64,
+    this.maxPromptTokens,
   });
 
   /// Model context window (`n_ctx`) in tokens.
@@ -33,7 +34,14 @@ class ContextWindowPolicy {
   /// Slack for the generation prompt and counting inaccuracies.
   final int safetyMargin;
 
-  int get promptBudget => contextSize - maxNewTokens - safetyMargin;
+  /// Optional cap below the context limit, to bound prompt-processing time.
+  final int? maxPromptTokens;
+
+  int get promptBudget {
+    final limit = contextSize - maxNewTokens - safetyMargin;
+    final cap = maxPromptTokens;
+    return cap == null || cap > limit ? limit : cap;
+  }
 
   Future<List<AiMessage>> fit(
     List<AiMessage> messages,
