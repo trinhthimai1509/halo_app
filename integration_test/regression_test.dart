@@ -22,9 +22,9 @@ import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
 
 import 'benchmark_prompts.dart';
 
-const AiMessage _system = AiMessage(
+final AiMessage _system = AiMessage(
   role: AiRole.system,
-  content: AssistantInstructions.systemPrompt,
+  content: AssistantInstructions.systemPrompt(DateTime.now()),
 );
 
 const Duration _maxGap = Duration(seconds: 10);
@@ -129,9 +129,9 @@ void main() {
     final enough = Completer<void>();
     final subscription = ai
         .generate(
-          const GenerationRequest(messages: [
+          GenerationRequest(messages: [
             _system,
-            AiMessage(role: AiRole.user, content: cancellationPrompt),
+            const AiMessage(role: AiRole.user, content: cancellationPrompt),
           ]),
         )
         .listen((delta) {

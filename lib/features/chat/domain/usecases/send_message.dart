@@ -3,6 +3,7 @@ import '../../../../core/utils/clock.dart';
 import '../../../../core/utils/id_generator.dart';
 import '../../../local_ai/domain/local_ai_service.dart';
 import '../assistant_instructions.dart';
+import '../calendar_answers.dart';
 import '../entities/chat_message.dart';
 import '../entities/conversation.dart';
 import '../entities/message_role.dart';
@@ -39,7 +40,8 @@ final class ReplyCompleted extends SendMessageEvent {
 }
 
 /// Orchestrates one user turn: persist the prompt, stream the local model's
-/// reply, persist the reply.
+/// reply (or a calendar answer computed from the device clock), persist the
+/// reply.
 ///
 /// Cancelling the returned stream's subscription stops generation; any
 /// partial reply that was already shown is still persisted, so history
@@ -90,6 +92,25 @@ class SendMessage {
     target = target.copyWith(updatedAt: sentAt);
     yield UserMessageSaved(target, userMessage);
 
+    // Plain calendar questions are answered from the device clock: the
+    // model cannot know today's date and would guess.
+    final calendarReply = CalendarAnswers.answer(prompt, sentAt);
+    if (calendarReply != null) {
+      final reply = ChatMessage(
+        id: _ids.next(),
+        conversationId: target.id,
+        role: MessageRole.assistant,
+        content: '',
+        createdAt: _clock(),
+      );
+      yield ReplyStarted(reply);
+      yield ReplyChunk(calendarReply);
+      final message = reply.copyWith(content: calendarReply);
+      await _repository.addMessage(message);
+      yield ReplyCompleted(message);
+      return;
+    }
+
     if (!_ai.isReady) await _ai.initialize();
 
     final draft = ChatMessage(
@@ -108,9 +129,10 @@ class SendMessage {
       // context window.
       final request = GenerationRequest(
         messages: [
-          const AiMessage(
+          // Built per request so the date/time is current.
+          AiMessage(
             role: AiRole.system,
-            content: AssistantInstructions.systemPrompt,
+            content: AssistantInstructions.systemPrompt(_clock()),
           ),
           for (final message in [...history, userMessage]) _toAiMessage(message),
         ],

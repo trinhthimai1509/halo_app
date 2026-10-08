@@ -1,0 +1,58 @@
+[QE] A_production A1 FAIL ttft=1292 tok_s=9.02 prompt_tokens=39 err=missing-context (declined)
+[QE] A_production A2 FAIL ttft=1371 tok_s=9.40 prompt_tokens=46 err=missing-context (declined)
+[QE] A_production A3 FAIL ttft=1201 tok_s=9.26 prompt_tokens=38 err=missing-context (declined)
+[QE] A_production B1 PASS ttft=1276 tok_s=9.03 prompt_tokens=40 err=null
+[QE] A_production B2 PASS ttft=1473 tok_s=8.12 prompt_tokens=39 err=null
+[QE] A_production B3 PASS ttft=1442 tok_s=8.00 prompt_tokens=40 err=null
+[QE] A_production C1 PASS ttft=1459 tok_s=8.26 prompt_tokens=43 err=null
+[QE] A_production C2 PASS ttft=1499 tok_s=8.81 prompt_tokens=48 err=null
+[QE] A_production C3 FAIL ttft=1804 tok_s=8.64 prompt_tokens=50 err=factual-error (knowledge)
+[QE] A_production D1 FAIL ttft=1544 tok_s=8.41 prompt_tokens=42 err=arithmetic-error
+[QE] A_production D2 PASS ttft=2104 tok_s=8.17 prompt_tokens=55 err=null
+[QE] A_production D3 FAIL ttft=2267 tok_s=8.24 prompt_tokens=59 err=language-mixing
+[QE] A_production E1 PASS ttft=2099 tok_s=6.81 prompt_tokens=53 err=null
+[QE] A_production E2 PASS ttft=2179 tok_s=null prompt_tokens=54 err=null
+[QE] A_production E3 FAIL ttft=1888 tok_s=4.93 prompt_tokens=48 err=instruction-violation
+[QE] A_production F1 PASS ttft=1775 tok_s=7.91 prompt_tokens=46 err=null
+[QE] A_production F2 PASS ttft=1897 tok_s=7.78 prompt_tokens=50 err=null
+[QE] A_production F3 FAIL ttft=2583 tok_s=7.11 prompt_tokens=61 err=instruction-violation
+[QE] A_production G1 PASS ttft=2804 tok_s=6.92 prompt_tokens=64 err=null
+[QE] A_production G2 PASS ttft=3164 tok_s=7.62 prompt_tokens=81 err=null
+[QE] A_production G3 PASS ttft=4216 tok_s=6.77 prompt_tokens=104 err=null
+[QE] A_production H1 PASS ttft=1945 tok_s=7.50 prompt_tokens=44 err=null
+[QE] A_production H2 FAIL ttft=2331 tok_s=7.50 prompt_tokens=51 err=hallucination
+[QE] A_production H3 FAIL ttft=2608 tok_s=7.35 prompt_tokens=58 err=hallucination
+[QE] A_production I1 FAIL ttft=1766 tok_s=7.16 prompt_tokens=40 err=hallucination (wrong date)
+[QE] A_production I2 PASS ttft=2172 tok_s=7.35 prompt_tokens=47 err=null
+[QE] A_production I3 PASS ttft=2514 tok_s=7.36 prompt_tokens=57 err=null
+[QE] A_production J1 PASS ttft=42874 tok_s=7.80 prompt_tokens=1077 err=null
+[QE] A_production J2 PASS ttft=108081 tok_s=6.73 prompt_tokens=2731 err=null
+[QE] A_production J3 PASS ttft=77314 tok_s=7.21 prompt_tokens=2016 err=null
+[QE] B1_date_prompt A1 PASS ttft=4159 tok_s=8.82 prompt_tokens=147 err=null
+[QE] B1_date_prompt A2 PASS ttft=4318 tok_s=8.75 prompt_tokens=154 err=null
+[QE] B1_date_prompt A3 PASS ttft=4126 tok_s=8.44 prompt_tokens=146 err=null
+[QE] B1_date_prompt B1 PASS ttft=4214 tok_s=8.58 prompt_tokens=148 err=null
+[QE] B1_date_prompt B2 PASS ttft=4486 tok_s=8.64 prompt_tokens=147 err=null
+[QE] B1_date_prompt B3 PASS ttft=4623 tok_s=8.70 prompt_tokens=148 err=null
+[QE] B1_date_prompt C1 PASS ttft=4898 tok_s=8.45 prompt_tokens=151 err=null
+[QE] B1_date_prompt C2 PASS ttft=5249 tok_s=8.82 prompt_tokens=156 err=null
+[QE] B1_date_prompt C3 FAIL ttft=5365 tok_s=8.56 prompt_tokens=158 err=factual-error (knowledge)
+[QE] B1_date_prompt D1 PASS ttft=5591 tok_s=7.84 prompt_tokens=150 err=null
+[QE] B1_date_prompt D2 PASS ttft=5372 tok_s=8.62 prompt_tokens=163 err=null
+[QE] B1_date_prompt D3 PASS ttft=5761 tok_s=8.25 prompt_tokens=167 err=null
+[QE] B1_date_prompt E1 PASS ttft=5491 tok_s=7.71 prompt_tokens=161 err=null
+[QE] B1_date_prompt E2 FAIL ttft=5578 tok_s=null prompt_tokens=162 err=instruction-violation
+[QE] B1_date_prompt E3 PASS ttft=5241 tok_s=8.45 prompt_tokens=156 err=null
+[QE] B1_date_prompt F1 PASS ttft=5233 tok_s=8.13 prompt_tokens=154 err=null
+[QE] B1_date_prompt F2 PASS ttft=5447 tok_s=8.22 prompt_tokens=158 err=null
+[QE] B1_date_prompt F3 PASS ttft=6035 tok_s=8.06 prompt_tokens=169 err=null
+[QE] B1_date_prompt G1 FAIL ttft=5827 tok_s=8.17 prompt_tokens=172 err=context-loss
+[QE] B1_date_prompt G2 PASS ttft=6408 tok_s=7.89 prompt_tokens=189 err=null
+[QE] B1_date_prompt G3 PASS ttft=7194 tok_s=8.22 prompt_tokens=212 err=null
+[QE] B1_date_prompt H1 PASS ttft=4944 tok_s=8.32 prompt_tokens=152 err=null
+[QE] B1_date_prompt H2 PASS ttft=5734 tok_s=8.30 prompt_tokens=159 err=null
+[QE] B1_date_prompt H3 FAIL ttft=6369 tok_s=8.06 prompt_tokens=166 err=hallucination
+[QE] B1_date_prompt I1 PASS ttft=5278 tok_s=7.81 prompt_tokens=148 err=null
+[QE] B1_date_prompt I2 PASS ttft=5615 tok_s=8.11 prompt_tokens=155 err=null
+[QE] B1_date_prompt I3 PASS ttft=6254 tok_s=7.92 prompt_tokens=165 err=null
+[QE] B1_date_prompt J1 FAIL ttft=65904 tok_s=2.12 prompt_tokens=1185 err=context-loss

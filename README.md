@@ -20,6 +20,7 @@ no network permission.
 | **Real on-device LLM, Android** (llama.cpp via `llamadart`, Qwen3.5-2B Q4_K_M) | Done; see [docs/LOCAL_AI.md](docs/LOCAL_AI.md) and [docs/LLM_BENCHMARK.md](docs/LLM_BENCHMARK.md) |
 | On-device LLM and speech, iOS | Not started. iOS shows a clear "not available" message, never fake output |
 | **Offline Vietnamese speech-to-text, Android** (sherpa-onnx, Zipformer-vi int8) | Done; see [docs/SPEECH.md](docs/SPEECH.md) |
+| Answer quality: device date/time context, Dart calendar answers, Vietnamese system prompt, tuned sampling | Done. On-device suite 13/33 → 25/33; see [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md) |
 | Dark mode, localisation | Prepared, not implemented |
 
 ## Requirements
@@ -104,4 +105,5 @@ lib/
 - [docs/LOCAL_AI.md](docs/LOCAL_AI.md): on-device LLM runtime, model setup, lifecycle
 - [docs/SPEECH.md](docs/SPEECH.md): offline Vietnamese speech-to-text, model setup, verification, limitations
 - [docs/STT_SPIKE.md](docs/STT_SPIKE.md): engine and licence evaluation, spike measurements
+- [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md): Vietnamese answer-quality suite, root causes, before/after results
 - [docs/LLM_BENCHMARK.md](docs/LLM_BENCHMARK.md): Galaxy S10 measurements and thread comparison

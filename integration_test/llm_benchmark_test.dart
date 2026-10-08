@@ -33,9 +33,9 @@ void main() {
 
   tearDownAll(() => ai.dispose());
 
-  const system = AiMessage(
+  final system = AiMessage(
     role: AiRole.system,
-    content: AssistantInstructions.systemPrompt,
+    content: AssistantInstructions.systemPrompt(DateTime.now()),
   );
 
   Future<String> ask(List<AiMessage> history, String prompt) async {
@@ -73,8 +73,8 @@ void main() {
     final enoughText = Completer<void>();
     final subscription = ai
         .generate(
-          const GenerationRequest(
-            messages: [system, AiMessage(role: AiRole.user, content: cancellationPrompt)],
+          GenerationRequest(
+            messages: [system, const AiMessage(role: AiRole.user, content: cancellationPrompt)],
           ),
         )
         .listen((delta) {

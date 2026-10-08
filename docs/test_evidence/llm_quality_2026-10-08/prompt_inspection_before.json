@@ -1,0 +1,22 @@
+{
+  "production_single_turn": {
+    "prompt": "<|im_start|>system\nYou are a helpful assistant. Respond in the same language as the user.<|im_end|>\n<|im_start|>user\nXin chào hôm nay là thứ mấy<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "tokens": 40,
+    "format": 22,
+    "thinking_forced_open": false
+  },
+  "production_multi_turn": {
+    "prompt": "<|im_start|>system\nYou are a helpful assistant. Respond in the same language as the user.<|im_end|>\n<|im_start|>user\nTên tôi là Minh.<|im_end|>\n<|im_start|>assistant\nChào Minh!<|im_end|>\n<|im_start|>user\nTên tôi là gì?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "tokens": 56,
+    "format": 22,
+    "thinking_forced_open": false
+  },
+  "candidate_single_turn": {
+    "prompt": "<|im_start|>system\nYou are Halo, a helpful assistant that runs entirely offline on the user's device. Respond in the same language as the user.\nCurrent local date and time: Thursday, 8 October 2026, 22:16 (+07, UTC+07:00). In Vietnamese: Thứ Năm, ngày 8 tháng 10 năm 2026.\nYou have no internet access and no real-time information such as news, prices, weather or sports results. If you do not know something or it requires live data, say so briefly instead of guessing.<|im_end|>\n<|im_start|>user\nXin chào hôm nay là thứ mấy<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "tokens": 148,
+    "format": 22,
+    "thinking_forced_open": false
+  },
+  "device_now": "2026-10-08T22:16:51.694414",
+  "device_tz": "+07 UTC+07:00"
+}

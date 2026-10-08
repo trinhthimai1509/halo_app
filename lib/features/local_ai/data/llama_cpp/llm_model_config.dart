@@ -33,19 +33,25 @@ class LlmModelConfig {
 
   /// Qwen3.5-2B (Apache-2.0), 4-bit, from `unsloth/Qwen3.5-2B-GGUF`.
   ///
-  /// Sampling follows the official model card for non-thinking text tasks:
-  /// temperature 1.0, top_p 1.0, top_k 20, min_p 0, presence_penalty 2.0.
+  /// Sampling uses the model card's lower-randomness non-thinking set:
+  /// temperature 0.7, top_p 0.8, top_k 20, min_p 0, presence_penalty 1.5.
+  ///
+  /// The card's "non-thinking text" set (1.0 / 1.0 / 2.0) was used until
+  /// 2026-10-08. On device it produced Chinese words inside Vietnamese
+  /// answers (the card warns that a high presence penalty can cause
+  /// language mixing) and misread a simple sum, so assistant answers now
+  /// favour precision over variety. See docs/LLM_QUALITY.md.
   static const LlmModelConfig qwen35_2b = LlmModelConfig(
     displayName: 'Qwen3.5-2B',
     fileName: 'Qwen3.5-2B-Q4_K_M.gguf',
     quantization: 'Q4_K_M',
     contextSize: 4096,
     maxNewTokens: 1024,
-    temperature: 1.0,
+    temperature: 0.7,
     topK: 20,
-    topP: 1.0,
+    topP: 0.8,
     minP: 0.0,
-    presencePenalty: 2.0,
+    presencePenalty: 1.5,
   );
 
   final String displayName;

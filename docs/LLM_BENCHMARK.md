@@ -18,6 +18,8 @@ indicative for similar phones, not as universal.
 **Runtime:** llamadart 0.8.24 with llamadart-native v0.4.1 (llama.cpp), CPU only.
 **Settings:** `n_ctx` 4096 · `maxNewTokens` 1024 · temperature 1.0 · top_p 1.0 · top_k 20 · min_p 0 · presence penalty 2.0 · thinking off.
 
+> These Sept 2026 measurements used the original sampling and a 38-token system prompt. Since 2026-10-08 production uses temperature 0.7, top_p 0.8 and presence 1.5, with a dated system prompt of about 220 tokens. Decode speed is unchanged; time to first token is about 6–7 s higher. See [LLM_QUALITY.md](LLM_QUALITY.md).
+
 ## Method
 
 - **Tools:**
@@ -161,7 +163,7 @@ Measured in the UI. `evaluated_prompt_tokens` always equalled the **full** promp
 **General:**
 - It introduces itself as "Qwen3.5 … Alibaba Cloud"; the system prompt is intentionally neutral.
 - It often emits markdown (`**bold**`, lists), which the UI shows as raw text.
-- Temperature 1.0 (the model card's recommendation) produces variable answers. A lower temperature may help reliability; this is untested.
+- Temperature 1.0 (the model card's recommendation) produces variable answers. *(Measured and changed on 2026-10-08; see LLM_QUALITY.md.)*
 
 ## 5. Limitations of this benchmark
 - One device, one model, one quantisation. CPU only; Vulkan wasn't tried.

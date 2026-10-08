@@ -10,6 +10,7 @@ import '../../../helpers/test_overrides.dart';
 /// Records the request and replies with a fixed text.
 class _RecordingAi implements LocalAiService {
   GenerationRequest? lastRequest;
+  int calls = 0;
 
   @override
   bool get isReady => true;
@@ -20,6 +21,7 @@ class _RecordingAi implements LocalAiService {
   @override
   Stream<String> generate(GenerationRequest request) {
     lastRequest = request;
+    calls++;
     return Stream.fromIterable(['Tên bạn ', 'là Mai.']);
   }
 
@@ -57,9 +59,54 @@ void main() {
       AiRole.assistant,
       AiRole.user,
     ]);
-    expect(messages.first.content, AssistantInstructions.systemPrompt);
+    expect(messages.first.content, AssistantInstructions.systemPrompt(testNow));
     expect(messages[1].content, 'Tôi tên là Mai.');
     expect(messages[2].content, 'Tên bạn là Mai.');
     expect(messages.last.content, 'Tên tôi là gì?');
+  });
+
+  test('history is sent once per turn, never duplicated, across three turns',
+      () async {
+    final repository = InMemoryChatRepository();
+    final ai = _RecordingAi();
+    final sendMessage = SendMessage(
+      repository: repository,
+      ai: ai,
+      ids: IdGenerator(),
+      clock: () => testNow,
+    );
+    final first = await sendMessage(text: 'Một').toList();
+    final conversation = (first.first as UserMessageSaved).conversation;
+    for (final text in ['Hai', 'Ba']) {
+      await sendMessage(
+        text: text,
+        conversation: conversation,
+        history: [...repository.messages[conversation.id]!],
+      ).drain<void>();
+    }
+    final contents = ai.lastRequest!.messages.skip(1).map((m) => m.content);
+    expect(contents, [
+      'Một', 'Tên bạn là Mai.', 'Hai', 'Tên bạn là Mai.', 'Ba',
+    ]);
+  });
+
+  test('a plain calendar question is answered from the clock, not the model',
+      () async {
+    final repository = InMemoryChatRepository();
+    final ai = _RecordingAi();
+    final sendMessage = SendMessage(
+      repository: repository,
+      ai: ai,
+      ids: IdGenerator(),
+      clock: () => DateTime(2026, 10, 8, 22, 5),
+    );
+    final events = await sendMessage(text: 'Xin chào hôm nay là thứ mấy').toList();
+    final reply = (events.last as ReplyCompleted).message;
+    expect(reply.content, 'Xin chào! Hôm nay là Thứ Năm, ngày 8 tháng 10 năm 2026.');
+    expect(ai.calls, 0);
+    expect(repository.messages.values.single.map((m) => m.content), [
+      'Xin chào hôm nay là thứ mấy',
+      'Xin chào! Hôm nay là Thứ Năm, ngày 8 tháng 10 năm 2026.',
+    ]);
   });
 }

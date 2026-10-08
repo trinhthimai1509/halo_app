@@ -1,0 +1,65 @@
+[LLM] generation_done prompt_msgs=2 prompt_tokens=54 evaluated_prompt_tokens=54 gen_tokens=256 ttft_ms=1655 total_ms=28874 tok_s=9.37 busy_retries=0 threads=2 gap_p50_ms=106 gap_p95_ms=110 gap_max_ms=116 stalls_over_2s=0 rss_mib=2958
+[LLM] generation_done prompt_msgs=2 prompt_tokens=37 evaluated_prompt_tokens=37 gen_tokens=85 ttft_ms=1172 total_ms=10525 tok_s=8.98 busy_retries=0 threads=2 gap_p50_ms=111 gap_p95_ms=113 gap_max_ms=115 stalls_over_2s=0 rss_mib=2963
+[LLM] generation_done prompt_msgs=2 prompt_tokens=39 evaluated_prompt_tokens=39 gen_tokens=136 ttft_ms=1425 total_ms=16339 tok_s=9.05 busy_retries=0 threads=2 gap_p50_ms=108 gap_p95_ms=114 gap_max_ms=150 stalls_over_2s=0 rss_mib=2968
+[QE] after A1
+[QE] after A2
+[QE] after A3
+[QE] after B1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=162 evaluated_prompt_tokens=162 gen_tokens=17 ttft_ms=4430 total_ms=6238 tok_s=8.85 busy_retries=0 threads=2 gap_p50_ms=106 gap_p95_ms=108 gap_max_ms=108 stalls_over_2s=0 rss_mib=3001
+[QE] after B2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=161 evaluated_prompt_tokens=161 gen_tokens=17 ttft_ms=5412 total_ms=7456 tok_s=7.83 busy_retries=0 threads=2 gap_p50_ms=116 gap_p95_ms=150 gap_max_ms=154 stalls_over_2s=0 rss_mib=3000
+[QE] after B3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=162 evaluated_prompt_tokens=162 gen_tokens=14 ttft_ms=5247 total_ms=6766 tok_s=8.56 busy_retries=0 threads=2 gap_p50_ms=108 gap_p95_ms=109 gap_max_ms=119 stalls_over_2s=0 rss_mib=2996
+[QE] after C1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=165 evaluated_prompt_tokens=165 gen_tokens=11 ttft_ms=4938 total_ms=6161 tok_s=8.18 busy_retries=0 threads=2 gap_p50_ms=107 gap_p95_ms=148 gap_max_ms=148 stalls_over_2s=0 rss_mib=2997
+[QE] after C2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=170 evaluated_prompt_tokens=170 gen_tokens=6 ttft_ms=5576 total_ms=6266 tok_s=7.25 busy_retries=0 threads=2 gap_p50_ms=114 gap_p95_ms=122 gap_max_ms=122 stalls_over_2s=0 rss_mib=2998
+[QE] after C3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=172 evaluated_prompt_tokens=172 gen_tokens=3 ttft_ms=5487 total_ms=5934 tok_s=4.47 busy_retries=0 threads=2 gap_p50_ms=150 gap_p95_ms=150 gap_max_ms=150 stalls_over_2s=0 rss_mib=2999
+[QE] after D1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=164 evaluated_prompt_tokens=164 gen_tokens=2 ttft_ms=5115 total_ms=5350 tok_s=4.26 busy_retries=0 threads=2 gap_p50_ms=123 gap_p95_ms=123 gap_max_ms=123 stalls_over_2s=0 rss_mib=2999
+[QE] after D2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=177 evaluated_prompt_tokens=177 gen_tokens=3 ttft_ms=5642 total_ms=5988 tok_s=5.78 busy_retries=0 threads=2 gap_p50_ms=122 gap_p95_ms=122 gap_max_ms=122 stalls_over_2s=0 rss_mib=3000
+[QE] after D3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=181 evaluated_prompt_tokens=181 gen_tokens=14 ttft_ms=5883 total_ms=7529 tok_s=7.90 busy_retries=0 threads=2 gap_p50_ms=111 gap_p95_ms=147 gap_max_ms=149 stalls_over_2s=0 rss_mib=3000
+[QE] after E1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=175 evaluated_prompt_tokens=175 gen_tokens=8 ttft_ms=5763 total_ms=6739 tok_s=7.17 busy_retries=0 threads=2 gap_p50_ms=115 gap_p95_ms=149 gap_max_ms=149 stalls_over_2s=0 rss_mib=3002
+[QE] after E2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=176 evaluated_prompt_tokens=176 gen_tokens=1 ttft_ms=5715 total_ms=5832 tok_s=null busy_retries=0 threads=2 rss_mib=2999
+[QE] after E3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=170 evaluated_prompt_tokens=170 gen_tokens=8 ttft_ms=5585 total_ms=6568 tok_s=7.12 busy_retries=0 threads=2 gap_p50_ms=112 gap_p95_ms=152 gap_max_ms=152 stalls_over_2s=0 rss_mib=2995
+[QE] after F1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=168 evaluated_prompt_tokens=168 gen_tokens=11 ttft_ms=5225 total_ms=6473 tok_s=8.01 busy_retries=0 threads=2 gap_p50_ms=109 gap_p95_ms=153 gap_max_ms=153 stalls_over_2s=0 rss_mib=2996
+[QE] after F2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=172 evaluated_prompt_tokens=172 gen_tokens=44 ttft_ms=5530 total_ms=10668 tok_s=8.37 busy_retries=0 threads=2 gap_p50_ms=114 gap_p95_ms=147 gap_max_ms=151 stalls_over_2s=0 rss_mib=3001
+[QE] after F3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=183 evaluated_prompt_tokens=183 gen_tokens=21 ttft_ms=6128 total_ms=8550 tok_s=8.26 busy_retries=0 threads=2 gap_p50_ms=115 gap_p95_ms=121 gap_max_ms=124 stalls_over_2s=0 rss_mib=2996
+[QE] after G1
+[LLM] generation_done prompt_msgs=4 prompt_tokens=186 evaluated_prompt_tokens=186 gen_tokens=33 ttft_ms=6182 total_ms=10230 tok_s=7.91 busy_retries=0 threads=2 gap_p50_ms=119 gap_p95_ms=151 gap_max_ms=156 stalls_over_2s=0 rss_mib=2996
+[QE] after G2
+[LLM] generation_done prompt_msgs=4 prompt_tokens=203 evaluated_prompt_tokens=203 gen_tokens=17 ttft_ms=6938 total_ms=8982 tok_s=7.83 busy_retries=0 threads=2 gap_p50_ms=116 gap_p95_ms=150 gap_max_ms=151 stalls_over_2s=0 rss_mib=2997
+[QE] after G3
+[LLM] generation_done prompt_msgs=6 prompt_tokens=226 evaluated_prompt_tokens=226 gen_tokens=8 ttft_ms=7726 total_ms=8688 tok_s=7.28 busy_retries=0 threads=2 gap_p50_ms=114 gap_p95_ms=157 gap_max_ms=157 stalls_over_2s=0 rss_mib=3000
+[QE] after H1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=166 evaluated_prompt_tokens=166 gen_tokens=53 ttft_ms=5707 total_ms=11818 tok_s=8.51 busy_retries=0 threads=2 gap_p50_ms=115 gap_p95_ms=116 gap_max_ms=151 stalls_over_2s=0 rss_mib=3000
+[QE] after H2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=173 evaluated_prompt_tokens=173 gen_tokens=20 ttft_ms=5835 total_ms=8229 tok_s=7.94 busy_retries=0 threads=2 gap_p50_ms=114 gap_p95_ms=151 gap_max_ms=151 stalls_over_2s=0 rss_mib=3000
+[QE] after H3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=180 evaluated_prompt_tokens=180 gen_tokens=83 ttft_ms=6114 total_ms=15600 tok_s=8.64 busy_retries=0 threads=2 gap_p50_ms=114 gap_p95_ms=116 gap_max_ms=120 stalls_over_2s=0 rss_mib=3000
+[QE] after I1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=169 evaluated_prompt_tokens=169 gen_tokens=93 ttft_ms=6012 total_ms=17213 tok_s=8.21 busy_retries=0 threads=2 gap_p50_ms=118 gap_p95_ms=150 gap_max_ms=153 stalls_over_2s=0 rss_mib=2999
+[QE] after I2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=179 evaluated_prompt_tokens=179 gen_tokens=180 ttft_ms=6455 total_ms=28359 tok_s=8.17 busy_retries=0 threads=2 gap_p50_ms=122 gap_p95_ms=124 gap_max_ms=152 stalls_over_2s=0 rss_mib=2999
+[QE] after I3
+[LLM] generation_done prompt_msgs=16 prompt_tokens=1199 evaluated_prompt_tokens=1199 gen_tokens=33 ttft_ms=43470 total_ms=47643 tok_s=7.67 busy_retries=0 threads=2 gap_p50_ms=124 gap_p95_ms=153 gap_max_ms=159 stalls_over_2s=0 rss_mib=3025
+[QE] after J1
+[LLM] generation_done prompt_msgs=36 prompt_tokens=2853 evaluated_prompt_tokens=2853 gen_tokens=26 ttft_ms=105972 total_ms=109359 tok_s=7.38 busy_retries=0 threads=2 gap_p50_ms=129 gap_p95_ms=133 gap_max_ms=162 stalls_over_2s=0 rss_mib=3046
+[QE] after J2
+[LLM] generation_done prompt_msgs=26 prompt_tokens=2138 evaluated_prompt_tokens=2138 gen_tokens=2 ttft_ms=79572 total_ms=79914 tok_s=2.92 busy_retries=0 threads=2 gap_p50_ms=181 gap_p95_ms=181 gap_max_ms=181 stalls_over_2s=0 rss_mib=3046
+[QE] after J3
+[LLM] generation_done prompt_msgs=2 prompt_tokens=176 evaluated_prompt_tokens=176 gen_tokens=187 ttft_ms=6663 total_ms=30725 tok_s=7.73 busy_retries=0 threads=2 gap_p50_ms=131 gap_p95_ms=139 gap_max_ms=143 stalls_over_2s=0 rss_mib=3046
+[QE] after K1
+[LLM] generation_done prompt_msgs=2 prompt_tokens=159 evaluated_prompt_tokens=159 gen_tokens=31 ttft_ms=6447 total_ms=10990 tok_s=6.60 busy_retries=0 threads=2 gap_p50_ms=157 gap_p95_ms=161 gap_max_ms=176 stalls_over_2s=0 rss_mib=3046
+[QE] after K2
+[LLM] generation_done prompt_msgs=2 prompt_tokens=161 evaluated_prompt_tokens=161 gen_tokens=12 ttft_ms=6396 total_ms=7940 tok_s=7.12 busy_retries=0 threads=2 gap_p50_ms=128 gap_p95_ms=132 gap_max_ms=132 stalls_over_2s=0 rss_mib=3046
+[QE] after K3

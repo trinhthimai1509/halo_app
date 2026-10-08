@@ -108,9 +108,14 @@ LlamaCppLocalAiService (local_ai/data/llama_cpp) ── only file importing llam
 
 ### Prompt and chat template
 - The prompt is built from the GGUF's own Jinja template, which for Qwen3.5 is ChatML-style. It is called with `enableThinking: false`; llamadart's own default is `true`, which would emit a hidden reasoning block.
-- **System prompt** (`AssistantInstructions`), kept minimal on purpose: *"You are a helpful assistant. Respond in the same language as the user."*
+- **System prompt** (`AssistantInstructions.systemPrompt(now)`, since 2026-10-08):
+  - Vietnamese, rebuilt **per request** with the device's current date, time and UTC offset.
+  - Short rules: answer in the user's language, concisely; don't invent; say "không biết" for live data or uncertain facts; ask for clarification on unclear (possibly mis-transcribed) input; no Markdown.
+  - About 220 tokens, which adds about 6–7 s to every reply on the tablet. See [LLM_QUALITY.md](LLM_QUALITY.md).
+- **Calendar questions** ("hôm nay là thứ mấy?" and similar) are answered in Dart from the device clock (`CalendarAnswers`) and never reach the model.
 - Message order: system → trimmed history → current user turn → assistant generation.
-- **Sampling** follows the official model card for non-thinking text tasks: temperature 1.0, top_p 1.0, top_k 20, min_p 0, presence_penalty 2.0, repeat penalty 1.0.
+- **Sampling** uses the model card's lower-randomness non-thinking set: temperature 0.7, top_p 0.8, top_k 20, min_p 0, presence_penalty 1.5, repeat penalty 1.0.
+  - The card's other set (1.0 / 1.0 / 2.0) was used until 2026-10-08. It produced language mixing and invented facts on device; see [LLM_QUALITY.md](LLM_QUALITY.md).
 
 ### Context policy (`ContextWindowPolicy`)
 - `n_ctx` = **4096**. The reply reserve is `maxNewTokens` = **1024**, plus a 64-token safety margin, leaving a prompt budget of 3008 tokens.

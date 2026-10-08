@@ -25,9 +25,9 @@ const int _threads = int.fromEnvironment(
 );
 const int _seed = int.fromEnvironment('LLM_SEED', defaultValue: 42);
 
-const AiMessage _system = AiMessage(
+final AiMessage _system = AiMessage(
   role: AiRole.system,
-  content: AssistantInstructions.systemPrompt,
+  content: AssistantInstructions.systemPrompt(DateTime.now()),
 );
 
 /// Stall guard: abort when one gap exceeds this...
@@ -156,10 +156,10 @@ void main() {
     final enough = Completer<void>();
     final subscription = ai
         .generate(
-          const GenerationRequest(
+          GenerationRequest(
             messages: [
               _system,
-              AiMessage(
+              const AiMessage(
                 role: AiRole.user,
                 content:
                     'Write a detailed, 20-step guide to learning to cook at home.',
