@@ -1,0 +1,2266 @@
+=== 21:04:54 pid=12251
+1300 1300 1053 806 507 507 520 520 MHz
+	Temperature{mValue=42.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+12251   3 10.3 S dev.offlineai.offline_ai_chat
+12261   2  3.4 S dev.offlineai.offline_ai_chat
+12293   6  0.0 S dev.offlineai.offline_ai_chat
+12290   6  0.0 S dev.offlineai.offline_ai_chat
+12286   7  0.0 S dev.offlineai.offline_ai_chat
+12287   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:05:01 pid=12251
+1053 1950 806 806 1404 1404 520 520 MHz
+	Temperature{mValue=38.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+12251   1 10.3 S dev.offlineai.offline_ai_chat
+12293   6  0.0 S dev.offlineai.offline_ai_chat
+12290   6  0.0 S dev.offlineai.offline_ai_chat
+12284   7  0.0 S dev.offlineai.offline_ai_chat
+12285   4  0.0 S dev.offlineai.offline_ai_chat
+12286   7  0.0 S dev.offlineai.offline_ai_chat
+=== 21:05:07 pid=12251
+1950 1950 1950 1950 2314 2314 2470 2470 MHz
+	Temperature{mValue=38.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+12262   6  6.6 S dev.offlineai.offline_ai_chat
+12394   1  0.0 S dev.offlineai.offline_ai_chat
+12293   6  0.0 S dev.offlineai.offline_ai_chat
+12290   6  0.0 S dev.offlineai.offline_ai_chat
+12284   0  0.0 S dev.offlineai.offline_ai_chat
+12285   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:05:13 pid=
+1300 1950 949 1586 507 1404 1248 2340 MHz
+	Temperature{mValue=42.2, mType=0, mName=AP, mStatus=0}
+=== 21:05:19 pid=
+1300 1053 1053 1950 1508 2314 2340 2340 MHz
+	Temperature{mValue=42.5, mType=0, mName=AP, mStatus=0}
+=== 21:05:24 pid=13088
+1157 1742 1950 1300 1404 1404 2236 2236 MHz
+	Temperature{mValue=42.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  114 R dev.offlineai.offline_ai_chat
+13088   2 10.7 S dev.offlineai.offline_ai_chat
+13143   3  7.1 S dev.offlineai.offline_ai_chat
+13158   0  0.0 S dev.offlineai.offline_ai_chat
+13157   6  0.0 S dev.offlineai.offline_ai_chat
+13156   7  0.0 S dev.offlineai.offline_ai_chat
+=== 21:05:31 pid=13088
+1456 1950 1950 1950 2314 2210 1976 1976 MHz
+	Temperature{mValue=54.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13266   4  167 S dev.offlineai.offline_ai_chat
+13265   4  128 S dev.offlineai.offline_ai_chat
+13262   6  125 S dev.offlineai.offline_ai_chat
+13329   7 92.8 R dev.offlineai.offline_ai_chat
+13155   7 53.5 R dev.offlineai.offline_ai_chat
+13088   5 17.8 S dev.offlineai.offline_ai_chat
+=== 21:05:37 pid=13088
+1950 1950 1950 1950 507 507 520 520 MHz
+	Temperature{mValue=54.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   1  106 R dev.offlineai.offline_ai_chat
+13330   2 89.6 R dev.offlineai.offline_ai_chat
+13331   0 58.6 R dev.offlineai.offline_ai_chat
+13329   2 44.8 R dev.offlineai.offline_ai_chat
+13100   2  3.4 R dev.offlineai.offline_ai_chat
+13088   2  3.4 R dev.offlineai.offline_ai_chat
+=== 21:05:43 pid=13088
+1950 1950 1950 1950 1404 650 1040 520 MHz
+	Temperature{mValue=50.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13504   1  110 R dev.offlineai.offline_ai_chat
+13503   0 78.5 R dev.offlineai.offline_ai_chat
+13505   0 64.2 R dev.offlineai.offline_ai_chat
+13155   2 60.7 R dev.offlineai.offline_ai_chat
+13143   2  7.1 S dev.offlineai.offline_ai_chat
+13088   2  3.5 S dev.offlineai.offline_ai_chat
+=== 21:05:50 pid=13088
+1950 1950 1950 1950 1404 1404 1144 520 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13504   1 80.6 R dev.offlineai.offline_ai_chat
+13503   2 70.9 R dev.offlineai.offline_ai_chat
+13505   1 67.7 R dev.offlineai.offline_ai_chat
+13155   0 64.5 R dev.offlineai.offline_ai_chat
+13143   2  6.4 S dev.offlineai.offline_ai_chat
+13088   2  3.2 S dev.offlineai.offline_ai_chat
+=== 21:05:56 pid=13088
+1950 1950 1950 1950 845 650 1040 520 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13748   0 75.0 R dev.offlineai.offline_ai_chat
+13749   2 71.8 R dev.offlineai.offline_ai_chat
+13747   1 68.7 R dev.offlineai.offline_ai_chat
+13155   2 65.6 R dev.offlineai.offline_ai_chat
+13143   1  3.1 S dev.offlineai.offline_ai_chat
+13088   2  3.1 S dev.offlineai.offline_ai_chat
+=== 21:06:02 pid=13088
+1950 1950 1950 1950 1404 1404 1144 1560 MHz
+	Temperature{mValue=47.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13748   1 93.1 R dev.offlineai.offline_ai_chat
+13155   0 68.9 R dev.offlineai.offline_ai_chat
+13747   2 65.5 R dev.offlineai.offline_ai_chat
+13749   1 62.0 R dev.offlineai.offline_ai_chat
+13143   2  3.4 S dev.offlineai.offline_ai_chat
+13088   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:06:09 pid=13088
+1950 1950 1950 1950 507 507 520 520 MHz
+	Temperature{mValue=47.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   1 83.3 R dev.offlineai.offline_ai_chat
+13899   0 73.3 R dev.offlineai.offline_ai_chat
+13898   2 73.3 R dev.offlineai.offline_ai_chat
+13897   1 73.3 R dev.offlineai.offline_ai_chat
+13143   2  3.3 S dev.offlineai.offline_ai_chat
+13088   1  3.3 S dev.offlineai.offline_ai_chat
+=== 21:06:16 pid=13088
+1456 1950 1950 1456 1794 1404 1560 1664 MHz
+	Temperature{mValue=47.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  113 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   3 10.3 S dev.offlineai.offline_ai_chat
+14103   1  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:06:22 pid=13088
+1300 1456 1586 1456 1404 2210 1560 1560 MHz
+	Temperature{mValue=57.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  116 R dev.offlineai.offline_ai_chat
+14383   5 16.6 R dev.offlineai.offline_ai_chat
+14382   5 16.6 R dev.offlineai.offline_ai_chat
+13143   3 13.3 S dev.offlineai.offline_ai_chat
+13088   0 13.3 S dev.offlineai.offline_ai_chat
+14381   7 10.0 R dev.offlineai.offline_ai_chat
+=== 21:06:29 pid=13088
+1456 1846 1053 1300 2106 2106 1976 1976 MHz
+	Temperature{mValue=61.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  100 R dev.offlineai.offline_ai_chat
+14591   2 25.8 R dev.offlineai.offline_ai_chat
+13143   0 12.9 S dev.offlineai.offline_ai_chat
+13088   3  9.6 S dev.offlineai.offline_ai_chat
+14590   5  6.4 R dev.offlineai.offline_ai_chat
+14589   6  6.4 R dev.offlineai.offline_ai_chat
+=== 21:06:35 pid=13088
+1950 1300 1950 1456 2002 1404 1560 1456 MHz
+	Temperature{mValue=61.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6 97.2 R dev.offlineai.offline_ai_chat
+13143   1 16.2 S dev.offlineai.offline_ai_chat
+13088   1 16.2 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+13260   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:06:42 pid=13088
+1586 1157 1157 1157 2106 2002 1664 1560 MHz
+	Temperature{mValue=61.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7 93.7 R dev.offlineai.offline_ai_chat
+14841   4 25.0 R dev.offlineai.offline_ai_chat
+13143   0  9.3 S dev.offlineai.offline_ai_chat
+13088   3  9.3 S dev.offlineai.offline_ai_chat
+14839   6  6.2 R dev.offlineai.offline_ai_chat
+14840   5  3.1 R dev.offlineai.offline_ai_chat
+=== 21:06:48 pid=13088
+1456 1456 949 1053 2106 2210 1976 1976 MHz
+	Temperature{mValue=61.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6 97.2 R dev.offlineai.offline_ai_chat
+13088   2 16.2 S dev.offlineai.offline_ai_chat
+13143   1 13.5 S dev.offlineai.offline_ai_chat
+13142   2  5.4 S dev.offlineai.offline_ai_chat
+14933   0  0.0 S dev.offlineai.offline_ai_chat
+14930   5  0.0 S dev.offlineai.offline_ai_chat
+=== 21:06:54 pid=13088
+1053 1456 1300 1300 1898 1898 1378 1378 MHz
+	Temperature{mValue=61.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+13143   1 17.2 R dev.offlineai.offline_ai_chat
+13088   3 17.2 S dev.offlineai.offline_ai_chat
+14933   2  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:07:01 pid=13088
+1456 1456 1846 1053 1690 1690 1560 1664 MHz
+	Temperature{mValue=62.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+15306   6  110 R dev.offlineai.offline_ai_chat
+13155   7  110 R dev.offlineai.offline_ai_chat
+15308   5 55.1 R dev.offlineai.offline_ai_chat
+15307   5 55.1 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   3  3.4 S dev.offlineai.offline_ai_chat
+=== 21:07:07 pid=13088
+1300 1300 1053 1053 1690 1690 2080 2080 MHz
+	Temperature{mValue=62.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+15306   6  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+15307   5 62.0 R dev.offlineai.offline_ai_chat
+15308   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 R dev.offlineai.offline_ai_chat
+=== 21:07:13 pid=13088
+1846 1456 1300 806 1222 2002 1560 1820 MHz
+	Temperature{mValue=61.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  105 R dev.offlineai.offline_ai_chat
+13143   0 17.1 R dev.offlineai.offline_ai_chat
+13088   2 17.1 S dev.offlineai.offline_ai_chat
+13142   1  2.8 S dev.offlineai.offline_ai_chat
+15327   3  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:07:20 pid=13088
+1456 1456 1053 1456 1222 1222 1560 1664 MHz
+	Temperature{mValue=62.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+13143   0 14.7 S dev.offlineai.offline_ai_chat
+13088   2 14.7 S dev.offlineai.offline_ai_chat
+15327   2  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:07:26 pid=13088
+1456 1053 1053 1053 1794 1794 1976 1976 MHz
+	Temperature{mValue=62.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+15839   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+15841   5 58.6 R dev.offlineai.offline_ai_chat
+15840   5 58.6 R dev.offlineai.offline_ai_chat
+13088   3 10.3 S dev.offlineai.offline_ai_chat
+13143   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:07:33 pid=13088
+1456 1456 1053 806 2002 2002 1560 1664 MHz
+	Temperature{mValue=62.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  139 R dev.offlineai.offline_ai_chat
+13143   0 14.2 S dev.offlineai.offline_ai_chat
+13088   2 14.2 S dev.offlineai.offline_ai_chat
+15897   4  0.0 S dev.offlineai.offline_ai_chat
+15327   2  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:07:39 pid=13088
+1053 1456 1456 1157 1222 1690 1820 1820 MHz
+	Temperature{mValue=61.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  114 R dev.offlineai.offline_ai_chat
+13143   1 14.2 S dev.offlineai.offline_ai_chat
+13088   1 10.7 S dev.offlineai.offline_ai_chat
+16077   6  3.5 R dev.offlineai.offline_ai_chat
+16030   1  0.0 S dev.offlineai.offline_ai_chat
+15327   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:07:46 pid=13088
+1846 1053 1846 806 1794 1586 1560 1560 MHz
+	Temperature{mValue=61.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+13088   3 15.7 S dev.offlineai.offline_ai_chat
+13143   0 13.1 R dev.offlineai.offline_ai_chat
+16253   4  2.6 R dev.offlineai.offline_ai_chat
+16251   7  2.6 R dev.offlineai.offline_ai_chat
+16252   5  2.6 R dev.offlineai.offline_ai_chat
+=== 21:07:53 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=60.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+13143   2 11.7 S dev.offlineai.offline_ai_chat
+13088   1 11.7 S dev.offlineai.offline_ai_chat
+16314   5  2.9 R dev.offlineai.offline_ai_chat
+16313   4  2.9 R dev.offlineai.offline_ai_chat
+13142   3  2.9 S dev.offlineai.offline_ai_chat
+=== 21:07:59 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=53.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+16368   4 66.6 R dev.offlineai.offline_ai_chat
+16367   7 27.2 R dev.offlineai.offline_ai_chat
+16366   5 27.2 R dev.offlineai.offline_ai_chat
+13088   3  9.0 S dev.offlineai.offline_ai_chat
+13143   0  6.0 S dev.offlineai.offline_ai_chat
+=== 21:08:06 pid=13088
+1053 1053 1950 1157 1690 1690 1378 1378 MHz
+	Temperature{mValue=53.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+16434   4  121 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+16435   7 60.7 R dev.offlineai.offline_ai_chat
+16433   7 60.7 R dev.offlineai.offline_ai_chat
+13143   2  7.1 S dev.offlineai.offline_ai_chat
+13088   0  7.1 S dev.offlineai.offline_ai_chat
+=== 21:08:12 pid=13088
+1053 949 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+16434   4  117 R dev.offlineai.offline_ai_chat
+16433   7 62.0 R dev.offlineai.offline_ai_chat
+16435   7 58.6 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+13143   3  3.4 S dev.offlineai.offline_ai_chat
+=== 21:08:18 pid=13088
+1950 1950 1300 1300 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+16544   7  109 R dev.offlineai.offline_ai_chat
+16543   4  109 R dev.offlineai.offline_ai_chat
+16542   6  109 R dev.offlineai.offline_ai_chat
+13155   5  109 R dev.offlineai.offline_ai_chat
+13143   0  9.3 S dev.offlineai.offline_ai_chat
+13088   3  6.2 S dev.offlineai.offline_ai_chat
+=== 21:08:25 pid=13088
+1053 1586 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+16592   6  120 R dev.offlineai.offline_ai_chat
+13155   5  120 R dev.offlineai.offline_ai_chat
+16594   7 62.0 R dev.offlineai.offline_ai_chat
+16591   7 62.0 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:08:31 pid=13088
+1053 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+16592   6  120 R dev.offlineai.offline_ai_chat
+13155   5  120 R dev.offlineai.offline_ai_chat
+16594   7 58.6 R dev.offlineai.offline_ai_chat
+16591   7 58.6 R dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+13143   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:08:37 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  116 R dev.offlineai.offline_ai_chat
+16700   7  113 R dev.offlineai.offline_ai_chat
+16701   5 60.0 R dev.offlineai.offline_ai_chat
+16699   5 56.6 R dev.offlineai.offline_ai_chat
+13143   3 10.0 S dev.offlineai.offline_ai_chat
+13088   3  3.3 S dev.offlineai.offline_ai_chat
+=== 21:08:44 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  112 R dev.offlineai.offline_ai_chat
+16763   4  109 R dev.offlineai.offline_ai_chat
+16764   5 56.2 R dev.offlineai.offline_ai_chat
+16762   1 56.2 R dev.offlineai.offline_ai_chat
+13143   1  9.3 S dev.offlineai.offline_ai_chat
+13088   0  9.3 S dev.offlineai.offline_ai_chat
+=== 21:08:50 pid=13088
+1950 1950 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+13143   5 17.1 S dev.offlineai.offline_ai_chat
+13088   2 14.2 S dev.offlineai.offline_ai_chat
+16770   4  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:08:57 pid=13088
+1950 1950 1456 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  116 R dev.offlineai.offline_ai_chat
+13143   2 16.6 S dev.offlineai.offline_ai_chat
+13088   1 10.0 R dev.offlineai.offline_ai_chat
+13142   1  3.3 S dev.offlineai.offline_ai_chat
+16863   0  0.0 S dev.offlineai.offline_ai_chat
+14792   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:09:03 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  116 R dev.offlineai.offline_ai_chat
+13143   1 13.3 S dev.offlineai.offline_ai_chat
+13088   0 13.3 S dev.offlineai.offline_ai_chat
+16940   7  3.3 R dev.offlineai.offline_ai_chat
+16938   6  3.3 R dev.offlineai.offline_ai_chat
+16939   0  3.3 R dev.offlineai.offline_ai_chat
+=== 21:09:10 pid=13088
+1950 1300 1053 1950 1586 1690 1378 1378 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  117 R dev.offlineai.offline_ai_chat
+13143   2 17.2 S dev.offlineai.offline_ai_chat
+13088   3 13.7 S dev.offlineai.offline_ai_chat
+13142   0  3.4 S dev.offlineai.offline_ai_chat
+16930   0  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:09:16 pid=13088
+1950 1950 1950 949 1690 1690 1378 1040 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+17088   3 40.0 R dev.offlineai.offline_ai_chat
+17087   5 20.0 R dev.offlineai.offline_ai_chat
+17086   6 16.6 R dev.offlineai.offline_ai_chat
+13143   0 13.3 S dev.offlineai.offline_ai_chat
+13088   1 13.3 S dev.offlineai.offline_ai_chat
+=== 21:09:23 pid=13088
+1950 1742 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17143   7  125 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+17142   4 64.2 R dev.offlineai.offline_ai_chat
+17144   4 60.7 R dev.offlineai.offline_ai_chat
+13143   0 10.7 R dev.offlineai.offline_ai_chat
+13088   1 10.7 S dev.offlineai.offline_ai_chat
+=== 21:09:29 pid=13088
+1053 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17143   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+17144   4 58.6 R dev.offlineai.offline_ai_chat
+17142   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:09:35 pid=13088
+1950 1950 1742 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7 97.1 R dev.offlineai.offline_ai_chat
+13088   3 11.4 S dev.offlineai.offline_ai_chat
+17239   5  8.5 R dev.offlineai.offline_ai_chat
+13143   3  8.5 R dev.offlineai.offline_ai_chat
+17238   4  5.7 R dev.offlineai.offline_ai_chat
+17240   6  2.8 R dev.offlineai.offline_ai_chat
+=== 21:09:42 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=53.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6 97.2 R dev.offlineai.offline_ai_chat
+13143   7 13.5 R dev.offlineai.offline_ai_chat
+13088   2 13.5 S dev.offlineai.offline_ai_chat
+13142   3  2.7 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:09:49 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17497   6  125 R dev.offlineai.offline_ai_chat
+17496   4  121 R dev.offlineai.offline_ai_chat
+17495   7 64.2 R dev.offlineai.offline_ai_chat
+13155   7 64.2 R dev.offlineai.offline_ai_chat
+13143   0  7.1 S dev.offlineai.offline_ai_chat
+13088   2  3.5 S dev.offlineai.offline_ai_chat
+=== 21:09:55 pid=13088
+1950 1950 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17497   6  120 R dev.offlineai.offline_ai_chat
+17496   4  117 R dev.offlineai.offline_ai_chat
+13155   7 58.6 R dev.offlineai.offline_ai_chat
+17495   7 55.1 R dev.offlineai.offline_ai_chat
+13088   0 10.3 S dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:10:01 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  125 R dev.offlineai.offline_ai_chat
+17588   5  121 R dev.offlineai.offline_ai_chat
+17589   7 60.7 R dev.offlineai.offline_ai_chat
+17587   7 60.7 R dev.offlineai.offline_ai_chat
+13143   2 10.7 S dev.offlineai.offline_ai_chat
+13088   0  3.5 S dev.offlineai.offline_ai_chat
+=== 21:10:08 pid=13088
+1053 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  124 R dev.offlineai.offline_ai_chat
+17588   5  120 R dev.offlineai.offline_ai_chat
+17589   7 58.6 R dev.offlineai.offline_ai_chat
+17587   7 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:10:14 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17646   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+17648   4 58.6 R dev.offlineai.offline_ai_chat
+17647   4 58.6 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+13143   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:10:20 pid=13088
+1456 1950 1950 1157 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17646   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+17648   4 62.0 R dev.offlineai.offline_ai_chat
+17647   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:10:27 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+17718   6  117 R dev.offlineai.offline_ai_chat
+17717   4 62.0 R dev.offlineai.offline_ai_chat
+17719   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:10:33 pid=13088
+1053 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17718   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+17719   4 58.6 R dev.offlineai.offline_ai_chat
+17717   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:10:39 pid=13088
+1456 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+17773   5  117 R dev.offlineai.offline_ai_chat
+17774   7 62.0 R dev.offlineai.offline_ai_chat
+17772   7 62.0 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:10:45 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+17848   7  125 R dev.offlineai.offline_ai_chat
+17846   6  121 R dev.offlineai.offline_ai_chat
+13155   4 64.2 R dev.offlineai.offline_ai_chat
+17847   4 60.7 R dev.offlineai.offline_ai_chat
+13143   0  7.1 S dev.offlineai.offline_ai_chat
+13088   1  7.1 S dev.offlineai.offline_ai_chat
+=== 21:10:52 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   5  109 R dev.offlineai.offline_ai_chat
+17946   0 31.2 R dev.offlineai.offline_ai_chat
+17945   4 31.2 R dev.offlineai.offline_ai_chat
+13143   0 15.6 S dev.offlineai.offline_ai_chat
+13088   2 12.5 S dev.offlineai.offline_ai_chat
+13142   1  3.1 S dev.offlineai.offline_ai_chat
+=== 21:10:58 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  102 R dev.offlineai.offline_ai_chat
+18023   6 67.6 R dev.offlineai.offline_ai_chat
+18022   5 23.5 R dev.offlineai.offline_ai_chat
+18021   4 23.5 R dev.offlineai.offline_ai_chat
+13143   3  5.8 S dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+=== 21:11:04 pid=13088
+1053 1157 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+18085   4 38.2 R dev.offlineai.offline_ai_chat
+18083   5 11.7 R dev.offlineai.offline_ai_chat
+18084   7  8.8 R dev.offlineai.offline_ai_chat
+13143   1  5.8 S dev.offlineai.offline_ai_chat
+13088   1  5.8 S dev.offlineai.offline_ai_chat
+=== 21:11:11 pid=13088
+1742 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+18103   7  117 R dev.offlineai.offline_ai_chat
+18102   5 58.6 R dev.offlineai.offline_ai_chat
+18101   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 R dev.offlineai.offline_ai_chat
+=== 21:11:17 pid=13088
+1742 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18103   7  120 R dev.offlineai.offline_ai_chat
+13155   6  120 R dev.offlineai.offline_ai_chat
+18102   5 62.0 R dev.offlineai.offline_ai_chat
+18101   5 62.0 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:11:23 pid=13088
+1950 1950 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+18229   5 64.5 R dev.offlineai.offline_ai_chat
+18230   4 32.2 R dev.offlineai.offline_ai_chat
+18228   7 32.2 R dev.offlineai.offline_ai_chat
+13143   1  6.4 S dev.offlineai.offline_ai_chat
+13088   1  6.4 R dev.offlineai.offline_ai_chat
+=== 21:11:30 pid=13088
+1300 949 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+18232   7  117 R dev.offlineai.offline_ai_chat
+18233   4 58.6 R dev.offlineai.offline_ai_chat
+18231   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:11:36 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  112 R dev.offlineai.offline_ai_chat
+18313   5 74.1 R dev.offlineai.offline_ai_chat
+18312   4 38.7 R dev.offlineai.offline_ai_chat
+18311   7 32.2 R dev.offlineai.offline_ai_chat
+13143   3  9.6 S dev.offlineai.offline_ai_chat
+13088   2  6.4 S dev.offlineai.offline_ai_chat
+=== 21:11:42 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18348   5  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+18349   6 58.6 R dev.offlineai.offline_ai_chat
+18347   6 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:11:49 pid=13088
+1456 1456 949 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  103 R dev.offlineai.offline_ai_chat
+13088   2  9.0 S dev.offlineai.offline_ai_chat
+13143   1  6.0 S dev.offlineai.offline_ai_chat
+18177   2  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:11:55 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  116 R dev.offlineai.offline_ai_chat
+18465   0 33.3 R dev.offlineai.offline_ai_chat
+13143   0 16.6 S dev.offlineai.offline_ai_chat
+13088   2 16.6 S dev.offlineai.offline_ai_chat
+18431   3  0.0 S dev.offlineai.offline_ai_chat
+18177   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:12:02 pid=13088
+1950 1950 1950 1742 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+18525   4 52.9 R dev.offlineai.offline_ai_chat
+18524   5 11.7 R dev.offlineai.offline_ai_chat
+18523   7 11.7 R dev.offlineai.offline_ai_chat
+13143   0  5.8 R dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+=== 21:12:08 pid=13088
+1950 1456 1053 1950 1586 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18580   7  125 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+18578   5 64.2 R dev.offlineai.offline_ai_chat
+18579   5 60.7 R dev.offlineai.offline_ai_chat
+13143   0  7.1 S dev.offlineai.offline_ai_chat
+13088   3  7.1 S dev.offlineai.offline_ai_chat
+=== 21:12:15 pid=13088
+1950 1300 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+18631   4 48.4 R dev.offlineai.offline_ai_chat
+18630   4 24.2 R dev.offlineai.offline_ai_chat
+18629   5 24.2 R dev.offlineai.offline_ai_chat
+13143   0 15.1 S dev.offlineai.offline_ai_chat
+13088   2 12.1 S dev.offlineai.offline_ai_chat
+=== 21:12:21 pid=13088
+1053 1950 1300 1950 1404 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  125 R dev.offlineai.offline_ai_chat
+13143   3 17.8 R dev.offlineai.offline_ai_chat
+13088   1 10.7 S dev.offlineai.offline_ai_chat
+18672   1  0.0 S dev.offlineai.offline_ai_chat
+18177   2  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:12:28 pid=13088
+1950 1157 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18720   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+18719   5 58.6 R dev.offlineai.offline_ai_chat
+18718   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:12:34 pid=13088
+1157 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  105 R dev.offlineai.offline_ai_chat
+18810   0 65.7 R dev.offlineai.offline_ai_chat
+18809   5 34.2 R dev.offlineai.offline_ai_chat
+18808   4 31.5 R dev.offlineai.offline_ai_chat
+13143   1 10.5 S dev.offlineai.offline_ai_chat
+13088   0  7.8 R dev.offlineai.offline_ai_chat
+=== 21:12:41 pid=13088
+1950 1053 949 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18861   4  125 R dev.offlineai.offline_ai_chat
+13155   7  121 R dev.offlineai.offline_ai_chat
+18862   6 64.2 R dev.offlineai.offline_ai_chat
+18860   6 60.7 R dev.offlineai.offline_ai_chat
+13143   0  7.1 S dev.offlineai.offline_ai_chat
+13088   0  7.1 S dev.offlineai.offline_ai_chat
+=== 21:12:47 pid=13088
+949 1053 1053 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+18861   4  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+18862   6 62.0 R dev.offlineai.offline_ai_chat
+18860   6 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   0  6.8 R dev.offlineai.offline_ai_chat
+=== 21:12:53 pid=13088
+1586 1950 1846 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+13088   1  9.3 S dev.offlineai.offline_ai_chat
+13143   1  6.2 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:00 pid=13088
+1456 1950 1950 1950 1690 1508 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+13143   0  8.8 S dev.offlineai.offline_ai_chat
+13088   3  8.8 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:06 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  110 R dev.offlineai.offline_ai_chat
+19083   6 20.0 R dev.offlineai.offline_ai_chat
+13143   1 13.3 S dev.offlineai.offline_ai_chat
+13088   2 10.0 S dev.offlineai.offline_ai_chat
+19082   7  6.6 R dev.offlineai.offline_ai_chat
+19081   0  6.6 R dev.offlineai.offline_ai_chat
+=== 21:13:13 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  113 R dev.offlineai.offline_ai_chat
+19248   0 27.5 R dev.offlineai.offline_ai_chat
+19247   7 27.5 R dev.offlineai.offline_ai_chat
+19246   6 24.1 R dev.offlineai.offline_ai_chat
+13143   1 13.7 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:13:19 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+19350   7  117 R dev.offlineai.offline_ai_chat
+19348   4  117 R dev.offlineai.offline_ai_chat
+19349   5 58.6 R dev.offlineai.offline_ai_chat
+13155   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:13:25 pid=13088
+1053 1950 1586 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  109 R dev.offlineai.offline_ai_chat
+19440   5 24.2 R dev.offlineai.offline_ai_chat
+13088   3 12.1 S dev.offlineai.offline_ai_chat
+13143   0  9.0 S dev.offlineai.offline_ai_chat
+19017   1  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:32 pid=13088
+1950 1456 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+13088   3  8.8 S dev.offlineai.offline_ai_chat
+13143   0  5.8 S dev.offlineai.offline_ai_chat
+19451   0  0.0 S dev.offlineai.offline_ai_chat
+19017   1  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:38 pid=13088
+1950 1157 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  127 R dev.offlineai.offline_ai_chat
+13143   1 20.6 S dev.offlineai.offline_ai_chat
+13088   3 13.7 S dev.offlineai.offline_ai_chat
+19017   1  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:45 pid=13088
+1586 1950 949 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  112 R dev.offlineai.offline_ai_chat
+19608   6 25.8 R dev.offlineai.offline_ai_chat
+13143   3 16.1 S dev.offlineai.offline_ai_chat
+13088   1 12.9 S dev.offlineai.offline_ai_chat
+19607   4  6.4 R dev.offlineai.offline_ai_chat
+19606   5  3.2 R dev.offlineai.offline_ai_chat
+=== 21:13:51 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+19619   4 26.4 S dev.offlineai.offline_ai_chat
+13088   3 11.7 S dev.offlineai.offline_ai_chat
+13143   1  8.8 S dev.offlineai.offline_ai_chat
+19017   1  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:13:58 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+19751   4 66.6 R dev.offlineai.offline_ai_chat
+19750   5 18.1 R dev.offlineai.offline_ai_chat
+19749   7 18.1 R dev.offlineai.offline_ai_chat
+13143   0  9.0 S dev.offlineai.offline_ai_chat
+13088   2  6.0 S dev.offlineai.offline_ai_chat
+=== 21:14:04 pid=13088
+1950 1950 1950 1950 1690 1586 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6 93.1 S dev.offlineai.offline_ai_chat
+13088   5 31.0 R dev.offlineai.offline_ai_chat
+13143   1 13.7 S dev.offlineai.offline_ai_chat
+19795   1 10.3 S dev.offlineai.offline_ai_chat
+19017   0  3.4 S dev.offlineai.offline_ai_chat
+19797   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:14:11 pid=13088
+949 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+19867   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+19868   5 62.0 R dev.offlineai.offline_ai_chat
+19869   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2 10.3 R dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:14:17 pid=13088
+1157 1053 1157 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+19867   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+19868   5 62.0 R dev.offlineai.offline_ai_chat
+19869   5 58.6 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:14:23 pid=13088
+1950 1300 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  121 R dev.offlineai.offline_ai_chat
+19959   1 35.7 R dev.offlineai.offline_ai_chat
+13088   0 14.2 S dev.offlineai.offline_ai_chat
+19958   6 10.7 R dev.offlineai.offline_ai_chat
+19957   5 10.7 R dev.offlineai.offline_ai_chat
+13143   0 10.7 S dev.offlineai.offline_ai_chat
+=== 21:14:30 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  125 R dev.offlineai.offline_ai_chat
+20016   4 35.7 R dev.offlineai.offline_ai_chat
+20015   5 35.7 R dev.offlineai.offline_ai_chat
+13143   2 10.7 S dev.offlineai.offline_ai_chat
+13088   0 10.7 S dev.offlineai.offline_ai_chat
+19017   5  0.0 S dev.offlineai.offline_ai_chat
+=== 21:14:36 pid=13088
+1300 1456 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+20020   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+20019   5 58.6 R dev.offlineai.offline_ai_chat
+20018   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+=== 21:14:42 pid=13088
+1950 1950 1950 1950 1690 1690 520 520 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   5 91.4 R dev.offlineai.offline_ai_chat
+13143   1 11.4 S dev.offlineai.offline_ai_chat
+13088   3 11.4 S dev.offlineai.offline_ai_chat
+13142   0  2.8 S dev.offlineai.offline_ai_chat
+20058   2  0.0 S dev.offlineai.offline_ai_chat
+19017   5  0.0 S dev.offlineai.offline_ai_chat
+=== 21:14:49 pid=13088
+1950 1950 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+20141   4  125 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+20144   7 60.7 R dev.offlineai.offline_ai_chat
+20143   7 60.7 R dev.offlineai.offline_ai_chat
+13143   2  7.1 S dev.offlineai.offline_ai_chat
+13088   2  7.1 S dev.offlineai.offline_ai_chat
+=== 21:14:55 pid=13088
+1053 1300 1053 1157 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+20141   4  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+20143   7 58.6 R dev.offlineai.offline_ai_chat
+20144   7 55.1 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   3  3.4 S dev.offlineai.offline_ai_chat
+=== 21:15:01 pid=13088
+1950 1950 1586 1586 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4 75.0 R dev.offlineai.offline_ai_chat
+20230   6 56.2 R dev.offlineai.offline_ai_chat
+20229   5 53.1 R dev.offlineai.offline_ai_chat
+20231   4 28.1 R dev.offlineai.offline_ai_chat
+13143   2  9.3 S dev.offlineai.offline_ai_chat
+13088   0  6.2 S dev.offlineai.offline_ai_chat
+=== 21:15:08 pid=13088
+1053 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  113 R dev.offlineai.offline_ai_chat
+20306   3 37.9 R dev.offlineai.offline_ai_chat
+20305   5 13.7 R dev.offlineai.offline_ai_chat
+20304   6 13.7 R dev.offlineai.offline_ai_chat
+13143   0 13.7 S dev.offlineai.offline_ai_chat
+13088   3 10.3 S dev.offlineai.offline_ai_chat
+=== 21:15:14 pid=13088
+1300 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  124 R dev.offlineai.offline_ai_chat
+20312   7  120 R dev.offlineai.offline_ai_chat
+20311   5 62.0 R dev.offlineai.offline_ai_chat
+20310   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:15:20 pid=13088
+1950 1456 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  117 R dev.offlineai.offline_ai_chat
+20389   0 72.4 R dev.offlineai.offline_ai_chat
+20388   5 34.4 R dev.offlineai.offline_ai_chat
+20387   6 34.4 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:15:27 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4 96.8 R dev.offlineai.offline_ai_chat
+13143   0 12.5 S dev.offlineai.offline_ai_chat
+13088   3 12.5 S dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:15:33 pid=13088
+1300 1950 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+20499   4 45.4 R dev.offlineai.offline_ai_chat
+20498   5 15.1 R dev.offlineai.offline_ai_chat
+20497   7 15.1 R dev.offlineai.offline_ai_chat
+13143   0  9.0 S dev.offlineai.offline_ai_chat
+13088   3  9.0 S dev.offlineai.offline_ai_chat
+=== 21:15:40 pid=13088
+1053 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+20504   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+20505   5 62.0 R dev.offlineai.offline_ai_chat
+20506   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   1 10.3 S dev.offlineai.offline_ai_chat
+=== 21:15:46 pid=13088
+1586 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  105 R dev.offlineai.offline_ai_chat
+13143   5 17.6 S dev.offlineai.offline_ai_chat
+13088   3 14.7 S dev.offlineai.offline_ai_chat
+20543   2  2.9 S dev.offlineai.offline_ai_chat
+13142   2  2.9 S dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:15:53 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  109 R dev.offlineai.offline_ai_chat
+13088   3  9.3 S dev.offlineai.offline_ai_chat
+13143   0  3.1 S dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:15:59 pid=13088
+1300 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+20664   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+20662   5 58.6 R dev.offlineai.offline_ai_chat
+20663   5 55.1 R dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:16:05 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+13143   0 15.1 R dev.offlineai.offline_ai_chat
+13088   1 12.1 S dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:16:12 pid=13088
+1742 1950 949 1157 1690 1586 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+13143   1 16.2 S dev.offlineai.offline_ai_chat
+13088   3 10.8 S dev.offlineai.offline_ai_chat
+20809   7  2.7 R dev.offlineai.offline_ai_chat
+20808   5  2.7 R dev.offlineai.offline_ai_chat
+20807   4  2.7 R dev.offlineai.offline_ai_chat
+=== 21:16:18 pid=13088
+1586 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  103 R dev.offlineai.offline_ai_chat
+13143   1 15.1 S dev.offlineai.offline_ai_chat
+13088   1 12.1 S dev.offlineai.offline_ai_chat
+13142   2  3.0 S dev.offlineai.offline_ai_chat
+20833   4  0.0 S dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+=== 21:16:25 pid=13088
+1300 1456 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+13143   1 12.1 S dev.offlineai.offline_ai_chat
+13088   1  6.0 S dev.offlineai.offline_ai_chat
+20971   4  0.0 R dev.offlineai.offline_ai_chat
+20344   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:16:31 pid=13088
+1456 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  121 R dev.offlineai.offline_ai_chat
+21037   5 25.0 R dev.offlineai.offline_ai_chat
+21038   4 17.8 R dev.offlineai.offline_ai_chat
+13143   3 14.2 S dev.offlineai.offline_ai_chat
+13088   0 14.2 S dev.offlineai.offline_ai_chat
+13142   2  3.5 S dev.offlineai.offline_ai_chat
+=== 21:16:38 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21069   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+21068   5 62.0 R dev.offlineai.offline_ai_chat
+21067   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2 10.3 R dev.offlineai.offline_ai_chat
+13088   1 10.3 S dev.offlineai.offline_ai_chat
+=== 21:16:44 pid=13088
+1053 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21100   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+21099   5 58.6 R dev.offlineai.offline_ai_chat
+21098   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:16:50 pid=13088
+1456 1950 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21100   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+21099   5 62.0 R dev.offlineai.offline_ai_chat
+21098   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2 10.3 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:16:57 pid=13088
+1950 1950 1950 1950 1690 1586 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  105 R dev.offlineai.offline_ai_chat
+21219   4 38.2 R dev.offlineai.offline_ai_chat
+21217   5  8.8 R dev.offlineai.offline_ai_chat
+21216   6  8.8 R dev.offlineai.offline_ai_chat
+13143   1  8.8 R dev.offlineai.offline_ai_chat
+13088   3  8.8 S dev.offlineai.offline_ai_chat
+=== 21:17:03 pid=13088
+1950 1950 1742 1950 1508 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+21289   5 54.5 R dev.offlineai.offline_ai_chat
+21288   7 18.1 R dev.offlineai.offline_ai_chat
+21287   4 15.1 R dev.offlineai.offline_ai_chat
+13143   0  6.0 S dev.offlineai.offline_ai_chat
+13088   1  6.0 S dev.offlineai.offline_ai_chat
+=== 21:17:10 pid=13088
+1950 1950 1950 1846 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  109 R dev.offlineai.offline_ai_chat
+13143   0 12.9 S dev.offlineai.offline_ai_chat
+13088   3  9.6 S dev.offlineai.offline_ai_chat
+21333   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:17:16 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21449   5  117 R dev.offlineai.offline_ai_chat
+21448   7  117 R dev.offlineai.offline_ai_chat
+13155   6 62.0 R dev.offlineai.offline_ai_chat
+21450   6 58.6 R dev.offlineai.offline_ai_chat
+13143   1 13.7 S dev.offlineai.offline_ai_chat
+13088   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:17:22 pid=13088
+1053 1053 1950 1586 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21449   5  120 R dev.offlineai.offline_ai_chat
+21448   7  120 R dev.offlineai.offline_ai_chat
+21450   6 58.6 R dev.offlineai.offline_ai_chat
+13155   6 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:17:28 pid=13088
+1053 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  113 R dev.offlineai.offline_ai_chat
+21567   4 68.9 R dev.offlineai.offline_ai_chat
+21566   5 20.6 R dev.offlineai.offline_ai_chat
+21565   1 17.2 R dev.offlineai.offline_ai_chat
+13143   3 10.3 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:17:35 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21619   6  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+21618   4 58.6 R dev.offlineai.offline_ai_chat
+21617   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:17:41 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  109 R dev.offlineai.offline_ai_chat
+13143   1 18.1 S dev.offlineai.offline_ai_chat
+13088   0 15.1 S dev.offlineai.offline_ai_chat
+13142   1  3.0 S dev.offlineai.offline_ai_chat
+21683   1  0.0 S dev.offlineai.offline_ai_chat
+21467   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:17:48 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  105 R dev.offlineai.offline_ai_chat
+13143   5 14.7 S dev.offlineai.offline_ai_chat
+13088   1 14.7 S dev.offlineai.offline_ai_chat
+21467   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:17:55 pid=13088
+1053 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+21863   4  109 R dev.offlineai.offline_ai_chat
+13155   6  109 R dev.offlineai.offline_ai_chat
+21864   5 56.2 R dev.offlineai.offline_ai_chat
+21862   5 53.1 R dev.offlineai.offline_ai_chat
+13143   3  6.2 S dev.offlineai.offline_ai_chat
+13088   3  6.2 S dev.offlineai.offline_ai_chat
+=== 21:18:01 pid=13088
+1950 1950 1950 1950 1404 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  103 R dev.offlineai.offline_ai_chat
+13143   0 12.1 S dev.offlineai.offline_ai_chat
+13088   2 12.1 R dev.offlineai.offline_ai_chat
+21918   7  0.0 S dev.offlineai.offline_ai_chat
+21467   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:18:08 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+13143   0 17.1 S dev.offlineai.offline_ai_chat
+13088   3 11.4 S dev.offlineai.offline_ai_chat
+13142   1  2.8 S dev.offlineai.offline_ai_chat
+21467   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:18:14 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22112   7  120 R dev.offlineai.offline_ai_chat
+13155   6  120 R dev.offlineai.offline_ai_chat
+22111   4 62.0 R dev.offlineai.offline_ai_chat
+22110   4 58.6 R dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:18:20 pid=13088
+1950 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+22112   7  117 R dev.offlineai.offline_ai_chat
+22111   4 58.6 R dev.offlineai.offline_ai_chat
+22110   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:18:26 pid=13088
+1950 949 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22178   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+22177   5 62.0 R dev.offlineai.offline_ai_chat
+22176   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:18:33 pid=13088
+1950 1053 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+13143   1  9.3 S dev.offlineai.offline_ai_chat
+13088   2  6.2 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:18:39 pid=13088
+1300 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22253   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+22252   4 58.6 R dev.offlineai.offline_ai_chat
+22251   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   1  6.8 R dev.offlineai.offline_ai_chat
+=== 21:18:45 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+22325   0 51.4 S dev.offlineai.offline_ai_chat
+13143   5 11.4 S dev.offlineai.offline_ai_chat
+13088   1  8.5 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:18:52 pid=13088
+1053 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  117 R dev.offlineai.offline_ai_chat
+22387   6 27.5 R dev.offlineai.offline_ai_chat
+22386   4 13.7 R dev.offlineai.offline_ai_chat
+13143   1 13.7 S dev.offlineai.offline_ai_chat
+22385   2 10.3 R dev.offlineai.offline_ai_chat
+13088   3 10.3 S dev.offlineai.offline_ai_chat
+=== 21:18:59 pid=13088
+1950 1053 949 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22463   7  125 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+22461   5 64.2 R dev.offlineai.offline_ai_chat
+22462   5 60.7 R dev.offlineai.offline_ai_chat
+13143   2 10.7 S dev.offlineai.offline_ai_chat
+13088   3  7.1 S dev.offlineai.offline_ai_chat
+=== 21:19:05 pid=13088
+949 949 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+22463   7  117 R dev.offlineai.offline_ai_chat
+22461   5 62.0 R dev.offlineai.offline_ai_chat
+22462   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:19:11 pid=13088
+1053 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  109 R dev.offlineai.offline_ai_chat
+22549   4 51.5 R dev.offlineai.offline_ai_chat
+13143   2  6.0 S dev.offlineai.offline_ai_chat
+13088   3  6.0 S dev.offlineai.offline_ai_chat
+22547   7  3.0 R dev.offlineai.offline_ai_chat
+22546   4  0.0 S dev.offlineai.offline_ai_chat
+=== 21:19:18 pid=13088
+1950 1950 1300 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+13143   5  8.8 S dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+22572   0  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:19:24 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+13088   1 16.1 S dev.offlineai.offline_ai_chat
+13143   1 12.9 S dev.offlineai.offline_ai_chat
+22637   4  0.0 S dev.offlineai.offline_ai_chat
+22612   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:19:31 pid=13088
+1950 1157 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22716   5  125 R dev.offlineai.offline_ai_chat
+13155   6  121 R dev.offlineai.offline_ai_chat
+22715   7 64.2 R dev.offlineai.offline_ai_chat
+22717   7 57.1 R dev.offlineai.offline_ai_chat
+13088   2 10.7 S dev.offlineai.offline_ai_chat
+13143   2  7.1 S dev.offlineai.offline_ai_chat
+=== 21:19:37 pid=13088
+1053 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+22716   5  117 R dev.offlineai.offline_ai_chat
+22717   7 62.0 R dev.offlineai.offline_ai_chat
+22715   7 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:19:43 pid=13088
+1950 1950 1742 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+22781   6  117 R dev.offlineai.offline_ai_chat
+22780   5 58.6 R dev.offlineai.offline_ai_chat
+22779   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:19:50 pid=13088
+1846 1053 949 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+22781   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+22780   5 62.0 R dev.offlineai.offline_ai_chat
+22779   5 55.1 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   3  3.4 S dev.offlineai.offline_ai_chat
+=== 21:19:56 pid=13088
+1950 1950 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+22867   4 71.8 R dev.offlineai.offline_ai_chat
+22866   6 21.8 R dev.offlineai.offline_ai_chat
+22865   5 21.8 R dev.offlineai.offline_ai_chat
+13143   1  6.2 S dev.offlineai.offline_ai_chat
+13088   0  6.2 S dev.offlineai.offline_ai_chat
+=== 21:20:03 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  117 R dev.offlineai.offline_ai_chat
+22937   1 65.5 R dev.offlineai.offline_ai_chat
+22936   5 24.1 R dev.offlineai.offline_ai_chat
+22935   4 24.1 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   3 10.3 S dev.offlineai.offline_ai_chat
+=== 21:20:09 pid=13088
+949 1950 949 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  112 R dev.offlineai.offline_ai_chat
+22991   5 65.6 R dev.offlineai.offline_ai_chat
+22990   4 34.3 R dev.offlineai.offline_ai_chat
+22989   6 31.2 R dev.offlineai.offline_ai_chat
+13143   0 15.6 S dev.offlineai.offline_ai_chat
+13088   2  9.3 R dev.offlineai.offline_ai_chat
+=== 21:20:16 pid=13088
+1950 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  102 R dev.offlineai.offline_ai_chat
+23082   6 67.6 R dev.offlineai.offline_ai_chat
+23081   5 20.5 R dev.offlineai.offline_ai_chat
+23080   4 20.5 R dev.offlineai.offline_ai_chat
+13143   1  8.8 S dev.offlineai.offline_ai_chat
+13088   2  8.8 S dev.offlineai.offline_ai_chat
+=== 21:20:22 pid=13088
+1950 1950 1456 1950 1404 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+13143   0 18.1 S dev.offlineai.offline_ai_chat
+13088   3 15.1 S dev.offlineai.offline_ai_chat
+22612   1  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:20:29 pid=13088
+1950 1053 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  105 R dev.offlineai.offline_ai_chat
+23181   4 58.8 R dev.offlineai.offline_ai_chat
+23179   5 17.6 R dev.offlineai.offline_ai_chat
+23180   6 14.7 R dev.offlineai.offline_ai_chat
+13143   1  8.8 S dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+=== 21:20:35 pid=13088
+949 1950 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23232   4  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+23231   5 58.6 R dev.offlineai.offline_ai_chat
+23230   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:20:42 pid=13088
+1950 1950 1950 1950 1586 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23289   5  121 R dev.offlineai.offline_ai_chat
+23288   6  107 R dev.offlineai.offline_ai_chat
+13155   7 82.1 R dev.offlineai.offline_ai_chat
+23290   6 60.7 R dev.offlineai.offline_ai_chat
+13143   1 10.7 S dev.offlineai.offline_ai_chat
+13088   0  7.1 S dev.offlineai.offline_ai_chat
+=== 21:20:48 pid=13088
+1053 1950 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23289   5  120 R dev.offlineai.offline_ai_chat
+23288   6  117 R dev.offlineai.offline_ai_chat
+23290   7 58.6 R dev.offlineai.offline_ai_chat
+13155   7 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:20:54 pid=13088
+1300 1950 1300 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23353   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+23352   4 58.6 R dev.offlineai.offline_ai_chat
+23351   4 58.6 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:21:00 pid=13088
+1456 1950 1157 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23353   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+23351   4 62.0 R dev.offlineai.offline_ai_chat
+23352   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:21:07 pid=13088
+1950 1950 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  113 R dev.offlineai.offline_ai_chat
+23452   7 23.3 R dev.offlineai.offline_ai_chat
+23451   5 20.0 R dev.offlineai.offline_ai_chat
+23450   1 20.0 R dev.offlineai.offline_ai_chat
+13143   0 13.3 R dev.offlineai.offline_ai_chat
+13088   3 13.3 S dev.offlineai.offline_ai_chat
+=== 21:21:13 pid=13088
+1950 1950 1456 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23478   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+23477   4 58.6 R dev.offlineai.offline_ai_chat
+23476   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   2  6.8 R dev.offlineai.offline_ai_chat
+=== 21:21:19 pid=13088
+949 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23478   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+23476   4 62.0 R dev.offlineai.offline_ai_chat
+23477   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:21:26 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  105 R dev.offlineai.offline_ai_chat
+23573   5 44.1 R dev.offlineai.offline_ai_chat
+23572   4 11.7 R dev.offlineai.offline_ai_chat
+23571   7 11.7 R dev.offlineai.offline_ai_chat
+13143   1  8.8 S dev.offlineai.offline_ai_chat
+13088   0  8.8 S dev.offlineai.offline_ai_chat
+=== 21:21:32 pid=13088
+1950 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  103 R dev.offlineai.offline_ai_chat
+13143   2 12.5 S dev.offlineai.offline_ai_chat
+13088   3 12.5 S dev.offlineai.offline_ai_chat
+23525   3  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:21:39 pid=13088
+1950 1950 1157 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  106 R dev.offlineai.offline_ai_chat
+23728   6 15.1 R dev.offlineai.offline_ai_chat
+13143   2 15.1 S dev.offlineai.offline_ai_chat
+13088   3  9.0 S dev.offlineai.offline_ai_chat
+23730   7  0.0 R dev.offlineai.offline_ai_chat
+23729   5  0.0 R dev.offlineai.offline_ai_chat
+=== 21:21:45 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4 97.2 R dev.offlineai.offline_ai_chat
+13143   6 11.1 S dev.offlineai.offline_ai_chat
+13088   0 11.1 S dev.offlineai.offline_ai_chat
+23525   3  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:21:52 pid=13088
+1456 1950 1950 1846 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23855   7  117 R dev.offlineai.offline_ai_chat
+23854   4  117 R dev.offlineai.offline_ai_chat
+13155   6 62.0 R dev.offlineai.offline_ai_chat
+23853   6 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 R dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:21:58 pid=13088
+1157 1053 1053 1157 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+23855   7  106 R dev.offlineai.offline_ai_chat
+23854   4  106 R dev.offlineai.offline_ai_chat
+23853   6 53.1 R dev.offlineai.offline_ai_chat
+13155   6 53.1 R dev.offlineai.offline_ai_chat
+13143   1  9.3 S dev.offlineai.offline_ai_chat
+13088   0  3.1 S dev.offlineai.offline_ai_chat
+=== 21:22:04 pid=13088
+949 1846 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  125 R dev.offlineai.offline_ai_chat
+13143   1 17.8 S dev.offlineai.offline_ai_chat
+13088   3 10.7 S dev.offlineai.offline_ai_chat
+23957   6  0.0 R dev.offlineai.offline_ai_chat
+23955   6  0.0 R dev.offlineai.offline_ai_chat
+23956   5  0.0 R dev.offlineai.offline_ai_chat
+=== 21:22:11 pid=13088
+1950 1950 1950 1742 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24008   5  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+24009   4 62.0 R dev.offlineai.offline_ai_chat
+24010   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   1 10.3 S dev.offlineai.offline_ai_chat
+=== 21:22:17 pid=13088
+1950 1950 1586 1053 1690 1586 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  100 R dev.offlineai.offline_ai_chat
+13143   0 11.7 S dev.offlineai.offline_ai_chat
+13088   2  8.8 S dev.offlineai.offline_ai_chat
+23525   3  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:22:24 pid=13088
+1950 1950 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6 94.4 R dev.offlineai.offline_ai_chat
+13088   0 11.1 S dev.offlineai.offline_ai_chat
+13143   3  8.3 S dev.offlineai.offline_ai_chat
+13142   2  2.7 S dev.offlineai.offline_ai_chat
+23525   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:22:30 pid=13088
+1950 1950 1456 1950 1508 1690 1378 1378 MHz
+	Temperature{mValue=48.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+13088   2  9.3 R dev.offlineai.offline_ai_chat
+13143   3  6.2 R dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:22:37 pid=13088
+1950 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24171   6  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+24170   5 58.6 R dev.offlineai.offline_ai_chat
+24169   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:22:43 pid=13088
+1950 949 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24254   5  121 R dev.offlineai.offline_ai_chat
+24255   7 85.7 R dev.offlineai.offline_ai_chat
+24253   7 82.1 R dev.offlineai.offline_ai_chat
+13155   6 78.5 R dev.offlineai.offline_ai_chat
+13143   0  7.1 S dev.offlineai.offline_ai_chat
+13088   2  7.1 S dev.offlineai.offline_ai_chat
+=== 21:22:49 pid=13088
+1456 1950 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24254   5  120 R dev.offlineai.offline_ai_chat
+24253   6  120 R dev.offlineai.offline_ai_chat
+24255   7 58.6 R dev.offlineai.offline_ai_chat
+13155   7 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:22:55 pid=13088
+1950 1456 1950 1053 1690 1586 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24354   7  120 R dev.offlineai.offline_ai_chat
+24355   5  117 R dev.offlineai.offline_ai_chat
+13155   6 62.0 R dev.offlineai.offline_ai_chat
+24356   6 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:23:02 pid=13088
+1053 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24354   7  120 R dev.offlineai.offline_ai_chat
+24355   5  117 R dev.offlineai.offline_ai_chat
+13155   6 62.0 R dev.offlineai.offline_ai_chat
+24356   6 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:23:08 pid=13088
+1456 1950 949 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24390   5  117 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+24388   6 62.0 R dev.offlineai.offline_ai_chat
+24389   6 55.1 R dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+13143   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:23:14 pid=13088
+1950 1300 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  110 R dev.offlineai.offline_ai_chat
+24517   7 37.9 R dev.offlineai.offline_ai_chat
+24516   4 13.7 R dev.offlineai.offline_ai_chat
+24515   3 13.7 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+=== 21:23:21 pid=13088
+1950 1950 949 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24545   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+24544   4 62.0 R dev.offlineai.offline_ai_chat
+24543   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1 10.3 R dev.offlineai.offline_ai_chat
+13088   1  3.4 S dev.offlineai.offline_ai_chat
+=== 21:23:27 pid=13088
+1950 949 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24545   7  120 R dev.offlineai.offline_ai_chat
+13155   6  120 R dev.offlineai.offline_ai_chat
+24544   4 58.6 R dev.offlineai.offline_ai_chat
+24543   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:23:33 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24614   5  120 R dev.offlineai.offline_ai_chat
+24613   6  117 R dev.offlineai.offline_ai_chat
+13155   7 62.0 R dev.offlineai.offline_ai_chat
+24622   6 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:23:39 pid=13088
+1950 949 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+24614   5  117 R dev.offlineai.offline_ai_chat
+24613   6  117 R dev.offlineai.offline_ai_chat
+24622   7 62.0 R dev.offlineai.offline_ai_chat
+13155   7 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:23:46 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  107 R dev.offlineai.offline_ai_chat
+24723   5 32.1 R dev.offlineai.offline_ai_chat
+24724   1 28.5 R dev.offlineai.offline_ai_chat
+13143   3 14.2 S dev.offlineai.offline_ai_chat
+24725   7 10.7 R dev.offlineai.offline_ai_chat
+13088   2 10.7 S dev.offlineai.offline_ai_chat
+=== 21:23:52 pid=13088
+1950 1053 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+24780   5 23.5 R dev.offlineai.offline_ai_chat
+13143   1 11.7 S dev.offlineai.offline_ai_chat
+13088   3  8.8 R dev.offlineai.offline_ai_chat
+24527   0  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:23:59 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  117 R dev.offlineai.offline_ai_chat
+24828   6 28.5 R dev.offlineai.offline_ai_chat
+13143   2 14.2 S dev.offlineai.offline_ai_chat
+13088   3 14.2 S dev.offlineai.offline_ai_chat
+24826   1 10.7 R dev.offlineai.offline_ai_chat
+24827   4  7.1 R dev.offlineai.offline_ai_chat
+=== 21:24:05 pid=13088
+1950 1950 1950 1846 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  102 R dev.offlineai.offline_ai_chat
+13143   2 11.7 S dev.offlineai.offline_ai_chat
+13088   0 11.7 S dev.offlineai.offline_ai_chat
+24918   4  0.0 R dev.offlineai.offline_ai_chat
+24889   2  0.0 S dev.offlineai.offline_ai_chat
+24527   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:24:12 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  112 R dev.offlineai.offline_ai_chat
+13143   2 15.6 S dev.offlineai.offline_ai_chat
+13088   2 15.6 S dev.offlineai.offline_ai_chat
+13142   0  3.1 S dev.offlineai.offline_ai_chat
+24971   1  0.0 S dev.offlineai.offline_ai_chat
+24527   0  0.0 S dev.offlineai.offline_ai_chat
+=== 21:24:18 pid=13088
+1950 949 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+25029   7  117 R dev.offlineai.offline_ai_chat
+25028   4 58.6 R dev.offlineai.offline_ai_chat
+25027   4 58.6 R dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+13143   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:24:24 pid=13088
+1742 1053 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25029   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+25028   4 58.6 R dev.offlineai.offline_ai_chat
+25027   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0 10.3 S dev.offlineai.offline_ai_chat
+13088   3  3.4 S dev.offlineai.offline_ai_chat
+=== 21:24:31 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  109 R dev.offlineai.offline_ai_chat
+25125   5 21.2 R dev.offlineai.offline_ai_chat
+13143   0 12.1 S dev.offlineai.offline_ai_chat
+13088   3  9.0 S dev.offlineai.offline_ai_chat
+25124   6  3.0 R dev.offlineai.offline_ai_chat
+25123   4  0.0 R dev.offlineai.offline_ai_chat
+=== 21:24:37 pid=13088
+1950 1300 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  103 R dev.offlineai.offline_ai_chat
+25189   4 66.6 R dev.offlineai.offline_ai_chat
+25187   6 18.1 R dev.offlineai.offline_ai_chat
+25188   5 15.1 R dev.offlineai.offline_ai_chat
+13143   0  6.0 R dev.offlineai.offline_ai_chat
+13088   3  6.0 S dev.offlineai.offline_ai_chat
+=== 21:24:44 pid=13088
+1053 1950 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25239   4  117 R dev.offlineai.offline_ai_chat
+25240   6  100 R dev.offlineai.offline_ai_chat
+13155   7 75.8 R dev.offlineai.offline_ai_chat
+25238   6 58.6 R dev.offlineai.offline_ai_chat
+13143   1  3.4 S dev.offlineai.offline_ai_chat
+13088   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:24:50 pid=13088
+1950 1586 1053 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25239   4  120 R dev.offlineai.offline_ai_chat
+25238   6  117 R dev.offlineai.offline_ai_chat
+25240   7 62.0 R dev.offlineai.offline_ai_chat
+13155   7 55.1 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:24:56 pid=13088
+1300 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  112 R dev.offlineai.offline_ai_chat
+13143   1 16.1 S dev.offlineai.offline_ai_chat
+13088   1 12.9 S dev.offlineai.offline_ai_chat
+13142   3  3.2 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:25:03 pid=13088
+1950 1950 1456 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25353   6  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+25352   5 62.0 R dev.offlineai.offline_ai_chat
+25351   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:25:09 pid=13088
+1053 949 1053 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25353   6  120 R dev.offlineai.offline_ai_chat
+13155   7  117 R dev.offlineai.offline_ai_chat
+25352   5 58.6 R dev.offlineai.offline_ai_chat
+25351   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:25:15 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  125 R dev.offlineai.offline_ai_chat
+13143   3 17.8 S dev.offlineai.offline_ai_chat
+13088   2 14.2 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:25:22 pid=13088
+1950 949 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  109 R dev.offlineai.offline_ai_chat
+13143   0 15.6 S dev.offlineai.offline_ai_chat
+13088   3 12.5 R dev.offlineai.offline_ai_chat
+25554   7  3.1 R dev.offlineai.offline_ai_chat
+25553   5  3.1 R dev.offlineai.offline_ai_chat
+25555   4  0.0 R dev.offlineai.offline_ai_chat
+=== 21:25:28 pid=13088
+1300 1950 949 1950 1586 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25628   7 87.1 R dev.offlineai.offline_ai_chat
+13155   6 87.1 R dev.offlineai.offline_ai_chat
+25629   4 43.5 R dev.offlineai.offline_ai_chat
+25626   4 43.5 R dev.offlineai.offline_ai_chat
+13143   0  7.6 S dev.offlineai.offline_ai_chat
+13088   2  2.5 S dev.offlineai.offline_ai_chat
+=== 21:25:35 pid=13088
+1742 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.8, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+25628   7  117 R dev.offlineai.offline_ai_chat
+25629   4 62.0 R dev.offlineai.offline_ai_chat
+25626   4 58.6 R dev.offlineai.offline_ai_chat
+13143   3  6.8 R dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:25:41 pid=13088
+1950 1950 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  117 R dev.offlineai.offline_ai_chat
+13143   1 10.3 S dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+25502   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:25:47 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25751   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+25750   5 58.6 R dev.offlineai.offline_ai_chat
+25749   5 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 R dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:25:54 pid=13088
+1456 949 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.2, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25751   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+25749   5 62.0 R dev.offlineai.offline_ai_chat
+25750   5 58.6 R dev.offlineai.offline_ai_chat
+13088   0 10.3 S dev.offlineai.offline_ai_chat
+13143   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:26:00 pid=13088
+1950 1157 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+25851   2 65.5 R dev.offlineai.offline_ai_chat
+25852   5 20.6 R dev.offlineai.offline_ai_chat
+25853   7 17.2 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   0  3.4 S dev.offlineai.offline_ai_chat
+=== 21:26:06 pid=13088
+1053 1053 949 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+25859   6  120 R dev.offlineai.offline_ai_chat
+13155   7  120 R dev.offlineai.offline_ai_chat
+25862   5 62.0 R dev.offlineai.offline_ai_chat
+25860   5 62.0 R dev.offlineai.offline_ai_chat
+13143   2 10.3 R dev.offlineai.offline_ai_chat
+13088   3  6.8 S dev.offlineai.offline_ai_chat
+=== 21:26:12 pid=13088
+1053 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.7, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  106 R dev.offlineai.offline_ai_chat
+25941   4 54.5 R dev.offlineai.offline_ai_chat
+25938   6 15.1 R dev.offlineai.offline_ai_chat
+25940   5 12.1 R dev.offlineai.offline_ai_chat
+13143   1  9.0 S dev.offlineai.offline_ai_chat
+13088   1  6.0 S dev.offlineai.offline_ai_chat
+=== 21:26:19 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=47.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  109 R dev.offlineai.offline_ai_chat
+13143   1  6.4 S dev.offlineai.offline_ai_chat
+13088   3  6.4 S dev.offlineai.offline_ai_chat
+25502   2  0.0 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:26:25 pid=13088
+1950 1456 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=47.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26053   4  113 R dev.offlineai.offline_ai_chat
+13155   6  113 R dev.offlineai.offline_ai_chat
+26055   5 56.6 R dev.offlineai.offline_ai_chat
+26052   5 56.6 R dev.offlineai.offline_ai_chat
+13143   0  6.6 S dev.offlineai.offline_ai_chat
+13088   1  6.6 S dev.offlineai.offline_ai_chat
+=== 21:26:32 pid=13088
+1950 1053 1053 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26080   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+26079   5 58.6 R dev.offlineai.offline_ai_chat
+26074   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   0  3.4 R dev.offlineai.offline_ai_chat
+=== 21:26:38 pid=13088
+1950 1053 1053 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26080   7  120 R dev.offlineai.offline_ai_chat
+13155   6  120 R dev.offlineai.offline_ai_chat
+26079   5 62.0 R dev.offlineai.offline_ai_chat
+26074   5 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:26:45 pid=13088
+1950 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.6, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  120 R dev.offlineai.offline_ai_chat
+13143   2 13.7 S dev.offlineai.offline_ai_chat
+13088   0 10.3 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:26:51 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   5 97.2 R dev.offlineai.offline_ai_chat
+13143   0 11.1 S dev.offlineai.offline_ai_chat
+13088   3  5.5 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:26:57 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4 96.9 R dev.offlineai.offline_ai_chat
+13088   0 21.2 S dev.offlineai.offline_ai_chat
+13143   0 12.1 S dev.offlineai.offline_ai_chat
+14792   2  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:27:04 pid=13088
+1950 1950 1950 1456 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  113 R dev.offlineai.offline_ai_chat
+13143   2 13.3 S dev.offlineai.offline_ai_chat
+13088   0 10.0 R dev.offlineai.offline_ai_chat
+26311   0  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:27:10 pid=13088
+1157 1157 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  113 R dev.offlineai.offline_ai_chat
+13143   0 13.3 S dev.offlineai.offline_ai_chat
+13088   3 10.0 S dev.offlineai.offline_ai_chat
+26497   7  0.0 R dev.offlineai.offline_ai_chat
+26495   4  0.0 R dev.offlineai.offline_ai_chat
+26496   2  0.0 R dev.offlineai.offline_ai_chat
+=== 21:27:16 pid=13088
+1300 1053 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+26542   7  117 R dev.offlineai.offline_ai_chat
+26541   5 62.0 R dev.offlineai.offline_ai_chat
+26540   5 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   2  3.4 S dev.offlineai.offline_ai_chat
+=== 21:27:23 pid=13088
+1456 1053 1053 1157 1690 1690 1378 1378 MHz
+	Temperature{mValue=51.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26571   7  117 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+26573   4 58.6 R dev.offlineai.offline_ai_chat
+26572   4 55.1 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:27:29 pid=13088
+1950 1950 1456 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  117 R dev.offlineai.offline_ai_chat
+26655   7 27.5 R dev.offlineai.offline_ai_chat
+26654   3 13.7 R dev.offlineai.offline_ai_chat
+13143   2 13.7 S dev.offlineai.offline_ai_chat
+13088   2 10.3 S dev.offlineai.offline_ai_chat
+26653   4  6.8 R dev.offlineai.offline_ai_chat
+=== 21:27:35 pid=13088
+1456 1950 1950 1586 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  110 R dev.offlineai.offline_ai_chat
+26711   7 36.6 R dev.offlineai.offline_ai_chat
+26710   4 16.6 R dev.offlineai.offline_ai_chat
+26709   3 16.6 R dev.offlineai.offline_ai_chat
+13143   0 13.3 S dev.offlineai.offline_ai_chat
+13088   1 10.0 S dev.offlineai.offline_ai_chat
+=== 21:27:42 pid=13088
+1950 1950 1950 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+26739   7  117 R dev.offlineai.offline_ai_chat
+26738   4 58.6 R dev.offlineai.offline_ai_chat
+26737   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2 13.7 S dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:27:48 pid=13088
+1053 1053 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26739   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+26737   4 62.0 R dev.offlineai.offline_ai_chat
+26738   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 R dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:27:54 pid=13088
+1950 1950 1950 1846 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.3, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26862   7  120 R dev.offlineai.offline_ai_chat
+13155   6  120 R dev.offlineai.offline_ai_chat
+26861   4 58.6 R dev.offlineai.offline_ai_chat
+26860   4 58.6 R dev.offlineai.offline_ai_chat
+13143   3  6.8 S dev.offlineai.offline_ai_chat
+13088   1  6.8 S dev.offlineai.offline_ai_chat
+=== 21:28:01 pid=13088
+1950 1950 1053 949 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+26862   7  120 R dev.offlineai.offline_ai_chat
+13155   6  117 R dev.offlineai.offline_ai_chat
+26861   4 58.6 R dev.offlineai.offline_ai_chat
+26860   4 58.6 R dev.offlineai.offline_ai_chat
+13143   1  6.8 S dev.offlineai.offline_ai_chat
+13088   2  3.4 R dev.offlineai.offline_ai_chat
+=== 21:28:07 pid=13088
+1950 1456 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7 87.8 R dev.offlineai.offline_ai_chat
+26976   5 19.5 R dev.offlineai.offline_ai_chat
+26975   5 19.5 R dev.offlineai.offline_ai_chat
+26977   6 17.0 R dev.offlineai.offline_ai_chat
+13143   1 12.1 S dev.offlineai.offline_ai_chat
+13088   0  9.7 S dev.offlineai.offline_ai_chat
+=== 21:28:15 pid=13088
+1950 1950 1300 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.9, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  103 R dev.offlineai.offline_ai_chat
+13143   0  6.0 S dev.offlineai.offline_ai_chat
+13088   2  6.0 S dev.offlineai.offline_ai_chat
+26311   2  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:28:21 pid=13088
+1053 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+27043   6  117 R dev.offlineai.offline_ai_chat
+27042   4 62.0 R dev.offlineai.offline_ai_chat
+27041   4 58.6 R dev.offlineai.offline_ai_chat
+13143   2  6.8 R dev.offlineai.offline_ai_chat
+13088   0  6.8 S dev.offlineai.offline_ai_chat
+=== 21:28:27 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.1, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  103 R dev.offlineai.offline_ai_chat
+13143   0 12.1 S dev.offlineai.offline_ai_chat
+13088   3  9.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+13261   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:28:34 pid=13088
+1846 1053 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=49.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  120 R dev.offlineai.offline_ai_chat
+27136   7  117 R dev.offlineai.offline_ai_chat
+27138   4 58.6 R dev.offlineai.offline_ai_chat
+27137   4 58.6 R dev.offlineai.offline_ai_chat
+13143   0  6.8 S dev.offlineai.offline_ai_chat
+13088   2  6.8 S dev.offlineai.offline_ai_chat
+=== 21:28:40 pid=13088
+1950 1950 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   4  110 R dev.offlineai.offline_ai_chat
+27277   7 16.6 R dev.offlineai.offline_ai_chat
+27276   5 16.6 R dev.offlineai.offline_ai_chat
+27275   6 10.0 R dev.offlineai.offline_ai_chat
+13143   1 10.0 S dev.offlineai.offline_ai_chat
+13088   3  6.6 S dev.offlineai.offline_ai_chat
+=== 21:28:46 pid=13088
+1586 949 1950 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=48.5, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+27473   4 38.2 R dev.offlineai.offline_ai_chat
+27472   5 11.7 R dev.offlineai.offline_ai_chat
+27471   7 11.7 R dev.offlineai.offline_ai_chat
+13143   1  8.8 S dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+=== 21:28:53 pid=13088
+1950 1157 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=52.4, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   7  120 R dev.offlineai.offline_ai_chat
+13088   1 17.2 S dev.offlineai.offline_ai_chat
+13143   3 13.7 S dev.offlineai.offline_ai_chat
+27166   5  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat
+13364   2  0.0 S dev.offlineai.offline_ai_chat
+=== 21:29:00 pid=13088
+1950 1950 1950 1053 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  102 R dev.offlineai.offline_ai_chat
+27584   4 35.2 R dev.offlineai.offline_ai_chat
+27582   7  5.8 R dev.offlineai.offline_ai_chat
+13143   0  5.8 S dev.offlineai.offline_ai_chat
+13088   3  5.8 S dev.offlineai.offline_ai_chat
+27583   5  2.9 R dev.offlineai.offline_ai_chat
+=== 21:29:06 pid=13088
+1053 1950 1053 1950 1690 1690 1378 1378 MHz
+	Temperature{mValue=50.0, mType=0, mName=AP, mStatus=0}
+  TID CPU %CPU S[NAME]
+13155   6  106 R dev.offlineai.offline_ai_chat
+13143   1 12.1 R dev.offlineai.offline_ai_chat
+13088   0  9.0 S dev.offlineai.offline_ai_chat
+13142   2  3.0 S dev.offlineai.offline_ai_chat
+27166   5  0.0 S dev.offlineai.offline_ai_chat
+14792   0  0.0 S dev.offlineai.offline_ai_chat

@@ -1,0 +1,15 @@
+00:00 +0: loading C:/dev/offline_ai_chat/integration_test/thread_sweep_test.dart
+Running Gradle task 'assembleDebug'...                             12.4s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.4s
+00:00 +0: (setUpAll)
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=3 load_ms=4566 rss_mib=2919
+[SWEEP] threads=3 seed=42 initialize_ms=4687
+00:04 +0: medium_sustained
+[SWEEP] case=medium verdict=ok pieces=208
+00:33 +1: (tearDownAll)
+00:34 +1: medium_sustained
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=208 ttft_ms=2112 total_ms=28666 tok_s=7.80 busy_retries=0 threads=3 gap_p50_ms=123 gap_p95_ms=153 gap_max_ms=340 stalls_over_2s=0 rss_mib=2940
+00:34 +1: (tearDownAll)
+[LLM] model_released rss_mib=465
+00:34 +1: All tests passed!

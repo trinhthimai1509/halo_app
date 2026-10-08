@@ -1,0 +1,49 @@
+00:00 +0: loading C:/dev/offline_ai_chat/integration_test/regression_test.dart
+Running Gradle task 'assembleDebug'...                             31.9s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.5s
+00:00 +0: (setUpAll)
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 load_ms=5456 rss_mib=2915
+[REG] threads=2
+00:05 +0: A: normal completion then immediate next generation
+[LLM] generation_done prompt_msgs=2 prompt_tokens=41 evaluated_prompt_tokens=41 gen_tokens=64 ttft_ms=2013 total_ms=8670 tok_s=9.46 busy_retries=0 threads=2 gap_p50_ms=100 gap_p95_ms=114 gap_max_ms=192 stalls_over_2s=0 rss_mib=2922
+[REG] A first=ok/64 second=ok/64 second_total_ms=8600
+00:23 +1: B: stop, native CPU drops, next generation unaffected
+00:23 +1: A: normal completion then immediate next generation
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=64 ttft_ms=1493 total_ms=8596 tok_s=8.87 busy_retries=0 threads=2 gap_p50_ms=103 gap_p95_ms=148 gap_max_ms=246 stalls_over_2s=0 rss_mib=2889
+00:29 +1: B: stop, native CPU drops, next generation unaffected
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=48 gen_tokens=41 ttft_ms=1529 total_ms=6378 tok_s=8.25 busy_retries=0 threads=2 gap_p50_ms=116 gap_p95_ms=134 gap_max_ms=148 stalls_over_2s=0 rss_mib=2877
+[REG] B cores_during=2.19 cores_after_stop=0.12 text_after_stop=0 next=ok/48
+00:37 +2: C1: repeated consecutive generations
+00:37 +2: B: stop, native CPU drops, next generation unaffected
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=48 ttft_ms=1715 total_ms=6649 tok_s=9.53 busy_retries=0 threads=2 gap_p50_ms=103 gap_p95_ms=108 gap_max_ms=110 stalls_over_2s=0 rss_mib=2884
+00:50 +2: C1: repeated consecutive generations
+[REG] C1 #1 ok/96 ms=12590
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=96 ttft_ms=1384 total_ms=12585 tok_s=8.48 busy_retries=0 threads=2 gap_p50_ms=117 gap_p95_ms=123 gap_max_ms=137 stalls_over_2s=0 rss_mib=2877
+[REG] C1 #2 ok/96 ms=12595
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=96 ttft_ms=1766 total_ms=12591 tok_s=8.78 busy_retries=0 threads=2 gap_p50_ms=111 gap_p95_ms=122 gap_max_ms=152 stalls_over_2s=0 rss_mib=2841
+[REG] C1 #3 ok/96 ms=12555
+[LLM] generation_done prompt_msgs=2 prompt_tokens=43 evaluated_prompt_tokens=43 gen_tokens=96 ttft_ms=1517 total_ms=12551 tok_s=8.61 busy_retries=0 threads=2 gap_p50_ms=111 gap_p95_ms=131 gap_max_ms=205 stalls_over_2s=0 rss_mib=2844
+[REG] C1 #4 ok/77 ms=10341
+[LLM] generation_done prompt_msgs=2 prompt_tokens=37 evaluated_prompt_tokens=37 gen_tokens=77 ttft_ms=1297 total_ms=10337 tok_s=8.41 busy_retries=0 threads=2 gap_p50_ms=113 gap_p95_ms=139 gap_max_ms=208 stalls_over_2s=0 rss_mib=2845
+[REG] C1 #5 ok/96 ms=12489
+01:38 +3: C1: repeated consecutive generations
+[LLM] generation_done prompt_msgs=2 prompt_tokens=45 evaluated_prompt_tokens=45 gen_tokens=96 ttft_ms=1525 total_ms=12484 tok_s=8.67 busy_retries=0 threads=2 gap_p50_ms=113 gap_p95_ms=120 gap_max_ms=140 stalls_over_2s=0 rss_mib=2846
+01:38 +3: C2: bounded sustained generation (3 min)
+[REG] C2 run=1 ok/255 ms=31093 elapsed_s=31
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=254 ttft_ms=1435 total_ms=31089 tok_s=8.53 busy_retries=0 threads=2 gap_p50_ms=115 gap_p95_ms=123 gap_max_ms=231 stalls_over_2s=0 rss_mib=2849
+[REG] C2 run=2 ok/256 ms=46096 elapsed_s=77
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=256 ttft_ms=1936 total_ms=46093 tok_s=5.77 busy_retries=0 threads=2 gap_p50_ms=184 gap_p95_ms=193 gap_max_ms=209 stalls_over_2s=0 rss_mib=2849
+[REG] C2 run=3 ok/101 ms=30169 elapsed_s=107
+[LLM] generation_done prompt_msgs=2 prompt_tokens=43 evaluated_prompt_tokens=43 gen_tokens=101 ttft_ms=4407 total_ms=30167 tok_s=3.88 busy_retries=0 threads=2 gap_p50_ms=264 gap_p95_ms=267 gap_max_ms=323 stalls_over_2s=0 rss_mib=2850
+[REG] C2 run=4 ok/49 ms=16494 elapsed_s=123
+[LLM] generation_done prompt_msgs=2 prompt_tokens=37 evaluated_prompt_tokens=37 gen_tokens=48 ttft_ms=3800 total_ms=16491 tok_s=3.70 busy_retries=0 threads=2 gap_p50_ms=264 gap_p95_ms=266 gap_max_ms=273 stalls_over_2s=0 rss_mib=2850
+[REG] C2 run=5 ok/256 ms=70608 elapsed_s=194
+[REG] C2 done runs=5 pieces=917 seconds=194
+04:53 +4: (tearDownAll)
+04:53 +4: C2: bounded sustained generation (3 min)
+[LLM] generation_done prompt_msgs=2 prompt_tokens=45 evaluated_prompt_tokens=45 gen_tokens=256 ttft_ms=4544 total_ms=70606 tok_s=3.86 busy_retries=0 threads=2 gap_p50_ms=265 gap_p95_ms=267 gap_max_ms=279 stalls_over_2s=0 rss_mib=2854
+04:54 +4: (tearDownAll)
+[LLM] model_released rss_mib=398
+04:54 +4: All tests passed!
+flutter_exit=0

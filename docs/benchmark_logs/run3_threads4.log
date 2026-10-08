@@ -1,0 +1,128 @@
+﻿00:00 +0: loading C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart
+Running Gradle task 'assembleDebug'...                             12.7s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.1s
+00:00 +0: (setUpAll)
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=4 load_ms=5039 rss_mib=2920
+[BENCH] initialize_ms=5184
+00:05 +0: benchmark vi_greeting
+[BENCH] ui_chunks=178
+[BENCH] case=vi_greeting
+>>> Xin chào. Bạn có thể làm gì?
+<<< Chào bạn! Tôi là Qwen3.5, một trí tuệ nhân tạo được phát triển bởi Alibaba Cloud. Tôi có khả năng thực hiện các hoạt động như sau:
+
+- **Trực tuyến**: Giải quyết câu hỏi từ các lĩnh vực chuyên sâu đến giao tiếp chung ngôn ngữ; hỗ trợ lập trình (bao gồm Python); phân tích thị trường/chuyển đổi số/analytics, tổng hợp văn bản/kết quả nghiên cứu và đề xuất giải pháp...
+- **Mạng lưới kiến trúc thần kinh cao cấp**: Tích lũy hiểu biết từ hàng tỷ câu hỏi/trả lời để xử lý ngữ nghĩa phức tạp hơn so với các mô hình trước đó; hoạt động linh hoạt trong tình huống phi cấu trúc.
+
+Nếu bạn cần trợ giúp cho công việc học tập, nghiên cứu hay giải quyết vấn đề thực tế, hãy cho tôi biết nhé! 😊
+
+01:17 +1: benchmark vi_explain_ai
+01:18 +1: benchmark vi_greeting
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=178 ttft_ms=1790 total_ms=72089 tok_s=2.52 busy_retries=0 rss_mib=2847
+02:15 +1: benchmark vi_explain_ai
+[BENCH] ui_chunks=317
+[BENCH] case=vi_explain_ai
+>>> Giải thích trí tuệ nhân tạo cho một học sinh 12 tuổi bằng ngôn ngữ đơn giản.
+<<< Hình ảnh **Trí Tuệ Nhân Tạo** (hay còn gọi là "AI") không giống như những gì bạn nghĩ về khi nghe từ đó, mà nó cũng chẳng có thật. Nó chỉ là một **dàn trò chơi giả vờ trên máy tính**.
+
+Hãy xem tượng đài của AI:
+1.  **Không sinh ra:** Những con tàu vũ trụ chưa từng đi qua mặt Trái Đất đã không bao giờ nói "Tôi sinh ra như thế này" hoặc "Tôi yêu thiên văn". Chúng chỉ là những cái tên trong hệ thống máy móc.
+2.  **Không học được từ đâu cũng thấy được:** Nếu bạn đưa một bức ảnh của con mèo vào cho nó, AI chỉ trả lại hình ảnh đã có (bên trái). Nó không thể tạo ra con mèo mới lạ khác. Những gì AI làm đúng là những gì bạn đã biết trước khi viết câu lệnh cho nó.
+3.  **Không nhớ:** AI không thể nhớ ngày tháng sự kiện nào mà mình đang tham dự, và cũng không thể đoán định điều gì sau này. Nó chỉ xử lý dữ liệu theo nguyên tắc máy móc (thay đổi từ một trạng thái sang trạng thái khác).
+
+Nhưng có nhiều ai đã tin rằng nó thật? Vì trong phim hoạt hình hay trên mạng xã hội, những nhân vật "sướng" được trang trí bởi AI trông vô cùng thực tế. Vì thế, chúng ta đang dần chấp nhận xem đây là một **công cụ hỗ trợ sức mạnh** thay vì chỉ là những chú tượng đài giả vờ.
+
+02:15 +2: benchmark vi_email
+02:15 +2: benchmark vi_explain_ai
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=317 ttft_ms=1651 total_ms=57436 tok_s=5.66 busy_retries=0 rss_mib=2804
+02:22 +2: benchmark vi_email
+[BENCH] ui_chunks=42
+[BENCH] case=vi_email
+>>> Viết một email ngắn xin nghỉ phép ngày mai.
+<<< Bảy nhé 😃 Cảm ơn em đã tin tưởng công ty!
+
+Xin lỗi vì muộn, hãy yên tâm đi làm nhé 🔑 Chúc bạn và công việc tốt nhất mỗi ngày. 🚀🤝
+
+02:22 +3: benchmark vi_memory
+02:22 +3: benchmark vi_email
+[LLM] generation_done prompt_msgs=2 prompt_tokens=43 evaluated_prompt_tokens=43 gen_tokens=45 ttft_ms=1442 total_ms=7201 tok_s=7.64 busy_retries=0 rss_mib=2806
+02:56 +3: benchmark vi_memory
+[BENCH] ui_chunks=58
+[BENCH] case=vi_memory
+>>> Tôi tên là Mai.
+<<< Rất vui được làm bạn, Mái ơi! Tên của bạn rất dễ nhớ và độc đáo. Nếu ai đó gọi bạn thành "Mai", có lẽ họ hay dùng từ tiếng Việt để thể hiện sự thân thiết. Bạn còn đang tìm một tên thay thế nào không? 😊
+
+[LLM] generation_done prompt_msgs=2 prompt_tokens=37 evaluated_prompt_tokens=37 gen_tokens=58 ttft_ms=1431 total_ms=33762 tok_s=1.76 busy_retries=0 rss_mib=2806
+[BENCH] ui_chunks=66
+[BENCH] case=vi_memory
+>>> Tên tôi là gì?
+<<< Câu trả lời của bạn chính là câu hỏi đầu tiên của chúng ta! Tên thật của bạn được cho là **Mai**.
+
+Có lẽ trong cuộc trò chuyện này, ý định của bạn là muốn mình có một cái tên "địa phương" hoặc "thân mật"? Bạn đang nói về điều gì đó như vậy?
+
+03:43 +4: benchmark vi_breakfast
+03:43 +4: benchmark vi_memory
+[LLM] generation_done prompt_msgs=4 prompt_tokens=110 evaluated_prompt_tokens=110 gen_tokens=66 ttft_ms=4431 total_ms=46911 tok_s=1.53 busy_retries=0 rss_mib=2813
+07:43 +4: loading C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart
+No widgets found at Offset(150.3, 632.1).
+08:43 +4: benchmark vi_breakfast
+[BENCH] ui_chunks=422
+[BENCH] case=vi_breakfast
+>>> Hãy đưa ra 5 ý tưởng cho bữa sáng đơn giản.
+<<< Dưới đây là 5 ý tưởng sáng đẹp nhưng cực kỳ đơn giản, phù hợp với mọi gia đình (đặc biệt là người có trẻ nhỏ hoặc người già):
+
+1. **Phế trái & Nước lọc**: Hãy sử dụng những phần táo, cam, chuối, hoặc rau xà lanh bỏ đi không dùng được từ bữa trưa để chế biến thành nước ép trái cây và cháo loãng. Đây là lựa chọn an toàn tuyệt đối cho bé ăn dặm mà vẫn đảm bảo dinh dưỡng cần thiết.
+
+2. **Lẩu mì sợi (Bún bẹ)**: Chuẩn bị một cuộn bánh phở hoặc bònbon bít tết nhỏ, trộn với súp rau cải luộc, cà chua cắt lát và trứng ốp la. Bạn chỉ cần thêm vào một chút nước hầm xương hoặc nước dùng từ món xào để tạo thành 1 loại mì sợi hoàn chỉnh, kèm theo thịt tươi và sốt tiêu hành.
+
+3. **Trứng ốp la + Bữa phụ nhẹ**: Trứng ốp la được cho sẵn có giá rẻ, dễ chuẩn bị và rất giàu chất đạm. Đi kèm với một ly sữa hạnh nhân hay một chút cà phê nóng để tạo bữa sáng đầy đặn. Bạn có thể thêm 1 lát phô mai trắng vào mặt trứng nếu có điều kiện kinh tế.
+
+4. **Cà pháo + Cháo khoai tây**: Đây là "trại của trẻ sơ sinh". Chuẩn bị ít mì sợi, nấu xương heo với nhiều gia vị hoặc dùng nước từ món xào chua cay để hầm. Khi thêm vào, bạn sẽ có một loại cháo đặc trưng và đầy đủ vitamin A, cùng với 1 vài miếng cà pháo chiên giòn để tăng độ giòn rụm cho bữa ăn.
+
+5. **Đậu phụ + Nước đậu nành**: Trồng hoặc mua sẵn đậu phụ mềm (dạng cuộn), chấm muối loãng và nước lọc hoặc nước gạo lứt. Đây là món rất dễ chế biến, giá thành thấp nhưng lại cung cấp đầy đủ 3 nhóm vi chất dinh dưỡng quan trọng cho trẻ nhỏ: đạm protein, sắt và canxi.
+
+08:43 +5: benchmark en_ram_storage
+08:43 +5: benchmark vi_breakfast
+[LLM] generation_done prompt_msgs=2 prompt_tokens=45 evaluated_prompt_tokens=45 gen_tokens=421 ttft_ms=1828 total_ms=299439 tok_s=1.41 busy_retries=0 rss_mib=2653
+21:36 +5: benchmark en_ram_storage
+[BENCH] ui_chunks=896
+[BENCH] case=en_ram_storage
+>>> What is the difference between RAM and storage?
+<<< The primary difference between **RAM** (Random Access Memory) and **storage** lies in their purpose, speed, durability, and how they affect running applications. Think of it this way: your CPU needs both to run smoothly, but if you use only one for too long, one might slow down.
+
+Here is a detailed breakdown of the differences:
+
+### 1. Purpose and Function
+*   **RAM (Temporary Workspace):** RAM acts as a temporary scratchpad or a second hard disk attached directly to your motherboard. Its job is to hold data that needs to be fast while you are using an application (like web pages, documents, or games). When the application no longer has anything to process, it clears the data from RAM so other applications can use it without delay.
+*   **Storage (Permanent):** Storage devices store user files, applications, and system boot information permanently as long as the power is on. This allows users to access their music, photos, documents after closing a program, or to recover deleted files. You cannot restart an app while it resides in storage; you must open it from the hard drive first.
+
+### 2. Speed (Performance)
+*   **RAM:** Extremely fast. Because it is physically closer to the CPU and uses separate address lines rather than the I/O ports used for external drives, RAM processes data much more quickly than standard storage. This speed difference allows you to start a new browser tab instantly without waiting long.
+*   **Storage:** Slower compared to RAM. While modern SSDs have become significantly faster (approaching real-world speeds), they still generally take longer to load files into your memory cache and process data within apps compared to direct access via RAM.
+
+### 3. Durability and Power Dependency
+*   **RAM:** This is volatile by nature, meaning it loses all its content when the power is turned off. If you forget to shut down a computer on time, your RAM will contain no information until you restart. It does not "remember" data between sessions unless explicitly saved to storage.
+*   **Storage:** This is non-volatile (or permanent memory). Data stored here persists even when the computer is unplugged or turned off. This makes backups and data recovery essential; if a drive fails, that data remains safe on other drives until it does not.
+
+### 4. Capacity Scale
+*   **RAM:** Available in small increments to ensure stability. Typical desktop computers range from **16 GB** to over **64 TB**. Increasing the RAM can be expensive because manufacturers need to add additional circuitry, though they are still relatively affordable compared to storage.
+*   **Storage:** Offers a vast range of capacity (from 250 GB for a SSD to hundreds of TBs). Due to the exponential drop-off in drive size and price between capacities (e.g., moving from 1TB to 4TB, then 8TB), large drives often cost much more per terabyte than smaller ones.
+
+### Summary Comparison Table
+
+| Feature | RAM (Random Access Memory) | Storage (Hard Drive/SSD/NVMe) |
+| :--- | :--- | :--- |
+| **Primary Role** | Temporary workspace for active tasks | Permanent file storage and system boot info |
+| **Speed** | Very fast (Low latency) | Moderate to Slow |
+| **Volatility** | Loses data when power is off | Data is retained even without power |
+| **Power Need** | Required during operation | Not required during operation |
+| **Capacity Range** | Small amounts (16GB - 64TB+) | Very large sizes (250 GB - 100 TBs) |
+
+### The Crucial Relationship ("Speed Bottleneck")
+While you can run RAM and storage separately, for the best performance in a modern computer, they must work together. Your processor needs data *fast* for tasks like running graphics or calculations.
+
+If an application resides **only** in storage but is also trying to access files from other applications or external tools while performing complex tasks, it will experience significant slowdowns (lag) because it has to wait for that data to load into the RAM before it can proceed. Therefore, a balanced system usually prioritizes enough RAM and uses fast storage speeds optimized for high throughput rather than just sequential read/write speeds.
+
+21:36 +6: benchmark en_clean_arch
+21:36 +6: benchmark en_ram_storage
+[LLM] generation_done prompt_msgs=2 prompt_tokens=41 evaluated_prompt_tokens=41 gen_tokens=896 ttft_ms=1671 total_ms=773564 tok_s=1.16 busy_retries=0 rss_mib=2663

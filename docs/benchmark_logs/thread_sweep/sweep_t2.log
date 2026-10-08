@@ -1,0 +1,27 @@
+00:00 +0: loading C:/dev/offline_ai_chat/integration_test/thread_sweep_test.dart
+Running Gradle task 'assembleDebug'...                             13.1s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           8.1s
+00:00 +0: (setUpAll)
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 load_ms=6050 rss_mib=2916
+[SWEEP] threads=2 seed=42 initialize_ms=6185
+00:06 +0: short
+[SWEEP] case=short verdict=ok pieces=64
+[SWEEP] text=Chào bạn! Tôi là Qwen3.5, và tôi **có thể giúp bạn**:  - ❓ **Trả lời hỏi đáp**: Giải thích kiến thức từ khoa học đến đời sống hàng ngày.   - ✍️ **Viết nội dung sáng tạo**: Viết truyện短篇 (huyền thoại/sc
+00:15 +1: medium_sustained
+00:15 +1: short
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=64 ttft_ms=1993 total_ms=8700 tok_s=9.39 busy_retries=0 threads=2 gap_p50_ms=102 gap_p95_ms=106 gap_max_ms=229 stalls_over_2s=0 rss_mib=2949
+00:40 +1: medium_sustained
+[SWEEP] case=medium verdict=ok pieces=208
+00:40 +2: stop_then_next
+00:40 +2: medium_sustained
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=208 ttft_ms=1590 total_ms=25099 tok_s=8.81 busy_retries=0 threads=2 gap_p50_ms=108 gap_p95_ms=139 gap_max_ms=267 stalls_over_2s=0 rss_mib=2961
+00:49 +2: stop_then_next
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=48 gen_tokens=57 ttft_ms=1573 total_ms=8537 tok_s=8.04 busy_retries=0 threads=2 gap_p50_ms=115 gap_p95_ms=169 gap_max_ms=208 stalls_over_2s=0 rss_mib=2927
+[SWEEP] case=stop cancel_ms=69 pieces_before_stop=56 cores_busy_during=2.16 cores_busy_after_stop=0.15 text_after_stop=0 next_verdict=ok next_total_ms=1270 next="Ok"
+00:52 +3: (tearDownAll)
+00:52 +3: stop_then_next
+[LLM] generation_done prompt_msgs=2 prompt_tokens=36 evaluated_prompt_tokens=36 gen_tokens=1 ttft_ms=1144 total_ms=1264 tok_s=null busy_retries=0 threads=2 rss_mib=2929
+00:52 +3: (tearDownAll)
+[LLM] model_released rss_mib=438
+00:54 +3: All tests passed!

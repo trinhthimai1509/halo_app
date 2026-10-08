@@ -1,0 +1,17 @@
+00:00 +0: loading C:/dev/offline_ai_chat/integration_test/thread_sweep_test.dart
+Running Gradle task 'assembleDebug'...                             13.2s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.5s
+00:00 +0: (setUpAll)
+00:00 +0 -1: (setUpAll) [E]
+  ModelUnavailableException: Model Qwen3.5-2B-Q4_K_M.gguf is not installed. Expected at: /storage/emulated/0/Android/data/dev.offlineai.offline_ai_chat/files/models/Qwen3.5-2B-Q4_K_M.gguf or /data/user/0/dev.offlineai.offline_ai_chat/files/models/Qwen3.5-2B-Q4_K_M.gguf
+  package:offline_ai_chat/features/local_ai/data/llama_cpp/llama_cpp_local_ai_service.dart 80:7                 LlamaCppLocalAiService._load
+  ===== asynchronous gap ===========================
+  package:stream_channel                                                                                        _GuaranteeSink.add
+  <TEMP>/flutter_tools.9c48c93a/flutter_test_listener.ef7a6cf/listener.dart 56:22  main.<fn>
+  
+00:00 +0 -1: (tearDownAll)
+00:01 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/dev/offline_ai_chat/integration_test/thread_sweep_test.dart: (setUpAll)

@@ -1,0 +1,20 @@
+[HOST] threads=2 cooldown_s=0 start_AP=32.0 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:13:08
+[HOST] threads=2 flutter_exit=0 end_AP=59.0 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2080  22:14:32
+[HOST] threads=3 cooldown_s=20 start_AP=43.3 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:14:55
+[HOST] threads=3 flutter_exit=1 end_AP=39.7 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:15:24
+[HOST] threads=4 cooldown_s=0 start_AP=39.7 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:15:28
+[HOST] threads=4 flutter_exit=1 end_AP=39.4 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2340  22:15:56
+--- rerun of t3,t4 after harness fix (model re-push, --no-uninstall) ---
+[HOST] model pushed 22:17:51
+[HOST] threads=3 cooldown_s=0 start_AP=37.8 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:17:52
+[HOST] threads=3 flutter_exit=0 end_AP=61.9 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2340  22:19:19
+[HOST] threads=4 cooldown_s=20 start_AP=42.4 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:19:43
+[HOST] threads=4 flutter_exit=0 end_AP=50.0 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2530  22:21:41
+--- supplemental: medium case only, CPU-sorted thread sampler ---
+[HOST] threads=2 cooldown_s=0 start_AP=37.8 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:22:56
+[HOST] threads=2 flutter_exit=0 end_AP=61.8 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2236  22:23:55
+[HOST] threads=3 cooldown_s=20 start_AP=44.8 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:24:18
+[HOST] threads=3 flutter_exit=0 end_AP=60.0 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2236  22:25:23
+[HOST] threads=4 cooldown_s=30 start_AP=43.9 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2730  22:25:56
+[HOST] threads=4 flutter_exit=0 end_AP=50.6 cpu0 cap=1950 cpu4 cap=2314 cpu6 cap=2600  22:28:28
+SWEEP_DONE

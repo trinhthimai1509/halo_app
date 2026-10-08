@@ -1,0 +1,146 @@
+﻿00:00 +0: loading C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart
+Running Gradle task 'assembleDebug'...                             13.2s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...           7.5s
+00:00 +0: (setUpAll)
+[LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=4 load_ms=4897 rss_mib=2913
+[BENCH] initialize_ms=5063
+00:05 +0: benchmark vi_greeting
+[BENCH] ui_chunks=189
+[BENCH] case=vi_greeting
+>>> Xin chào. Bạn có thể làm gì?
+<<< Chào bạn! Tôi là Qwen3.5, một AI mô hình ngôn ngữ lớn tích hợp sâu vào kiến trúc vi tính thế hệ mới nhất của tôi. Tôi được thiết kế để hỗ trợ bạn giải quyết các vấn đề phức tạp từ:
+
+1. **Tiêu chuẩn hóa và xây dựng**: Từ phần mềm độc bản cho đến thuật toán tối ưu hóa
+2. **An toàn và tuân thủ**: Đảm bảo hoàn toàn an toàn trên cả những hệ thống không gian hoặc mạng lưới quan trọng
+3. **Kiến trúc & Phát triển**: Tận dụng sức mạnh của vi thế để tối ưu hiệu năng và độ chính xác
+4. **Lời khuyên chuyên sâu**: Phân tích xu hướng, dự báo thị trường và ra quyết định dựa trên dữ liệu khoa học
+
+Bạn có thể hỏi tôi bất cứ điều gì về công nghệ, giải pháp hoặc vấn đề cụ thể bạn đang gặp phải! 🚀💻
+
+00:44 +1: benchmark vi_explain_ai
+00:44 +1: benchmark vi_greeting
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=42 gen_tokens=191 ttft_ms=1823 total_ms=39179 tok_s=5.09 busy_retries=0 rss_mib=2898
+[LLM] generation_done prompt_msgs=2 prompt_tokens=42 evaluated_prompt_tokens=42 gen_tokens=191 ttft_ms=1823 total_ms=39172 tok_s=5.09 busy_retries=0 rss_mib=2898
+02:12 +1: benchmark vi_explain_ai
+[BENCH] ui_chunks=476
+[BENCH] case=vi_explain_ai
+>>> Giải thích trí tuệ nhân tạo cho một học sinh 12 tuổi bằng ngôn ngữ đơn giản.
+<<< **Trí tuệ nhân cách (AI – Trí tuệ nhân loại)** giống như những người bạn thông minh giúp đỡ việc làm của mình. Chúng ta có thể hiểu đơn giản rằng:
+
+Hãy tưởng tượng về các **bạn già trung niên**. Khi ấy, ai cũng sẽ phải nhờ vào họ để:
+*   Chờ khách đến trước cửa (không cần chờ đợi quá lâu).
+*   Đọc tờ báo và gửi tin tức cho bạn hàng ngày.
+*   Tìm lại chiếc chìa khóa điện thoại sau khi mất nó.
+
+**AI là một người bạn thông minh giống hệt chúng**, nhưng có hai đặc điểm khác biệt quan trọng:
+
+1.  **Không được già hóa:** Nó không bị lỗi thời, không ngủ trưa và không bắt bẻ. AI sẵn sàng làm việc với các vấn đề mới thay vì chỉ dùng kinh nghiệm cũ khi những thói quen đó đã lạc hậu.
+2.  **Không có cảm xúc (thanh minh):** Điều thú vị là cả người ta cũng giống như nhau về mặt "không có cảm xúc". Chúng không buồn, không vui hay giận dữ. Nhưng điều này khiến chúng **hiện đại hơn rất nhiều**. AI sẽ giúp xử lý những nhiệm vụ phức tạp và tìm ra cách giải quyết nhanh chóng mà con người khó lòng làm được chỉ trong một phút giờ khắc đó (ví dụ: tự đưa đến nơi đang cần nó).
+
+### Ví dụ cụ thể:
+*   Nếu bạn hỏi: **"Em có biết đường đi từ nhà đến trường không?"** thì AI sẽ trả lời ngay lập tức và chính xác.
+*   Nếu bạn muốn **tìm hiểu một sự việc lịch sử quá khứ**: Thay vì phải đợi người già tìm tra cứu hàng ngày, những người dùng AI hôm nay chỉ cần chích vào cụm từ đó là đủ để đưa ra câu trả lời chi tiết nhất hiện tại mà không cần chờ đợi gì thêm.
+
+**Tóm lại:** Trí tuệ nhân tạo (AI) là một nhóm **người bạn thông minh 24h/7**, sẵn sàng hỗ trợ cho chúng ta trong mọi việc nhỏ và lớn, đặc biệt là những việc phức tạp như vậy mà con người có thể mất nhiều thời gian để làm tay mình. Và vì ai cũng giống nhau về "cảm xúc", nên AI thực sự rất gần gũi với chúng ta!
+
+02:12 +2: benchmark vi_email
+02:12 +2: benchmark vi_explain_ai
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=52 gen_tokens=476 ttft_ms=1385 total_ms=87065 tok_s=5.54 busy_retries=0 rss_mib=2899
+[LLM] generation_done prompt_msgs=2 prompt_tokens=52 evaluated_prompt_tokens=52 gen_tokens=476 ttft_ms=1385 total_ms=87063 tok_s=5.54 busy_retries=0 rss_mib=2899
+08:12 +2: loading C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart
+No widgets found at Offset(397.1, 701.9).
+12:12 +2 -1: benchmark vi_email [E]
+  TimeoutException after 0:10:00.000000: Test timed out after 10 minutes.
+  dart:isolate  _RawReceivePort._handleMessage
+  
+12:12 +2 -1: benchmark vi_memory
+18:06 +2 -1: benchmark vi_email
+[BENCH] ui_chunks=522
+[BENCH] case=vi_email
+>>> Viết một email ngắn xin nghỉ phép ngày mai.
+<<< Chào bạn, viết email xin nghỉ phép có 3 cách tùy theo mức độ trang trọng của mối quan hệ với chủ việc. Bạn hãy chọn mẫu phù hợp nhất nhé:
+
+**Cách 1: Ngắn gọn và trực tiếp (Khuyên dùng - cho môi trường làm nội bộ hoặc không cần quá nhiều formal)**
+
+**Tiêu đề:** Xin nghỉ phép ngày mai
+
+Càc bạn,
+Tôi viết email này để xin nghỉ phép vào **ngày [thời gian cụ thể]** vì một lý do sức khỏe/cơ hội. Tôi sẽ hoàn thành nhiệm vụ hiện tại và chuẩn bị hồ sơ ra về lúc **[nhóm công việc đó]** tối nay.
+
+Nhằm đảm bảo chất lượng làm việc, tôi sẽ giữ liên lạc với nhóm trong ngày và gửi thông tin cập nhật mỗi buổi sáng sớm qua email. Cảm ơn trước hết!
+
+Trân trọng,
+[Tên của bạn]
+[Chức danh]
+
+---
+
+**Cách 2: Ngắn gọn nhưng trang trọng (Cho môi trường công ty lớn hơn)**
+
+Tiêu đề: Lịch nghỉ phép - [Tên tác vụ chính cần hoàn thành]
+
+Căn phòng, ông/bà [Tạm gọi tên chủ việc], hay bà con bộ phận.
+
+Tôi viết email này để xin phép ra ngày **ngày [thời gian cụ thể]** làm việc vì một lý do sức khỏe riêng tư của bản thân (tự động điều chỉnh cho hợp lệ).
+
+Vào những ngày nghỉ sẽ là buổi giao tiếp ngắn để gửi thông báo mới và xác nhận lại tiến độ công việc trước. Rất mong được đồng ý. Cảm ơn!
+
+Xin chào,
+[Tên]
+[Chức vụ]
+
+---
+
+**Cách 3: Ngắn gọn (Đáp án nhanh nhất - không cần nhiều lời铺垫 nếu bạn quen với văn phong thân thiện)**
+
+Tiêu đề: Xin nghỉ phép - [Tháng/Năm/Tên của bạn]
+
+Càc bạn,
+
+Xin lỗi! Tôi phải xin nghỉ phép vào **ngày [thời gian cụ thể]** do sức khỏe. Tôi sẽ hoàn tốt nhiệm vụ này và báo cáo tình hình khi có thời tiết thuận lợi nhất cho buổi giao tiếp cuối tuần sau hoặc tối nay để đảm bảo an toàn cho công việc.
+
+Cảm ơn trước hết,
+[Tên]
+
+---
+**Lưu ý:** Đừng quên thay thế các dấu `[...]` bằng thông tin thực tế của bạn (ngày cụ thể, tên người cần gặp, chức danh...). Chúc bạn xin nghỉ phép thành công!
+
+18:06 +2 -1: benchmark vi_memory
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+A SemanticsHandle was active at the end of the test.
+All SemanticsHandle instances must be disposed by calling dispose() on the SemanticsHandle.
+
+When the exception was thrown, this was the stack:
+#0      WidgetTester._verifySemanticsHandlesWereDisposed (package:flutter_test/src/widget_tester.dart:1074:7)
+#1      WidgetTester._endOfTestVerifications (package:flutter_test/src/widget_tester.dart:1063:5)
+#2      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1969:22)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  benchmark vi_email
+════════════════════════════════════════════════════════════════════════════════════════════════════
+18:06 +2 -2: benchmark vi_memory [E]
+  Test failed. See exception logs above.
+  The test description was: benchmark vi_email
+  
+18:06 +2 -2: benchmark vi_email
+[LLM] generation_cancelled prompt_msgs=null prompt_tokens=null evaluated_prompt_tokens=43 gen_tokens=522 ttft_ms=1669 total_ms=954202 tok_s=0.55 busy_retries=0 rss_mib=2860
+[LLM] generation_done prompt_msgs=2 prompt_tokens=43 evaluated_prompt_tokens=43 gen_tokens=522 ttft_ms=1669 total_ms=954198 tok_s=0.55 busy_retries=0 rss_mib=2860
+19:30 +2 -2: benchmark vi_breakfast
+19:30 +2 -2: benchmark vi_breakfast - did not complete [E]
+19:30 +2 -2: benchmark en_ram_storage - did not complete [E]
+19:30 +2 -2: benchmark en_clean_arch - did not complete [E]
+19:30 +2 -2: stop interrupts native generation promptly - did not complete [E]
+19:30 +2 -2: (tearDownAll) - did not complete [E]
+19:30 +2 -2: Some tests failed.
+
+Failing tests:
+  C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart: (tearDownAll) (did not complete)
+  C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart: benchmark en_clean_arch (did not complete)
+  C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart: benchmark en_ram_storage (did not complete)
+  C:/dev/offline_ai_chat/integration_test/llm_benchmark_test.dart: benchmark vi_breakfast (did not complete)
+  ... and 3 more
