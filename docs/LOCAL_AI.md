@@ -57,6 +57,8 @@ Model binaries are **never committed**: `.gitignore` excludes `*.gguf`, `*.liter
 
 ## 3. Development setup: installing the model on Android
 
+> **Customers** import the model inside the app; see [MODEL_INSTALL.md](MODEL_INSTALL.md). The ADB steps below are a developer shortcut. An imported model (app-private storage) takes precedence over an ADB copy.
+
 ```bash
 # 1. Download to the host (outside the repo) and verify
 curl -L -o C:/dev/models/Qwen3.5-2B-Q4_K_M.gguf https://huggingface.co/unsloth/Qwen3.5-2B-GGUF/resolve/main/Qwen3.5-2B-Q4_K_M.gguf

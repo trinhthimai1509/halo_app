@@ -67,6 +67,8 @@ SherpaSpeechToTextService (speech/data)
 
 ## 3. Model installation
 
+> **Customers** import `halo-stt-vi.zip` in the app (AI models screen); see [MODEL_INSTALL.md](MODEL_INSTALL.md). The ADB steps below are for development. An imported model takes precedence.
+
 ### Development (validated)
 ```bash
 # From the extracted release archive. Push the model files only, never test_wavs/.
@@ -85,7 +87,7 @@ The same `chmod` applies to the LLM folder `files/models/`, see [LOCAL_AI.md §3
 
 All four model files must be present.
 
-### Production delivery (decision pending, not implemented)
+### Production delivery (implemented 2026-10-09: in-app import, see MODEL_INSTALL.md)
 
 ADB is a development mechanism only. A shipped build must place **both** models in app-private storage (`getApplicationSupportDirectory()`):
 

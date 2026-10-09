@@ -4,6 +4,7 @@ import 'package:offline_ai_chat/features/chat/domain/entities/chat_message.dart'
 import 'package:offline_ai_chat/features/chat/domain/entities/conversation.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/message_role.dart';
 import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
+import 'package:offline_ai_chat/features/model_setup/presentation/model_setup_controller.dart';
 import 'package:offline_ai_chat/features/speech/domain/speech_to_text_service.dart';
 
 import '../fakes/fake_local_ai_service.dart';
@@ -31,6 +32,8 @@ List<Override> testOverrides({
       speech ?? FakeSpeechToTextService(processingDelay: Duration.zero),
     ),
     clockProvider.overrideWithValue(() => testNow),
+    // Models count as installed, so the chat screen does not open setup.
+    modelsReadyProvider.overrideWith((ref) async => true),
   ];
 }
 

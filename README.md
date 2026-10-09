@@ -21,6 +21,7 @@ no network permission.
 | On-device LLM and speech, iOS | Not started. iOS shows a clear "not available" message, never fake output |
 | **Offline Vietnamese speech-to-text, Android** (sherpa-onnx, Zipformer-vi int8) | Done; see [docs/SPEECH.md](docs/SPEECH.md) |
 | Answer quality: device date context, Dart calendar and arithmetic answers, Vietnamese system prompt, tuned sampling | Done. On-device suite 13/33 → 25/33 (3-seed average unchanged after the speed work); see [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md) |
+| **In-app model import** (Android file picker, streamed copy with SHA-256 checks, atomic install, cancel and crash recovery; no ADB, no Internet) | Done; see [docs/MODEL_INSTALL.md](docs/MODEL_INSTALL.md) |
 | Response time: 4 prefill threads, system-prompt state snapshot, 1,536-token prompt cap | Done. Median time to first token 8.3 s → 0.93 s on the Tab S9 FE; see [docs/LLM_PERFORMANCE.md](docs/LLM_PERFORMANCE.md) |
 | Dark mode, localisation | Prepared, not implemented |
 
@@ -28,7 +29,7 @@ no network permission.
 
 - Flutter 3.47 (stable) / Dart 3.13
 - Android: Android SDK 36, JDK 17, and an **arm64** device (x86_64 for the emulator)
-- The model files, installed on the device: the LLM ([docs/LOCAL_AI.md §3](docs/LOCAL_AI.md#3-development-setup-installing-the-model-on-android)) and the speech model ([docs/SPEECH.md §3](docs/SPEECH.md#3-model-installation)). Production model delivery is not decided yet.
+- The model files, **imported in the app** (AI models screen, opened automatically on first start). See [docs/MODEL_INSTALL.md](docs/MODEL_INSTALL.md) for the customer files, steps, sizes and hashes. Developers can still `adb push` (LOCAL_AI.md §3, SPEECH.md §3).
 - iOS: Xcode on macOS (not verified; built on Windows)
 
 ## Run
@@ -107,5 +108,6 @@ lib/
 - [docs/SPEECH.md](docs/SPEECH.md): offline Vietnamese speech-to-text, model setup, verification, limitations
 - [docs/STT_SPIKE.md](docs/STT_SPIKE.md): engine and licence evaluation, spike measurements
 - [docs/LLM_QUALITY.md](docs/LLM_QUALITY.md): Vietnamese answer-quality suite, root causes, before/after results
+- [docs/MODEL_INSTALL.md](docs/MODEL_INSTALL.md): customer delivery package, in-app model import, requirements, troubleshooting
 - [docs/LLM_PERFORMANCE.md](docs/LLM_PERFORMANCE.md): time-to-first-token analysis, thread and snapshot experiments, acceptance
 - [docs/LLM_BENCHMARK.md](docs/LLM_BENCHMARK.md): Galaxy S10 measurements and thread comparison

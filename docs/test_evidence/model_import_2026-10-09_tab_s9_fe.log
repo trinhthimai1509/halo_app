@@ -1,0 +1,22 @@
+# Halo release build (LLM_METRICS=true), Galaxy Tab S9 FE (SM-X510, Android 16), 2026-10-09
+# Developer (adb) model copies renamed away before the test; models imported through the AI models screen from /sdcard/Download/Halo.
+# Wi-Fi switched off at 20:14:44 (no active network afterwards); airplane mode was NOT enabled.
+# 20:07:13 wrong file (speech ZIP picked for the LLM); 20:07:45 LLM import ok; 20:08:15 cancelled replacement; 20:08 force-stop at 36% of a replacement, relaunch; 20:09:21 speech ZIP import ok; 20:10 force-stop + relaunch, then typed and voice chat.
+10-09 20:07:13.698 [MODEL] import package=llm result=failed reason=wrongFile
+10-09 20:07:45.466 [MODEL] import package=llm result=ok ms=21637 bytes=1280835840
+10-09 20:08:15.135 [MODEL] import package=llm result=cancelled
+10-09 20:09:21.649 [MODEL] import package=stt result=ok ms=11882 bytes=77100477
+10-09 20:10:01.819 [LLM] model_loaded model=Qwen3.5-2B quant=Q4_K_M file_mib=1221 n_ctx=4096 threads=2 batch_threads=4 load_ms=5680 rss_mib=2796
+10-09 20:10:06.439 [LLM] snapshot_built prefix_tokens=201 build_ms=4597 bytes=22677626
+10-09 20:10:13.395 [LLM] generation_done prompt_msgs=2 prompt_tokens=223 evaluated_prompt_tokens=22 gen_tokens=49 ttft_ms=5325 total_ms=11558 tok_s=7.70 busy_retries=0 snapshot=true snapshot_restore_ms=21 threads=2 gap_p50_ms=127 gap_p95_ms=129 gap_max_ms=150 stalls_over_2s=0 rss_mib=2816
+10-09 20:13:34.230 [STT] model_loaded model=sherpa-onnx-zipformer-vi-int8-2025-04-20 threads=2 load_ms=2777 rss_mib=2967
+10-09 20:13:36.526 [STT] transcribed audio_ms=4320 speech_ms=4290 peak=0.107 decode_ms=232 stop_to_text_ms=329 text="Xin chào hôm nay là thứ mấy" rss_mib=2978
+10-09 20:13:49.232 [STT] transcribed audio_ms=3040 speech_ms=3040 peak=0.145 decode_ms=135 stop_to_text_ms=259 text="Nay có bao nhiêu ngày" rss_mib=2950
+10-09 20:13:58.097 [STT] transcribed audio_ms=2640 speech_ms=2310 peak=0.124 decode_ms=112 stop_to_text_ms=187 text="Tháng này có bao nhiêu ngày" rss_mib=2949
+10-09 20:14:12.524 [LLM] generation_done prompt_msgs=6 prompt_tokens=331 evaluated_prompt_tokens=130 gen_tokens=82 ttft_ms=2507 total_ms=12817 tok_s=7.86 busy_retries=0 snapshot=true snapshot_restore_ms=20 threads=2 gap_p50_ms=127 gap_p95_ms=129 gap_max_ms=131 stalls_over_2s=0 rss_mib=2959
+10-09 20:14:55.764 [STT] transcribed audio_ms=4720 speech_ms=3120 peak=0.324 decode_ms=137 stop_to_text_ms=231 text="Biết là tháng mười mà không biết tháng mười có bao nhiêu ngày à" rss_mib=2953
+10-09 20:15:08.933 [LLM] generation_done prompt_msgs=8 prompt_tokens=438 evaluated_prompt_tokens=237 gen_tokens=48 ttft_ms=4311 total_ms=10490 tok_s=7.61 busy_retries=0 snapshot=true snapshot_restore_ms=76 threads=2 gap_p50_ms=130 gap_p95_ms=131 gap_max_ms=132 stalls_over_2s=0 rss_mib=2957
+10-09 20:15:19.012 [STT] transcribed audio_ms=4480 speech_ms=4230 peak=0.243 decode_ms=182 stop_to_text_ms=279 text="Tháng mười làm gì có tháng nhuận với tháng không nhượng trời" rss_mib=2962
+10-09 20:15:39.417 [LLM] generation_done prompt_msgs=10 prompt_tokens=509 evaluated_prompt_tokens=308 gen_tokens=99 ttft_ms=5721 total_ms=18923 tok_s=7.42 busy_retries=0 snapshot=true snapshot_restore_ms=25 threads=2 gap_p50_ms=132 gap_p95_ms=139 gap_max_ms=141 stalls_over_2s=0 rss_mib=2978
+10-09 20:15:45.190 [STT] transcribed audio_ms=2640 speech_ms=2640 peak=0.291 decode_ms=160 stop_to_text_ms=226 text="Tôi không nói lịch âm" rss_mib=2972
+10-09 20:16:09.838 [LLM] generation_done prompt_msgs=12 prompt_tokens=623 evaluated_prompt_tokens=422 gen_tokens=96 ttft_ms=9025 total_ms=23086 tok_s=6.76 busy_retries=0 snapshot=true snapshot_restore_ms=75 threads=2 gap_p50_ms=148 gap_p95_ms=152 gap_max_ms=211 stalls_over_2s=0 rss_mib=2981

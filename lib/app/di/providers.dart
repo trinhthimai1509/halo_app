@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../../core/utils/clock.dart';
 import '../../core/utils/id_generator.dart';
@@ -11,6 +14,8 @@ import '../../features/chat/domain/usecases/send_message.dart';
 import '../../features/local_ai/data/llama_cpp/llama_cpp_local_ai_service.dart';
 import '../../features/local_ai/data/unsupported_local_ai_service.dart';
 import '../../features/local_ai/domain/local_ai_service.dart';
+import '../../features/model_setup/data/model_import_platform.dart';
+import '../../features/model_setup/data/model_installer.dart';
 import '../../features/speech/data/sherpa_speech_to_text_service.dart';
 import '../../features/speech/data/unsupported_speech_to_text_service.dart';
 import '../../features/speech/domain/speech_to_text_service.dart';
@@ -68,5 +73,22 @@ final sendMessageProvider = Provider<SendMessage>(
     ai: ref.watch(localAiServiceProvider),
     ids: ref.watch(idGeneratorProvider),
     clock: ref.watch(clockProvider),
+  ),
+);
+
+/// Android Storage Access Framework bridge (MainActivity). Tests override.
+final modelImportPlatformProvider = Provider<ModelImportPlatform>(
+  (ref) => MethodChannelModelImportPlatform(),
+);
+
+/// Installs models into app-private storage; the developer (adb) folder is
+/// only consulted for status.
+final modelInstallerProvider = Provider<ModelInstaller>(
+  (ref) => ModelInstaller(
+    platform: ref.watch(modelImportPlatformProvider),
+    privateRoot: () async => (await getApplicationSupportDirectory()).path,
+    developerRoot: () async => Platform.isAndroid
+        ? (await getExternalStorageDirectory())?.path
+        : null,
   ),
 );

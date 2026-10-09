@@ -29,8 +29,9 @@ data (SQLite data source, LocalChatRepository, LlamaCppLocalAiService, SherpaSpe
 | Feature | Why it is separate |
 | --- | --- |
 | `chat` | Conversations, messages and history. History is not split into its own feature because it shares the same entities, repository and state. |
-| `local_ai` | The on-device model boundary. It knows nothing about chat persistence (`AiMessage` is its own type) so a runtime can be integrated and tested in isolation. Phase 2 added `LlamaCppLocalAiService` (llama.cpp via llamadart, the only file importing it), `ContextWindowPolicy` and `StreamCoalescer`; see LOCAL_AI.md. Model download / management UI will live here. |
+| `local_ai` | The on-device model boundary. It knows nothing about chat persistence (`AiMessage` is its own type) so a runtime can be integrated and tested in isolation. Phase 2 added `LlamaCppLocalAiService` (llama.cpp via llamadart, the only file importing it), `ContextWindowPolicy` and `StreamCoalescer`; see LOCAL_AI.md. |
 | `speech` | The on-device speech-to-text boundary. |
+| `model_setup` | Installing the model files from user-picked documents: `ModelInstaller` (staging, SHA-256 verification, atomic promotion, cancel, crash recovery), `ModelImportPlatform` (Android Storage Access Framework via `MainActivity.kt`), `ModelCatalog` (exact files, sizes and hashes) and the AI models screen. The LLM and speech services only see installed files through their locators. See MODEL_INSTALL.md. |
 
 ## Use cases
 
@@ -150,6 +151,10 @@ instead of leaving the app.
 | `sherpa_speech_to_text_service_test` | With a fake microphone and recognizer: formatting, permission, silence, trimming, 30 s buffer cap, single model load with per-session warm-up, cancel, retry after a missing model, reload after a recognizer error, dispose |
 | `audio_signal_test` | PCM decoding, silence and click rejection, trimming with padding, quiet speech kept, clipping peak |
 | `transcript_formatter_test` | Upper case → sentence case with all Vietnamese diacritics intact; no punctuation added; mixed-case text untouched |
+| `model_installer_test` | Model import: missing, success (single file, ZIP, loose files), wrong file, verification failure, missing files, insufficient storage, picker closed, cancel mid-import, failed replacement keeps the old model, retry, busy, persistence across restarts, interrupted import recovery (both crash points), damaged install, developer copy |
+| `model_catalog_test` | Installed paths and file names match what the LLM and STT services load; every file has a size and full SHA-256 |
+| `model_setup_screen_test` | Status, storage needs, wrong-file error and retry on the AI models screen |
+| `no_fake_in_production_test` | No fake class in `lib/`; Android wires the real llama.cpp and sherpa-onnx services; unsupported platforms report "not available" |
 | `arithmetic_answers_test` | Explicit + − × ÷ calculations (Vietnamese words, thousands and decimal notation, precedence, division by zero) are exact; word problems, code-like and ambiguous input are left to the model |
 | `perf_probe_test` (integration, on device) | Prefill speed vs thread count; system-prompt snapshot restores give identical output (docs/LLM_PERFORMANCE.md) |
 | `calendar_answers_test` | Plain date/weekday/time questions (with greetings, particles, month boundaries) are answered from the clock; compound or unrelated questions are left to the model |

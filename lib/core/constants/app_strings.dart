@@ -44,7 +44,7 @@ abstract final class AppStrings {
 
   // Errors.
   static const String modelUnavailable =
-      'The on-device model is not installed. See docs/LOCAL_AI.md.';
+      'The on-device AI model is not installed yet.';
   static const String generationFailed =
       'Something went wrong while generating a reply.';
   static const String loadConversationFailed =
@@ -53,11 +53,52 @@ abstract final class AppStrings {
   static const String micPermissionDenied =
       'Voice input needs microphone access. Allow it in Settings.';
   static const String speechModelUnavailable =
-      'The on-device speech model is not installed. See docs/SPEECH.md.';
+      'The Vietnamese speech model is not installed yet.';
   static const String noSpeechDetected =
       "Didn't catch that. Please try speaking again.";
   static const String historyLoadFailed = 'Your history could not be loaded.';
   static const String deleteFailed = 'The conversation could not be deleted.';
+
+  // Model setup.
+  static const String modelSetupTitle = 'AI models';
+  static const String modelSetupIntro =
+      'Halo runs entirely on this device and never downloads anything. '
+      'Copy the model files to this device (for example to the Download '
+      'folder), then import them here.';
+  static const String llmModelHint =
+      'Choose the file Qwen3.5-2B-Q4_K_M.gguf.';
+  static const String speechModelHint =
+      'Choose halo-stt-vi.zip, or select the four speech files together.';
+  static const String modelInstalled = 'Installed';
+  static const String modelInstalledDeveloper = 'Installed (developer copy)';
+  static const String modelMissing = 'Not installed';
+  static const String modelInvalid = 'Damaged: import again';
+  static const String modelChecking = 'Checking…';
+  static const String importAction = 'Import';
+  static const String replaceAction = 'Replace';
+  static const String retryAction = 'Try again';
+  static const String cancelImport = 'Cancel import';
+  static const String importDone = 'Imported and verified.';
+  static const String importCancelled =
+      'Import cancelled. Nothing was changed.';
+  static const String importBusy = 'Another import is still running.';
+  static const String importWrongLlmFile =
+      "That isn't the expected model file. Choose Qwen3.5-2B-Q4_K_M.gguf.";
+  static const String importWrongSpeechFile =
+      "One of the files isn't the expected speech model file.";
+  static const String importMissingSpeechFiles =
+      'Some speech files are missing. Choose halo-stt-vi.zip, or select all '
+      'four files: encoder, decoder, joiner and tokens.txt.';
+  static String importNoSpace(String need, String free) =>
+      'Not enough free space: $need needed, $free free. Free up space and '
+      'try again.';
+  static const String importCorrupt =
+      'The file is damaged or a different version. Copy it to the device '
+      'again and retry. Your previous model was kept.';
+  static const String importIoError =
+      'The file could not be read. Try again. Your previous model was kept.';
+  static String storageNeeded(String size) => 'Needs about $size of storage';
+  static const String setUpModels = 'Set up';
 
   // Relative dates.
   static const String today = 'Today';

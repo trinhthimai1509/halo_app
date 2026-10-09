@@ -45,10 +45,10 @@ class SttModel {
 
 /// Finds an installed [SttModel] on the device.
 ///
-/// Same convention as the LLM's `ModelFileLocator`: the development
-/// location is `<external files>/stt/<directoryName>/` (writable with
-/// `adb push`), then the internal support directory, where a production
-/// installer would place it.
+/// 1. App-private `<support>/stt/<directoryName>/`: where the in-app Model
+///    Setup screen installs it (the customer path).
+/// 2. Development fallback: `<external files>/stt/<directoryName>/`
+///    (writable with `adb push`).
 class SttModelLocator {
   const SttModelLocator();
 
@@ -56,8 +56,8 @@ class SttModelLocator {
 
   Future<List<String>> candidateDirectories(SttModel model) async {
     final roots = <Directory?>[
-      if (Platform.isAndroid) await getExternalStorageDirectory(),
       await getApplicationSupportDirectory(),
+      if (Platform.isAndroid) await getExternalStorageDirectory(),
     ];
     return [
       for (final root in roots.whereType<Directory>())

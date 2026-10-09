@@ -5,11 +5,11 @@ import 'package:path_provider/path_provider.dart';
 
 /// Finds the GGUF file on the device.
 ///
-/// Development location (Android): the app's external files directory,
-/// `/sdcard/Android/data/<applicationId>/files/models/<fileName>`, which
-/// `adb push` can write to without any storage permission and which is
-/// removed with the app. Falls back to the internal support directory, where
-/// a future first-run install would place the model.
+/// 1. App-private support directory, `<support>/models/<fileName>`: where
+///    the in-app Model Setup screen installs it (the customer path).
+/// 2. Development fallback (Android): the app's external files directory,
+///    `/sdcard/Android/data/<applicationId>/files/models/<fileName>`, which
+///    `adb push` can write to without a storage permission.
 class ModelFileLocator {
   const ModelFileLocator();
 
@@ -18,8 +18,8 @@ class ModelFileLocator {
   /// Every location searched, in order.
   Future<List<String>> candidatePaths(String fileName) async {
     final directories = <Directory?>[
-      if (Platform.isAndroid) await getExternalStorageDirectory(),
       await getApplicationSupportDirectory(),
+      if (Platform.isAndroid) await getExternalStorageDirectory(),
     ];
     return [
       for (final directory in directories.whereType<Directory>())

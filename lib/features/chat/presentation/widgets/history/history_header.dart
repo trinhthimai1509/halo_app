@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../app/router/app_router.dart';
 import '../../../../../app/theme/app_durations.dart';
 import '../../../../../app/theme/app_radius.dart';
 import '../../../../../app/theme/app_spacing.dart';
@@ -66,6 +67,13 @@ class _HistoryHeaderState extends ConsumerState<HistoryHeader> {
                   ),
                 ),
               ),
+              SoftIconButton(
+                icon: Icons.memory_rounded,
+                tooltip: AppStrings.modelSetupTitle,
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(AppRoutes.models),
+              ),
+              const SizedBox(width: AppSpacing.xxs),
               SoftIconButton(
                 icon: Icons.info_outline_rounded,
                 tooltip: AppStrings.licenses,

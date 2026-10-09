@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../app/router/app_router.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/widgets/ambient_background.dart';
 import '../../../../core/widgets/content_width.dart';
+import '../../../model_setup/presentation/model_setup_controller.dart';
 import '../state/chat_controller.dart';
 import '../state/chat_state.dart';
 import '../state/composer_controller.dart';
@@ -17,6 +19,7 @@ class ChatScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     _listenForErrors(context, ref);
+    _openSetupIfModelsMissing(context, ref);
 
     final isListening = ref.watch(
       composerControllerProvider.select((s) => s.voice == VoiceStatus.listening),
@@ -59,6 +62,7 @@ class ChatScreen extends ConsumerWidget {
           ChatError.modelUnavailable => AppStrings.modelUnavailable,
           ChatError.loadFailed => AppStrings.loadConversationFailed,
         },
+        setUp: error == ChatError.modelUnavailable,
       );
       ref.read(chatControllerProvider.notifier).clearError();
     });
@@ -73,14 +77,41 @@ class ChatScreen extends ConsumerWidget {
           VoiceError.noSpeech => AppStrings.noSpeechDetected,
           VoiceError.failed => AppStrings.voiceFailed,
         },
+        setUp: error == VoiceError.modelUnavailable,
       );
       ref.read(composerControllerProvider.notifier).acknowledge();
     });
   }
 
-  static void _showMessage(BuildContext context, String message) {
+  static void _showMessage(
+    BuildContext context,
+    String message, {
+    bool setUp = false,
+  }) {
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(message)));
+      ..showSnackBar(
+        SnackBar(
+          content: Text(message),
+          action: setUp
+              ? SnackBarAction(
+                  label: AppStrings.setUpModels,
+                  onPressed: () =>
+                      Navigator.of(context).pushNamed(AppRoutes.models),
+                )
+              : null,
+        ),
+      );
+  }
+
+  /// First launch without models: open Model Setup once, instead of
+  /// letting the user discover it through an error.
+  static void _openSetupIfModelsMissing(BuildContext context, WidgetRef ref) {
+    ref.listen(modelsReadyProvider, (previous, next) {
+      if (previous?.hasValue ?? false) return;
+      if (next.value == false) {
+        Navigator.of(context).pushNamed(AppRoutes.models);
+      }
+    });
   }
 }
