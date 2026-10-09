@@ -30,5 +30,7 @@ void main() {
     expect(prompt, contains('Không bịa đặt'));
     expect(prompt, contains('hỏi lại'));
     expect(prompt, contains('"tôi"'));
+    expect(prompt, contains('hãy thừa nhận'));
+    expect(prompt, contains('Không nói rằng bạn cần Internet'));
   });
 }

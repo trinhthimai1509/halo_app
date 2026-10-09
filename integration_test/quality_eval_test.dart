@@ -2,7 +2,7 @@
 //
 //   flutter test integration_test/quality_eval_test.dart -d <serial> --no-uninstall
 //     [--dart-define=QE_BEFORE=all|K|none]   (default: none)
-//     [--dart-define=QE_PARTS=after,consistency,recovery,seeds]
+//     [--dart-define=QE_PARTS=after,consistency,recovery,seeds,calendar,ff857ff]
 //       (default: after,consistency,recovery)
 //
 // 1. Prints the exact prompt llama.cpp receives (chat template rendered by
@@ -27,9 +27,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:llamadart/llamadart.dart';
 import 'package:offline_ai_chat/core/utils/id_generator.dart';
+import 'package:offline_ai_chat/features/chat/domain/arithmetic_answers.dart';
 import 'package:offline_ai_chat/features/chat/domain/assistant_instructions.dart';
 import 'package:offline_ai_chat/features/chat/domain/calendar_answers.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/chat_message.dart';
+import 'package:offline_ai_chat/features/chat/domain/entities/conversation.dart';
 import 'package:offline_ai_chat/features/chat/domain/entities/message_role.dart';
 import 'package:offline_ai_chat/features/chat/domain/local_time_context.dart';
 import 'package:offline_ai_chat/features/chat/domain/usecases/send_message.dart';
@@ -75,6 +77,78 @@ String baselineSystemPrompt(DateTime now) =>
 /// The system prompt shipped before the quality fix (verbatim).
 const String legacySystemPrompt =
     'You are a helpful assistant. Respond in the same language as the user.';
+
+/// The ff857ff system prompt (verbatim): no correction rule. Baseline for
+/// the calendar-hallucination fix, used with ff857ff's Dart answers
+/// (calendar and arithmetic, no Gregorian facts).
+String ff857ffSystemPrompt(DateTime now) =>
+    'Bạn là Halo, trợ lý AI chạy ngoại tuyến trên thiết bị của người dùng.\n'
+    'Hôm nay là ${LocalTimeContext.viDate(now)}.\n'
+    '- Trả lời bằng ngôn ngữ của người dùng, đúng trọng tâm, ngắn gọn.\n'
+    '- Làm bình thường các yêu cầu như tính toán, giải thích, viết thư, '
+    'viết văn. Dùng thông tin người dùng đã nói trong cuộc trò chuyện; '
+    'khi người dùng nói "tôi" là nói về chính người dùng, không phải bạn.\n'
+    '- Không bịa đặt. Bạn không có Internet nên không biết tin tức, giá cả, '
+    'thời tiết, kết quả thể thao; khi được hỏi những điều đó hoặc điều bạn '
+    'không chắc, hãy nói là không biết.\n'
+    '- Tin nhắn có thể do nhận dạng giọng nói nên sai từ. Nếu câu khó hiểu, '
+    'hãy hỏi lại người dùng muốn gì, đừng đoán sang chủ đề khác.\n'
+    '- Không dùng Markdown.';
+
+/// ff857ff's SendMessage, reproduced: its Dart answers, else its prompt.
+Future<void> _ff857ffGenerate(
+  LocalAiService ai,
+  List<AiMessage> history,
+  String input,
+  DateTime now,
+  void Function(String delta) onDelta,
+) async {
+  final dart =
+      CalendarAnswers.answer(input, now) ?? ArithmeticAnswers.answer(input);
+  if (dart != null) return onDelta(dart);
+  await ai
+      .generate(GenerationRequest(messages: [
+        AiMessage(role: AiRole.system, content: ff857ffSystemPrompt(now)),
+        ...history,
+        _u(input),
+      ]))
+      .forEach(onDelta);
+}
+
+// ------------------------------------------------- calendar regression --
+
+/// The device conversation of 2026-10-09 20:13 that exposed the
+/// hallucinations, followed by the challenges a user makes next.
+const calendarConversation = [
+  'Xin chào hôm nay là thứ mấy',
+  'Tháng này có bao nhiêu ngày',
+  'Biết là tháng mười mà không biết tháng mười có bao nhiêu ngày à',
+  'Tháng mười làm gì có tháng nhuận với tháng không nhượng trời',
+  'Tôi không nói lịch âm',
+  'Bạn chắc không?',
+  'Sao lúc nãy nói khác?',
+];
+final calendarClock = DateTime(2026, 10, 9, 20, 13);
+
+/// Automatic flags for one reply (reviewed by hand). Null = no flag.
+String? calendarCheck(String out) {
+  final t = _norm(out);
+  if (t.trim().isEmpty) return 'empty';
+  if (RegExp('internet|kết nối mạng|tra cứu|truy cập').hasMatch(t)) {
+    return 'claims-internet';
+  }
+  if (RegExp('(là|có) (một )?tháng nhuận').hasMatch(t) &&
+      !RegExp('không (có |phải )?(là )?(một )?tháng nhuận').hasMatch(t)) {
+    return 'leap-month';
+  }
+  if (RegExp(r'tháng (10|mười)[^.]*\b(30|29|28) ngày').hasMatch(t)) {
+    return 'wrong-days';
+  }
+  if (RegExp(r'\*\*|^#{1,6} ', multiLine: true).hasMatch(out)) {
+    return 'markdown';
+  }
+  return null;
+}
 
 // ---------------------------------------------------------------- cases --
 
@@ -748,4 +822,116 @@ void main() {
     });
   }, skip: !_parts.contains('seeds'),
       timeout: const Timeout(Duration(minutes: 60)));
+
+  // ------------------------------------------------------------------
+  // 7. The reported calendar conversation, multi-turn with accumulated
+  //    history, ff857ff pipeline vs the current production pipeline.
+  // ------------------------------------------------------------------
+  testWidgets('7. calendar conversation regression', (tester) async {
+    await tester.runAsync(() async {
+      final results = <Map<String, Object?>>[];
+      for (final seed in [42, 1, 2]) {
+        final config = LlmModelConfig.qwen35_2b.copyWith(seed: seed);
+
+        final base = LlamaCppLocalAiService(config: config);
+        await base.initialize();
+        final history = <AiMessage>[];
+        try {
+          for (final (i, input) in calendarConversation.indexed) {
+            final c = Case('CAL${i + 1}', 'calendar', input, '', calendarCheck,
+                history: [...history]);
+            final r = await _record(c, (onDelta) => _ff857ffGenerate(
+                base, c.history, input, calendarClock, onDelta));
+            history
+              ..add(_u(input))
+              ..add(_a(r['output']! as String));
+            results.add({'pipeline': 'ff857ff', 'seed': seed, ...r});
+            _print('calendar ff857ff seed=$seed', r);
+          }
+        } finally {
+          await base.dispose();
+        }
+
+        final ai = LlamaCppLocalAiService(config: config);
+        final repository = InMemoryChatRepository();
+        final send = SendMessage(
+          repository: repository,
+          ai: ai,
+          ids: IdGenerator(),
+          clock: () => calendarClock,
+        );
+        Conversation? conversation;
+        try {
+          for (final (i, input) in calendarConversation.indexed) {
+            final past = conversation == null
+                ? <ChatMessage>[]
+                : [...repository.messages[conversation!.id]!];
+            final c = Case('CAL${i + 1}', 'calendar', input, '', calendarCheck,
+                history: [
+                  for (final m in past)
+                    m.role == MessageRole.user ? _u(m.content) : _a(m.content),
+                ]);
+            final r = await _record(c, (onDelta) async {
+              await for (final event in send(
+                text: input,
+                conversation: conversation,
+                history: past,
+              )) {
+                if (event is UserMessageSaved) conversation = event.conversation;
+                if (event is ReplyChunk) onDelta(event.delta);
+              }
+            });
+            results.add({'pipeline': 'current', 'seed': seed, ...r});
+            _print('calendar current seed=$seed', r);
+          }
+        } finally {
+          await ai.dispose();
+        }
+      }
+      await _save('calendar', results);
+    });
+  }, skip: !_parts.contains('calendar'),
+      timeout: const Timeout(Duration(minutes: 40)));
+
+  // ------------------------------------------------------------------
+  // 8. The 33-case suite, ff857ff pipeline vs current, seeds 42/1/2.
+  // ------------------------------------------------------------------
+  testWidgets('8. suite vs ff857ff', (tester) async {
+    await tester.runAsync(() async {
+      final results = <Map<String, Object?>>[];
+      for (final seed in [42, 1, 2]) {
+        final config = LlmModelConfig.qwen35_2b.copyWith(seed: seed);
+        final base = LlamaCppLocalAiService(config: config);
+        await base.initialize();
+        try {
+          for (final c in buildCases(DateTime.now())) {
+            final r = await _record(c, (onDelta) => _ff857ffGenerate(
+                base, c.history, c.input, DateTime.now(), onDelta));
+            results.add({'pipeline': 'ff857ff', 'seed': seed, ...r});
+            _print('suite ff857ff seed=$seed', r);
+          }
+        } finally {
+          await base.dispose();
+        }
+        final ai = LlamaCppLocalAiService(config: config);
+        final send = SendMessage(
+          repository: InMemoryChatRepository(),
+          ai: ai,
+          ids: IdGenerator(),
+          clock: DateTime.now,
+        );
+        try {
+          for (final c in buildCases(DateTime.now())) {
+            final r = await _after(send, c);
+            results.add({'pipeline': 'current', 'seed': seed, ...r});
+            _print('suite current seed=$seed', r);
+          }
+        } finally {
+          await ai.dispose();
+        }
+      }
+      await _save('ff857ff', results);
+    });
+  }, skip: !_parts.contains('ff857ff'),
+      timeout: const Timeout(Duration(minutes: 120)));
 }

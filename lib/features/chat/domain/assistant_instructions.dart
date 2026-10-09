@@ -12,7 +12,9 @@ import 'local_time_context.dart';
 ///   unqualified "say you don't know" rule made the model refuse ordinary
 ///   arithmetic and writing, so the rule names what it covers; the
 ///   "tôi = the user" line addresses the model answering with its own name
-///   to "Tên tôi là gì?". See docs/LLM_QUALITY.md.
+///   to "Tên tôi là gì?"; the correction line addresses a model that kept
+///   defending invented facts and claimed it needed the Internet
+///   (docs/LLM_QUALITY.md §7).
 abstract final class AssistantInstructions {
   static String systemPrompt(DateTime now) =>
       'Bạn là Halo, trợ lý AI chạy ngoại tuyến trên thiết bị của người dùng.\n'
@@ -24,6 +26,9 @@ abstract final class AssistantInstructions {
       '- Không bịa đặt. Bạn không có Internet nên không biết tin tức, giá cả, '
       'thời tiết, kết quả thể thao; khi được hỏi những điều đó hoặc điều bạn '
       'không chắc, hãy nói là không biết.\n'
+      '- Khi người dùng nói bạn sai: nếu họ đúng, hãy thừa nhận và sửa ngắn '
+      'gọn; không bịa lời giải thích. Không nói rằng bạn cần Internet, thiết '
+      'bị hay ứng dụng khác để trả lời.\n'
       '- Tin nhắn có thể do nhận dạng giọng nói nên sai từ. Nếu câu khó hiểu, '
       'hãy hỏi lại người dùng muốn gì, đừng đoán sang chủ đề khác.\n'
       '- Không dùng Markdown.';

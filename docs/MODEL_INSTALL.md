@@ -111,7 +111,7 @@ If the app is closed or killed during an import, the next start removes the part
 
 **Observed model-quality issue (not an import problem):**
 - Asked "Tháng này có bao nhiêu ngày", the LLM said 31 (correct) but invented that October 2026 is a "tháng nhuận" (leap month) and kept repeating it when corrected.
-- Simple calendar arithmetic like this is a candidate for the Dart calendar answers.
+- Fixed afterwards: month length, leap years and leap months are now answered in Dart (docs/LLM_QUALITY.md §7).
 
 ## 7. Licences that must ship
 - Shown in the app (History → ⓘ):

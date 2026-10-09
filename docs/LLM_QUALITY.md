@@ -4,6 +4,7 @@
 > - The response-time work ([LLM_PERFORMANCE.md](LLM_PERFORMANCE.md)) took the median time to first token from 8.3 s to 0.93 s.
 > - It also added Dart arithmetic answers and a "tôi = the user" prompt line, and removed the clock time from the prompt.
 > - Quality re-measured over 3 seeds, hand-graded: **74/99 before and after**. The latency table in §3 below describes the 366ae73 state.
+> - Later the same day: Gregorian calendar facts in Dart, a correction-handling rule and Markdown rendering (§7).
 
 **Device:** Galaxy Tab S9 FE (SM-X510, Exynos 1380, Android 16).
 **Model:** Qwen3.5-2B Q4_K_M with llama.cpp (llamadart 0.8.24), 2 threads, `n_ctx` 4096.
@@ -182,3 +183,52 @@ flutter test integration_test/quality_eval_test.dart -d <serial> --no-uninstall 
 ```
 
 The device must stay **unlocked with the screen on**. A dozing screen lets the OS freeze the app, and the test tool then aborts the run. The suite takes about 15 minutes per pipeline. Results are written to `<external files>/qe/*.json`.
+
+## 7. Calendar hallucinations and correction handling (2026-10-09)
+
+**Reported** (tablet, 2026-10-09 20:13, release build). Asked "Tháng này có bao nhiêu ngày", the model said 31 but also:
+- that it had no Internet to look the month up;
+- that October 2026 is a "tháng nhuận" (the Gregorian calendar has no leap months);
+- it kept defending this when corrected and invented leap months "4, 7, 9 hoặc 11";
+- it showed raw `**31 ngày**`.
+
+**Changes**
+
+| File | Change |
+|---|---|
+| `lib/features/chat/domain/gregorian_answers.dart` (new) | Month length, year length, leap year and "is month X a leap month" are **computed in Dart**: this/next/last month, month words, "năm nay/sau/ngoái/2028". The question must end the message ("Biết là tháng mười mà … có bao nhiêu ngày à" matches). Corrections such as "Tôi không nói lịch âm" and anything else go to the model |
+| `send_message.dart` | Chain: clock answers → Gregorian answers → arithmetic → model. Dart replies are persisted like model replies, so **follow-up turns see them in the history** (unit test replays the reported conversation and checks the exact request) |
+| `assistant_instructions.dart` | One rule: when told it is wrong, admit and correct briefly if the user is right; don't invent explanations; never claim to need Internet, a device or another app |
+| `presentation/widgets/markdown_lite.dart` (new) | Assistant text renders `**bold**`, `*italic*`, `` `code` ``, `#` headings, bullets and `---` rules instead of showing markers. Unclosed markers (mid-stream), `2 * 3` and `snake__case` stay literal. No links or HTML are interpreted |
+
+**Context-loss audit (no defect found):**
+- History is the controller's full persisted message list, including Dart answers; `SendMessage` appends the user turn once.
+- Messages are stored in SQLite with role and content, so a reopened conversation sends the same history.
+- `ContextWindowPolicy` drops oldest turns only when the prompt exceeds 1536 tokens. The reported 5-turn conversation is about 600 tokens.
+- The prompt snapshot contains only the system block, is keyed by its exact text, and is used only when the rendered prompt starts with it. It cannot carry state from another conversation. Changing the prompt (as here) rebuilds it once (about 3–4 s).
+
+**Real-model results** (Tab S9 FE, seeds 42/1/2, the exact conversation plus "Bạn chắc không?" and "Sao lúc nãy nói khác?"; evidence in [test_evidence/calendar_fix_2026-10-09/](test_evidence/calendar_fix_2026-10-09/); hand-graded):
+
+| | ff857ff | This change |
+|---|---|---|
+| Turns 1–3 (date, month length ×2) | 6/9 correct; "30 ngày" once, "không biết" twice (once "không kết nối internet để tra cứu") | **9/9** correct, from Dart (0 ms model time) |
+| Turns 4–7 (corrections and challenges), acceptable replies | 3/12 | **8/12** |
+| Replies claiming no Internet / needing to look things up | 4/18 | **0/12** |
+| Replies calling October a leap month or inventing leap months | 3/18 (plus "30 ngày" twice) | **0/12** |
+| Remaining faults | | An invented month-length list (seed 42), hedging on "Bạn chắc không?" (seeds 1, 2), Markdown in 4 replies (now rendered) |
+
+A stronger wording ("…nếu câu trả lời trước đã đúng, hãy khẳng định lại") was tried and **rejected**. It scored 5/12, invented leap-year reasoning, and once parroted the rule back to the user (`calendar_conversation_rejected_prompt.json`).
+
+**No regression on the 33-case suite** (same seeds, both pipelines in one run):
+
+| | ff857ff | This change |
+|---|---|---|
+| Auto-graded | 83/99 (27/26/30) | 86/99 (28/28/30) |
+| Hand review of the 7 cases whose result differs | 11/21 | 11/21 |
+| Single-turn TTFT median / p90 | 0.79 s / 0.99 s | 0.78 s / 0.96 s |
+| Long-history J1 / J2 TTFT | 23.1–23.3 s / 26.8–28.2 s | 23.6–24.1 s / 27.0–27.4 s |
+| Decode | 7.8 tok/s | 7.7 tok/s |
+
+The system prompt grew from 201 to 246 tokens. Because it is snapshotted, this costs nothing per request. In the calendar conversation the first model turn includes the one-time snapshot build (about 4 s). In the ff857ff run the same cost lands on turn 2, which is now answered instantly.
+
+**Limits:** follow-up corrections are still answered by a 2B model. The rule reduced, but did not remove, hedging and invented explanations.

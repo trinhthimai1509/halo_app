@@ -6,6 +6,7 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/ai_orb.dart';
 import '../../../../core/widgets/thinking_dots.dart';
+import 'markdown_lite.dart';
 
 /// An assistant reply, integrated into the page rather than boxed in a
 /// bubble: a small identity row, then full-width readable text.
@@ -91,8 +92,10 @@ class _ReplyText extends StatelessWidget {
       liveRegion: showCaret,
       child: Text.rich(
         TextSpan(
-          text: content,
           children: [
+            // The model sometimes emits Markdown despite the prompt; render
+            // the common subset instead of showing raw ** and #.
+            ...MarkdownLite.spans(content),
             if (showCaret)
               const WidgetSpan(
                 alignment: PlaceholderAlignment.middle,

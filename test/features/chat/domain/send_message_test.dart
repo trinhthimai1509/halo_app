@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:offline_ai_chat/core/utils/id_generator.dart';
 import 'package:offline_ai_chat/features/chat/domain/assistant_instructions.dart';
+import 'package:offline_ai_chat/features/chat/domain/entities/conversation.dart';
 import 'package:offline_ai_chat/features/chat/domain/usecases/send_message.dart';
 import 'package:offline_ai_chat/features/local_ai/domain/local_ai_service.dart';
 
@@ -108,5 +109,81 @@ void main() {
       'Xin chào hôm nay là thứ mấy',
       'Xin chào! Hôm nay là Thứ Năm, ngày 8 tháng 10 năm 2026.',
     ]);
+  });
+
+  test('regression: the reported October 2026 conversation', () async {
+    // Device conversation 2026-10-09 20:13: the model called October a
+    // "tháng nhuận" and said it needed the Internet. Turns 1-3 must now be
+    // answered in Dart, and those answers must reach the model as history
+    // for the corrections that follow (turns 4-5).
+    final repository = InMemoryChatRepository();
+    final ai = _RecordingAi();
+    final sendMessage = SendMessage(
+      repository: repository,
+      ai: ai,
+      ids: IdGenerator(),
+      clock: () => DateTime(2026, 10, 9, 20, 13),
+    );
+    Future<String> send(String text, Conversation conversation) async {
+      final events = await sendMessage(
+        text: text,
+        conversation: conversation,
+        history: [...repository.messages[conversation.id]!],
+      ).toList();
+      return (events.last as ReplyCompleted).message.content;
+    }
+
+    final first = await sendMessage(text: 'Xin chào hôm nay là thứ mấy')
+        .toList();
+    final conversation = (first.first as UserMessageSaved).conversation;
+    expect(
+      (first.last as ReplyCompleted).message.content,
+      'Xin chào! Hôm nay là Thứ Sáu, ngày 9 tháng 10 năm 2026.',
+    );
+    expect(
+      await send('Tháng này có bao nhiêu ngày', conversation),
+      'Tháng 10 năm 2026 có 31 ngày (dương lịch).',
+    );
+    expect(
+      await send(
+        'Biết là tháng mười mà không biết tháng mười có bao nhiêu '
+        'ngày à',
+        conversation,
+      ),
+      'Tháng 10 năm 2026 có 31 ngày (dương lịch).',
+    );
+    expect(ai.calls, 0);
+
+    await send(
+      'Tháng mười làm gì có tháng nhuận với tháng không nhượng trời',
+      conversation,
+    );
+    await send('Tôi không nói lịch âm', conversation);
+    expect(ai.calls, 2);
+
+    final sent = ai.lastRequest!.messages;
+    expect(sent.first.role, AiRole.system);
+    expect(sent.skip(1).map((m) => (m.role, m.content)), [
+      (AiRole.user, 'Xin chào hôm nay là thứ mấy'),
+      (
+        AiRole.assistant,
+        'Xin chào! Hôm nay là Thứ Sáu, ngày 9 tháng 10 năm 2026.',
+      ),
+      (AiRole.user, 'Tháng này có bao nhiêu ngày'),
+      (AiRole.assistant, 'Tháng 10 năm 2026 có 31 ngày (dương lịch).'),
+      (
+        AiRole.user,
+        'Biết là tháng mười mà không biết tháng mười có bao nhiêu ngày à',
+      ),
+      (AiRole.assistant, 'Tháng 10 năm 2026 có 31 ngày (dương lịch).'),
+      (
+        AiRole.user,
+        'Tháng mười làm gì có tháng nhuận với tháng không nhượng trời',
+      ),
+      (AiRole.assistant, 'Tên bạn là Mai.'),
+      (AiRole.user, 'Tôi không nói lịch âm'),
+    ]);
+    // Persisted, so reopening the conversation keeps the same history.
+    expect(repository.messages[conversation.id]!.length, 10);
   });
 }

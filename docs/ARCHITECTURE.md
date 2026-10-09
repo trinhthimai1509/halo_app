@@ -144,7 +144,7 @@ instead of leaving the app.
 | `chat_screen_test` | Welcome state, suggestion → streamed reply, typing and sending, voice finish/cancel, small phone at 1.6× text without overflow |
 | `history_screen_test` | Empty state, list order, preview and relative dates, reopening, swipe delete, long-press delete, search |
 | `conversation_title_test` | Title derivation and relative-date formatting |
-| `send_message_test` | The system prompt, history and new message reach the model in order |
+| `send_message_test` | The system prompt, history and new message reach the model in order; the reported October 2026 conversation is answered in Dart for turns 1–3 and those answers reach the model as history for the corrections |
 | `context_window_policy_test` | Trimming the oldest turns first, always keeping the system prompt and current turn, and rejecting over-long input |
 | `stream_coalescer_test` | First piece emitted immediately, then batched per 50 ms; flush and dispose |
 | `composer_controller_test` | Voice sessions: transcript delivery, permission denial, no speech, missing model vs recognizer error, 30 s auto-stop, cancel during the permission prompt, no voice while generating, repeated sessions |
@@ -158,8 +158,10 @@ instead of leaving the app.
 | `arithmetic_answers_test` | Explicit + − × ÷ calculations (Vietnamese words, thousands and decimal notation, precedence, division by zero) are exact; word problems, code-like and ambiguous input are left to the model |
 | `perf_probe_test` (integration, on device) | Prefill speed vs thread count; system-prompt snapshot restores give identical output (docs/LLM_PERFORMANCE.md) |
 | `calendar_answers_test` | Plain date/weekday/time questions (with greetings, particles, month boundaries) are answered from the clock; compound or unrelated questions are left to the model |
+| `gregorian_answers_test` | Month length, leap years and "no leap months in the Gregorian calendar" are computed (Feb in 1900/2000/2028, relative months across year ends); the reported conversation's questions match, corrections and unrelated questions are left to the model |
+| `markdown_lite_test` | Bold, italic, code, headings, bullets and rules in replies are rendered without raw markers; arithmetic like `2 * 3`, snake_case and unclosed markers stay literal |
 | `assistant_instructions_test` | The system prompt carries the given clock's date, time and offset (never a fixed date) and the behaviour rules |
-| `quality_eval_test` (integration, on device) | 33-case Vietnamese answer-quality suite on the real model, before vs after (docs/LLM_QUALITY.md) |
+| `quality_eval_test` (integration, on device) | 33-case Vietnamese answer-quality suite on the real model, before vs after; the reported calendar conversation replayed multi-turn (docs/LLM_QUALITY.md) |
 | `sherpa_recognizer_host_test` (opt-in) | The production recognizer decodes real Vietnamese audio with the real model on the host |
 
 Fakes (`FakeLocalAiService`, `FakeSpeechToTextService`) live in `test/fakes/`, so they cannot be compiled into the app.

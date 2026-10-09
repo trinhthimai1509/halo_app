@@ -8,6 +8,7 @@ import '../calendar_answers.dart';
 import '../entities/chat_message.dart';
 import '../entities/conversation.dart';
 import '../entities/message_role.dart';
+import '../gregorian_answers.dart';
 import '../repositories/chat_repository.dart';
 
 /// Progress of one user turn, emitted in order by [SendMessage].
@@ -94,9 +95,12 @@ class SendMessage {
     yield UserMessageSaved(target, userMessage);
 
     // Plain calendar questions are answered from the device clock (the
-    // model cannot know today's date) and explicit simple calculations
-    // exactly (the 2B model gets them wrong at random).
+    // model cannot know today's date), Gregorian facts (month length, leap
+    // years) and explicit simple calculations exactly (the 2B model gets
+    // them wrong). These replies are stored like any other, so follow-up
+    // questions see them in the history.
     final calendarReply = CalendarAnswers.answer(prompt, sentAt) ??
+        GregorianAnswers.answer(prompt, sentAt) ??
         ArithmeticAnswers.answer(prompt);
     if (calendarReply != null) {
       final reply = ChatMessage(
